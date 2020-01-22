@@ -14,5 +14,9 @@
     "access": "public"
   },
   "license": "MIT",
-  "repository": "hackclub/theme"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hackclub/theme.git",
+    "directory": "packages/theme"
+  }
 }
