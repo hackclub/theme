@@ -1,0 +1,44 @@
+{
+  "name": "@hackclub/components",
+  "version": "0.0.1",
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "unpkg": "dist/index.umd.js",
+  "sideEffects": false,
+  "scripts": {
+    "prepare": "rm -rf ./dist && microbundle --jsx React.createElement",
+    "watch": "microbundle watch --external all --jsx React.createElement --no-compress"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "theme-ui"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hackclub/theme.git",
+    "directory": "packages/components"
+  },
+  "dependencies": {
+    "@hackclub/theme": "^0.0.1",
+    "theme-ui": "^0.3.0-alpha.6"
+  },
+  "peerDependencies": {
+    "@emotion/core": "^10.0.27",
+    "@hackclub/icons": "^0.0.3",
+    "next": "^9.2.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-feather": "^2.0.3",
+    "theme-ui": "^0.3.0-alpha.6"
+  },
+  "devDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
