@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "prepare": "lerna run prepare",
+    "clean": "lerna run clean",
+    "format": "npx prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\""
+  },
+  "workspaces": {
+    "packages": ["packages/*"]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "lerna": "^3.14.1",
+    "microbundle": "^0.11.0"
+  }
+}

@@ -1,0 +1,7 @@
+.cache
+public
+package-lock.json
+node_modules
+dist
+coverage
+.DS_Store
