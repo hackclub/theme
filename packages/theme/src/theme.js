@@ -23,7 +23,7 @@ export const colors = {
   instagram: '#e1306c'
 }
 
-export const theme = {
+export default {
   breakpoints: [32, 48, 64, 96, 128].map(w => `${w}em`),
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [12, 16, 20, 24, 32, 48, 64, 96, 128],
@@ -133,7 +133,7 @@ export const theme = {
   },
   alerts: {
     primary: {
-      color: 'invertedText',
+      color: 'background',
       bg: 'orange',
       fontWeight: 'body'
     }
@@ -152,13 +152,11 @@ export const theme = {
       fontWeight: 'bold',
       svg: { ml: -1, mr: 2 }
     },
-    inverted: {
-      bg: 'invertedPrimary',
-      color: 'invertedText',
-      cursor: 'pointer',
-      fontFamily: 'inherit',
-      fontWeight: 'bold',
-      svg: { ml: -1, mr: 2 }
+    outline: {
+      variant: 'buttons.primary',
+      bg: 'transparent',
+      color: 'primary',
+      border: '2px solid currentColor'
     }
   },
   forms: {
@@ -207,28 +205,22 @@ export const theme = {
   },
   layout: {
     container: {
-      width: '100%',
       maxWidth: ['layout', null, 'layoutPlus', null, 'wide'],
+      width: '100%',
       mx: 'auto',
       px: 3
     },
     wide: {
-      width: '100%',
-      maxWidth: ['wide', null, null, null, 'widePlus'],
-      mx: 'auto',
-      px: 3
+      variant: 'layout.container',
+      maxWidth: ['wide', null, null, null, 'widePlus']
     },
     copy: {
-      width: '100%',
-      maxWidth: ['copy', null, null, null, 'copyPlus'],
-      mx: 'auto',
-      px: 3
+      variant: 'layout.container',
+      maxWidth: ['copy', null, null, null, 'copyPlus']
     },
     narrow: {
-      width: '100%',
-      maxWidth: ['narrow', null, 'narrowPlus', null, 'layout'],
-      mx: 'auto',
-      px: 3
+      variant: 'layout.container',
+      maxWidth: ['narrow', null, 'narrowPlus', null, 'layout']
     }
   },
   styles: {
@@ -281,5 +273,3 @@ export const theme = {
     }
   }
 }
-
-export default theme
