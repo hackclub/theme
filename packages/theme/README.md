@@ -10,7 +10,7 @@ npm i @hackclub/theme
 
 ```js
 import { ThemeProvider } from 'theme-ui'
-import theme from '@hackclub/theme'
+import { theme } from '@hackclub/theme'
 
 export default ({ children }) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
