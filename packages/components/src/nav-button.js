@@ -1,3 +1,4 @@
+import React from 'react'
 import { IconButton } from 'theme-ui'
 
 const NavButton = ({ sx, ...props }) => (

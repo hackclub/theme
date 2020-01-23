@@ -1,3 +1,4 @@
+import React from 'react'
 import { Box, Container, Heading } from 'theme-ui'
 import Meta from './meta'
 
@@ -13,7 +14,7 @@ const Header = ({
   <Box
     as="header"
     sx={{
-      bg: 'header',
+      bg: 'sunken',
       color: 'text',
       pt: [4, null, null, null, 5],
       pb: [4, 5, null, null, 6],
@@ -21,7 +22,9 @@ const Header = ({
       ...sx
     }}
   >
-    {includeMeta && <Meta title={title} description={desc} image={img} />}
+    {includeMeta && (
+      <Meta title={title} description={descriptionn} image={img} />
+    )}
     <Container>
       <Heading
         as="h1"

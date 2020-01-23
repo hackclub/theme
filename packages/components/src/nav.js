@@ -1,5 +1,5 @@
-import { useColorMode } from 'theme-ui'
-import { Box, Container } from 'theme-ui'
+import React from 'react'
+import { useColorMode, Box, Container } from 'theme-ui'
 
 import Link from 'next/link'
 import { useRouter } from 'next/router'

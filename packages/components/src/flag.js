@@ -1,3 +1,4 @@
+import React from 'react'
 import { Image, Link } from '@theme-ui/components'
 
 const Flag = props => (
