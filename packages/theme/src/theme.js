@@ -1,12 +1,3 @@
-export const breakpoints = [32, 48, 64, 96, 128].map(w => `${w}em`)
-
-const heading = {
-  color: 'text',
-  fontFamily: 'body',
-  lineHeight: 'heading',
-  fontWeight: 'bold'
-}
-
 export const colors = {
   darker: '#121217',
   dark: '#17171d',
@@ -33,10 +24,10 @@ export const colors = {
 }
 
 export const theme = {
-  breakpoints,
+  breakpoints: [32, 48, 64, 96, 128].map(w => `${w}em`),
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [12, 16, 20, 24, 32, 48, 64, 96, 128],
-  initialColorMode: 'light',
+  initialColorModeName: 'light',
   useColorSchemeMediaQuery: true,
   colors: {
     ...colors,
@@ -109,10 +100,10 @@ export const theme = {
       lineHeight: 'heading'
     },
     title: {
+      fontSize: [4, 5, 6],
       fontWeight: 'bold',
-      lineHeight: 'title',
       letterSpacing: 'title',
-      fontSize: [4, 5, 6]
+      lineHeight: 'title'
     },
     subtitle: {
       fontSize: [2, 3, null, null, 4],
@@ -121,16 +112,14 @@ export const theme = {
       lineHeight: 'subheading'
     },
     headline: {
-      fontWeight: 'bold',
-      lineHeight: 'heading',
+      variant: 'text.heading',
       letterSpacing: 'headline',
       fontSize: 4,
       mt: 3,
       mb: 3
     },
     subheadline: {
-      fontWeight: 'bold',
-      lineHeight: 'heading',
+      variant: 'text.heading',
       letterSpacing: 'headline',
       fontSize: 2,
       mt: 0,
@@ -159,7 +148,7 @@ export const theme = {
       bg: 'primary',
       color: 'background',
       cursor: 'pointer',
-      fontFamily: 'body',
+      fontFamily: 'inherit',
       fontWeight: 'bold',
       svg: { ml: -1, mr: 2 }
     },
@@ -167,7 +156,7 @@ export const theme = {
       bg: 'invertedPrimary',
       color: 'invertedText',
       cursor: 'pointer',
-      fontFamily: 'body',
+      fontFamily: 'inherit',
       fontWeight: 'bold',
       svg: { ml: -1, mr: 2 }
     }
@@ -176,7 +165,7 @@ export const theme = {
     input: {
       bg: 'elevated',
       color: 'text',
-      fontFamily: 'body',
+      fontFamily: 'inherit',
       borderRadius: 'base',
       boxShadow: 'small',
       transition: 'box-shadow .125s ease-in-out',
@@ -251,33 +240,8 @@ export const theme = {
       margin: 0,
       minHeight: '100vh'
     },
-    h1: {
-      ...heading,
-      fontSize: 5
-    },
-    h2: {
-      ...heading,
-      fontSize: 4
-    },
-    h3: {
-      ...heading,
-      fontSize: 3
-    },
-    h4: {
-      ...heading,
-      fontSize: 2
-    },
-    h5: {
-      ...heading,
-      fontSize: 1
-    },
-    h6: {
-      ...heading,
-      fontSize: 0
-    },
     p: {
       color: 'text',
-      fontFamily: 'body',
       fontWeight: 'body',
       lineHeight: 'body'
     },
