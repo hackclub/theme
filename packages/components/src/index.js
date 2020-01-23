@@ -1,7 +1,6 @@
 export { default as ColorSwitcher } from './color-switcher'
 export { default as Flag } from './flag'
-// export { default as Fonts } from './fonts'
-// export { default as Global } from './global'
+export { default as Fonts } from './fonts'
 export { default as Header } from './header'
 export { default as Meta } from './meta'
 // export { default as Nav } from './nav'
