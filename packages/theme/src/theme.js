@@ -56,6 +56,8 @@ export default {
     }
   },
   fonts: {
+    heading:
+      '"Phantom Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     body:
       '"Phantom Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     monospace: '"SFMono-Regular", "Roboto Mono", Menlo, Consolas, monospace'
@@ -68,7 +70,8 @@ export default {
   },
   fontWeights: {
     body: 400,
-    bold: 700
+    bold: 700,
+    heading: 700
   },
   letterSpacings: {
     title: '-0.009em',
