@@ -34,6 +34,7 @@ export default {
     text: colors.black,
     background: colors.white,
     elevated: colors.white,
+    sheet: colors.snow,
     sunken: colors.smoke,
     border: colors.smoke,
     placeholder: colors.muted,
@@ -46,6 +47,7 @@ export default {
         text: colors.white,
         background: colors.dark,
         elevated: colors.darkless,
+        sheet: colors.darkless,
         sunken: colors.darker,
         border: colors.darkless,
         placeholder: colors.slate,
@@ -60,7 +62,7 @@ export default {
       '"Phantom Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     body:
       '"Phantom Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    monospace: '"SFMono-Regular", "Roboto Mono", Menlo, Consolas, monospace'
+    monospace: '"SF Mono", "Roboto Mono", Menlo, Consolas, monospace'
   },
   lineHeights: {
     title: 1,
@@ -90,9 +92,11 @@ export default {
   radii: {
     default: 6,
     extra: 9,
+    ultra: 12,
     circle: 99999
   },
   shadows: {
+    text: '0 1px 2px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.125)',
     small: '0 1px 2px rgba(0, 0, 0, 0.0625), 0 2px 4px rgba(0, 0, 0, 0.0625)',
     card: '0 4px 8px rgba(0, 0, 0, 0.125)',
     elevated: '0 1px 2px rgba(0, 0, 0, 0.0625), 0 8px 12px rgba(0, 0, 0, 0.125)'
@@ -235,17 +239,60 @@ export default {
       margin: 0,
       minHeight: '100vh'
     },
+    h1: {
+      variant: 'text.heading',
+      fontSize: 5
+    },
+    h2: {
+      variant: 'text.heading',
+      fontSize: 4
+    },
+    h3: {
+      variant: 'text.heading',
+      fontSize: 3
+    },
+    h4: {
+      variant: 'text.heading',
+      fontSize: 2
+    },
+    h5: {
+      variant: 'text.heading',
+      fontSize: 1
+    },
+    h6: {
+      variant: 'text.heading',
+      fontSize: 0
+    },
     p: {
       color: 'text',
       fontWeight: 'body',
-      lineHeight: 'body'
+      lineHeight: 'body',
+      my: 3
+    },
+    img: {
+      maxWidth: '100%'
+    },
+    hr: {
+      border: 0,
+      borderBottom: '1px solid',
+      borderColor: 'border'
     },
     a: {
-      color: 'primary'
+      color: 'primary',
+      textDecoration: 'underline',
+      textUnderlinePosition: 'under',
+      ':focus,:hover': {
+        textDecorationStyle: 'wavy'
+      }
     },
     pre: {
       fontFamily: 'monospace',
-      overflowX: 'auto',
+      fontSize: 1,
+      p: 3,
+      color: 'text',
+      bg: 'sheet',
+      overflow: 'auto',
+      borderRadius: 'default',
       code: {
         color: 'inherit'
       }
@@ -254,25 +301,37 @@ export default {
       fontFamily: 'monospace',
       fontSize: 'inherit'
     },
+    'p > code, li > code': {
+      color: 'accent',
+      fontSize: 1,
+      '::before,::after': {
+        content: '"`"'
+      }
+    },
+    li: {
+      my: 2
+    },
     table: {
       width: '100%',
+      my: 4,
       borderCollapse: 'separate',
-      borderSpacing: 0
+      borderSpacing: 0,
+      [['th', 'td']]: {
+        textAlign: 'left',
+        py: '4px',
+        pr: '4px',
+        pl: 0,
+        borderColor: 'border',
+        borderBottomStyle: 'solid'
+      }
     },
     th: {
-      textAlign: 'left',
-      borderBottomStyle: 'solid'
+      verticalAlign: 'bottom',
+      borderBottomWidth: '2px'
     },
     td: {
-      textAlign: 'left',
-      borderBottomStyle: 'solid'
-    },
-    img: {
-      maxWidth: '100%'
-    },
-    hr: {
-      borderColor: 'border',
-      my: [3, 4]
+      verticalAlign: 'top',
+      borderBottomWidth: '1px'
     }
   }
 }
