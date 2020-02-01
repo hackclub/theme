@@ -68,6 +68,7 @@ export default {
     title: 1,
     heading: 1.125,
     subheading: 1.25,
+    caption: 1.375,
     body: 1.5
   },
   fontWeights: {
@@ -84,15 +85,16 @@ export default {
     wide: 1536,
     layoutPlus: 1200,
     layout: 1024,
+    copyUltra: 980,
     copyPlus: 768,
     copy: 680,
     narrowPlus: 600,
     narrow: 512
   },
   radii: {
-    default: 6,
-    extra: 9,
-    ultra: 12,
+    default: 8,
+    extra: 12,
+    ultra: 16,
     circle: 99999
   },
   shadows: {
@@ -135,7 +137,8 @@ export default {
     caption: {
       color: 'muted',
       fontWeight: 'medium',
-      letterSpacing: 'headline'
+      letterSpacing: 'headline',
+      lineHeight: 'caption'
     }
   },
   alerts: {
@@ -157,6 +160,7 @@ export default {
       cursor: 'pointer',
       fontFamily: 'inherit',
       fontWeight: 'bold',
+      borderRadius: 'default',
       svg: { ml: -1, mr: 2 }
     },
     outline: {
@@ -201,6 +205,7 @@ export default {
       p: [3, 4],
       borderRadius: 'extra',
       boxShadow: 'card',
+      overflow: 'hidden',
       input: { boxShadow: 'none !important' }
     },
     sunken: {
@@ -208,6 +213,15 @@ export default {
       p: [3, 4],
       borderRadius: 'extra',
       'input, a': { bg: 'header', boxShadow: 'none !important' }
+    },
+    interactive: {
+      variant: 'cards.primary',
+      WebkitTapHighlightColor: 'transparent',
+      transition: 'transform .125s ease-in-out, box-shadow .125s ease-in-out',
+      ':hover,:focus': {
+        transform: 'scale(1.0625)',
+        boxShadow: 'elevated'
+      }
     }
   },
   layout: {
