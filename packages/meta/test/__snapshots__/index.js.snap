@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Meta renders 1`] = `
+<div>
+  <meta
+    content="website"
+    property="og:type"
+  />
+  <meta
+    content="Hack Club"
+    property="og:site_name"
+  />
+  <meta
+    content="@hackclub"
+    name="twitter:site"
+  />
+  <title>
+    Hack Club
+  </title>
+  <meta
+    content="Hack Club"
+    property="og:title"
+  />
+  <meta
+    content="Hack Club"
+    name="twitter:title"
+  />
+  <meta
+    content="#ec3750"
+    name="theme-color"
+  />
+  <meta
+    content="#ec3750"
+    name="msapplication-TileColor"
+  />
+  <link
+    color="#ec3750"
+    href="https://hackclub.com/safari-pinned-tab.svg"
+    rel="mask-icon"
+  />
+  <link
+    href="https://hackclub.com/apple-touch-icon.png"
+    rel="apple-touch-icon"
+    sizes="180x180"
+  />
+  <link
+    href="https://hackclub.com/favicon-32x32.png"
+    rel="icon"
+    sizes="32x32"
+    type="image/png"
+  />
+  <link
+    href="https://hackclub.com/favicon-16x16.png"
+    rel="icon"
+    sizes="16x16"
+    type="image/png"
+  />
+</div>
+`;
+
+exports[`Meta renders custom color 1`] = `
+<div>
+  <meta
+    content="website"
+    property="og:type"
+  />
+  <meta
+    content="Hack Club"
+    property="og:site_name"
+  />
+  <meta
+    content="@hackclub"
+    name="twitter:site"
+  />
+  <title>
+    Hack Club
+  </title>
+  <meta
+    content="Hack Club"
+    property="og:title"
+  />
+  <meta
+    content="Hack Club"
+    name="twitter:title"
+  />
+  <meta
+    content="#0069ff"
+    name="theme-color"
+  />
+  <meta
+    content="#0069ff"
+    name="msapplication-TileColor"
+  />
+  <link
+    color="#0069ff"
+    href="https://hackclub.com/safari-pinned-tab.svg"
+    rel="mask-icon"
+  />
+  <link
+    href="https://hackclub.com/apple-touch-icon.png"
+    rel="apple-touch-icon"
+    sizes="180x180"
+  />
+  <link
+    href="https://hackclub.com/favicon-32x32.png"
+    rel="icon"
+    sizes="32x32"
+    type="image/png"
+  />
+  <link
+    href="https://hackclub.com/favicon-16x16.png"
+    rel="icon"
+    sizes="16x16"
+    type="image/png"
+  />
+</div>
+`;
+
+exports[`Meta renders custom title 1`] = `
+<div>
+  <meta
+    content="website"
+    property="og:type"
+  />
+  <meta
+    content="Hack Club"
+    property="og:site_name"
+  />
+  <meta
+    content="@hackclub"
+    name="twitter:site"
+  />
+  <title>
+    Custom Title – Hack Club
+  </title>
+  <meta
+    content="Custom Title – Hack Club"
+    property="og:title"
+  />
+  <meta
+    content="Custom Title – Hack Club"
+    name="twitter:title"
+  />
+  <meta
+    content="#ec3750"
+    name="theme-color"
+  />
+  <meta
+    content="#ec3750"
+    name="msapplication-TileColor"
+  />
+  <link
+    color="#ec3750"
+    href="https://hackclub.com/safari-pinned-tab.svg"
+    rel="mask-icon"
+  />
+  <link
+    href="https://hackclub.com/apple-touch-icon.png"
+    rel="apple-touch-icon"
+    sizes="180x180"
+  />
+  <link
+    href="https://hackclub.com/favicon-32x32.png"
+    rel="icon"
+    sizes="32x32"
+    type="image/png"
+  />
+  <link
+    href="https://hackclub.com/favicon-16x16.png"
+    rel="icon"
+    sizes="16x16"
+    type="image/png"
+  />
+</div>
+`;
+
+exports[`Meta renders image 1`] = `
+<div>
+  <meta
+    content="website"
+    property="og:type"
+  />
+  <meta
+    content="Hack Club"
+    property="og:site_name"
+  />
+  <meta
+    content="@hackclub"
+    name="twitter:site"
+  />
+  <title>
+    Hack Club
+  </title>
+  <meta
+    content="Hack Club"
+    property="og:title"
+  />
+  <meta
+    content="Hack Club"
+    name="twitter:title"
+  />
+  <meta
+    content="https://hackclub.com/cards/bank.jpg"
+    property="og:image"
+  />
+  <meta
+    content="summary_large_image"
+    name="twitter:card"
+  />
+  <meta
+    content="https://hackclub.com/cards/bank.jpg"
+    name="twitter:image"
+  />
+  <meta
+    content="#ec3750"
+    name="theme-color"
+  />
+  <meta
+    content="#ec3750"
+    name="msapplication-TileColor"
+  />
+  <link
+    color="#ec3750"
+    href="https://hackclub.com/safari-pinned-tab.svg"
+    rel="mask-icon"
+  />
+  <link
+    href="https://hackclub.com/apple-touch-icon.png"
+    rel="apple-touch-icon"
+    sizes="180x180"
+  />
+  <link
+    href="https://hackclub.com/favicon-32x32.png"
+    rel="icon"
+    sizes="32x32"
+    type="image/png"
+  />
+  <link
+    href="https://hackclub.com/favicon-16x16.png"
+    rel="icon"
+    sizes="16x16"
+    type="image/png"
+  />
+</div>
+`;
