@@ -1,0 +1,29 @@
+{
+  "name": "@hackclub/meta",
+  "description": "Generate meta tags for Hack Club pages",
+  "version": "0.0.1",
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+  "sideEffects": false,
+  "scripts": {
+    "prepare": "rm -rf ./dist && microbundle --jsx React.createElement",
+    "watch": "microbundle watch --jsx React.createElement --no-compress"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hackclub/theme.git",
+    "directory": "packages/meta"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0"
+  },
+  "devDependencies": {
+    "react": "^16.12.0"
+  }
+}
