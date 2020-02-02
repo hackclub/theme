@@ -1,4 +1,6 @@
-export const colors = {
+import prism from './prism'
+
+const colors = {
   darker: '#121217',
   dark: '#17171d',
   darkless: '#252429',
@@ -304,11 +306,12 @@ const theme = {
       fontSize: 1,
       p: 3,
       color: 'text',
-      bg: 'sheet',
+      bg: 'sunken',
       overflow: 'auto',
       borderRadius: 'default',
       code: {
-        color: 'inherit'
+        color: 'inherit',
+        ...prism
       }
     },
     code: {
