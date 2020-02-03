@@ -4,7 +4,7 @@
     "prepare": "lerna run prepare",
     "clean": "lerna run clean",
     "test": "jest",
-    "format": "npx prettier --write \"**/*.js{,on}\" \"**/*.md\"  \"**/*.mdx\""
+    "fmt": "npx prettier --write \"**/*.js{,on}\" \"**/*.md{,x}\""
   },
   "workspaces": {
     "packages": [

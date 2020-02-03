@@ -1,0 +1,5 @@
+{
+  "name": "theme",
+  "rewrites": [{ "source": "/(.+)", "destination": "/docs" }],
+  "github": { "silent": true }
+}

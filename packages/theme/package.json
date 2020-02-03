@@ -9,7 +9,7 @@
   "unpkg": "dist/index.umd.js",
   "sideEffects": false,
   "scripts": {
-    "prepare": "microbundle && cp -r src/fonts fonts",
+    "prepare": "microbundle",
     "watch": "microbundle watch --no-compress"
   },
   "publishConfig": {

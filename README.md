@@ -1,6 +1,7 @@
 # Hack Club Theme
 
-(WIP) [Hack Club](https://hackclub.com)’s frontend design system/tools, made with [Theme UI](https://theme-ui.com).
+[Hack Club](https://hackclub.com)’s frontend design system/tools,
+made for [Theme UI](https://theme-ui.com).
 
 ## Packages
 
