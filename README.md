@@ -5,4 +5,4 @@
 ## Packages
 
 1. @hackclub/theme – Theme UI base theme
-2. @hackclub/components – React components built on Theme UI
+2. @hackclub/meta – React component for generating social tags for `<head>`
