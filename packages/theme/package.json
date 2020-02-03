@@ -9,7 +9,7 @@
   "unpkg": "dist/index.umd.js",
   "sideEffects": false,
   "scripts": {
-    "prepare": "microbundle",
+    "prepare": "rm -rf ./dist && microbundle",
     "watch": "microbundle watch --no-compress"
   },
   "publishConfig": {
@@ -20,5 +20,6 @@
     "type": "git",
     "url": "https://github.com/hackclub/theme.git",
     "directory": "packages/theme"
-  }
+  },
+  "gitHead": "029e83b336da014076112a68048dfa65565013ee"
 }
