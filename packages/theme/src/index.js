@@ -94,6 +94,7 @@ const theme = {
     narrow: 512
   },
   radii: {
+    small: 4,
     default: 8,
     extra: 12,
     ultra: 16,
@@ -311,19 +312,22 @@ const theme = {
       borderRadius: 'default',
       code: {
         color: 'inherit',
+        mx: 0,
         ...prism
       }
     },
     code: {
       fontFamily: 'monospace',
-      fontSize: 'inherit'
+      fontSize: 'inherit',
+      color: 'accent',
+      bg: 'sunken',
+      borderRadius: 'small'
+      mx: 1,
+      px: 1
     },
     'p > code, li > code': {
       color: 'accent',
-      fontSize: 1,
-      '::before,::after': {
-        content: '"`"'
-      }
+      fontSize: 1
     },
     li: {
       my: 2
