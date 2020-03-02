@@ -7,6 +7,8 @@ yarn add @hackclub/theme
 # npm i @hackclub/theme
 ```
 
+Check out theme: [**theme.hackclub.com**](https://theme.hackclub.com)
+
 ## Usage
 
 ```js
