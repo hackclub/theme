@@ -211,7 +211,7 @@ export default ({ css }) => (
         React component →
       </Button>
       <Heading variant="headline">Colors</Heading>
-      <Grid columns={[null, 2, 4]} gap={3} mb={[4, 5]}>
+      <Grid columns={[2, 4]} gap={3} mb={[4, 5]}>
         {[
           'red',
           'orange',
