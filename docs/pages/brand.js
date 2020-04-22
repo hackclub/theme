@@ -151,20 +151,29 @@ export default ({ css }) => (
       }}
     >
       <Heading variant="headline">Logos</Heading>
-      <Grid columns={[null, 2, 3]} gap={3} mb={[4, 5]}>
+      <Grid columns={[null, 2, 3]} gap={3}>
         {[
           'flag-orpheus-top',
           'flag-orpheus-left',
           'flag-standalone',
           'flag-orpheus-top-bw',
           'flag-orpheus-left-bw',
-          'flag-standalone-bw'
-          // 'icon-rounded',
-          // 'icon-square'
+          'flag-standalone-bw',
+          'icon-rounded',
+          'icon-square'
         ].map((key) => (
           <Logo name={key} key={key} />
         ))}
       </Grid>
+      <Button
+        as="a"
+        href="https://assets.hackclub.com/2020_branding.zip"
+        variant="outline"
+        mt={3}
+        mb={[4, 5]}
+      >
+        Download all →
+      </Button>
       <Heading id="banners" variant="headline">
         HTML banners
       </Heading>
