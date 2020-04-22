@@ -171,25 +171,35 @@ export default ({ css }) => (
       <Box
         as="table"
         sx={{
-          maxWidth: '100%',
+          display: 'block',
           overflowX: 'auto',
-          'td:first-child': { pr: 3 },
+          whiteSpace: 'nowrap',
+          maxWidth: '100%',
+          'td:first-of-type': { pr: 3 },
           img: { maxWidth: 128 * 1.5 },
           pre: { whiteSpace: 'initial' }
         }}
       >
-        <HTML
-          file="flag-orpheus-top"
-          html={`<a href="https://hackclub.com/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club"/></a>`}
-        />
-        <HTML
-          file="flag-orpheus-left"
-          html={`<a href="https://hackclub.com/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.hackclub.com/flag-orpheus-left.svg" alt="Hack Club"/></a>`}
-        />
-        <HTML
-          file={`banners/${new Date().getFullYear()}`}
-          html={`<a href="https://hackclub.com/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.hackclub.com/banners/${new Date().getFullYear()}.svg" alt="Hack Club"/></a>`}
-        />
+        <Box as="thead" sx={{ display: 'none' }}>
+          <tr>
+            <th>Preview</th>
+            <th>HTML code</th>
+          </tr>
+        </Box>
+        <tbody>
+          <HTML
+            file="flag-orpheus-top"
+            html={`<a href="https://hackclub.com/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club"/></a>`}
+          />
+          <HTML
+            file="flag-orpheus-left"
+            html={`<a href="https://hackclub.com/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.hackclub.com/flag-orpheus-left.svg" alt="Hack Club"/></a>`}
+          />
+          <HTML
+            file={`banners/${new Date().getFullYear()}`}
+            html={`<a href="https://hackclub.com/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 256px; z-index: 999;" src="https://assets.hackclub.com/banners/${new Date().getFullYear()}.svg" alt="Hack Club"/></a>`}
+          />
+        </tbody>
       </Box>
       <Button
         as="a"
