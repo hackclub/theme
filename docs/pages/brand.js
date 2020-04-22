@@ -53,6 +53,7 @@ const Logo = ({ name }) => (
           bg: 'elevated',
           color: 'cyan',
           transition: 'all .125s ease-in-out',
+          justifyContent: 'center',
           py: 1,
           ':hover,:focus': { bg: 'cyan', color: 'white' }
         }
