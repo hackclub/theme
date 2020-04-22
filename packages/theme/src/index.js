@@ -146,8 +146,9 @@ const theme = {
   },
   alerts: {
     primary: {
-      color: 'background',
+      borderRadius: 'default',
       bg: 'orange',
+      color: 'background',
       fontWeight: 'body'
     }
   },
@@ -164,6 +165,8 @@ const theme = {
       fontFamily: 'inherit',
       fontWeight: 'bold',
       borderRadius: 'default',
+      display: 'inline-flex',
+      alignItems: 'center',
       svg: { ml: -1, mr: 2 }
     },
     outline: {
@@ -321,7 +324,7 @@ const theme = {
       fontSize: 'inherit',
       color: 'accent',
       bg: 'sunken',
-      borderRadius: 'small'
+      borderRadius: 'small',
       mx: 1,
       px: 1
     },
