@@ -9,7 +9,7 @@ const Meta = ({
   description,
   image,
   color = '#ec3750',
-  manifest = false
+  manifest = 'https://assets.hackclub.com/favicons/site.webmanifest'
 }) => (
   <React.Fragment>
     <meta key="og_type" property="og:type" content="website" />
@@ -42,28 +42,28 @@ const Meta = ({
     <link
       key="safari_icon"
       rel="mask-icon"
-      href="https://hackclub.com/safari-pinned-tab.svg"
+      href="https://assets.hackclub.com/favicons/safari-pinned-tab.svg"
       color={color}
     />
     <link
       key="apple_icon"
       rel="apple-touch-icon"
       sizes="180x180"
-      href="https://hackclub.com/apple-touch-icon.png"
+      href="https://assets.hackclub.com/favicons/apple-touch-icon.png"
     />
     <link
       key="favicon_32"
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="https://hackclub.com/favicon-32x32.png"
+      href="https://assets.hackclub.com/favicons/favicon-32x32.png"
     />
     <link
       key="favicon_16"
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="https://hackclub.com/favicon-16x16.png"
+      href="https://assets.hackclub.com/favicons/favicon-16x16.png"
     />
 
     {manifest && <link key="manifest" rel="manifest" href={manifest} />}
