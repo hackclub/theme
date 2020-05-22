@@ -37,7 +37,7 @@ test('Meta renders image', () => {
       'meta[name="twitter:card"][content="summary_large_image"]'
     )
   ).toBeTruthy()
-  expect(container.querySelector(`[content="${url}"]`)).toBeTruthy()
+  expect(container.querySelectorAll(`[content="${url}"]`)).toHaveLength(2)
   expect(container).toMatchSnapshot()
 })
 
