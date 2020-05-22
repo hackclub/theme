@@ -3,6 +3,10 @@
 exports[`Meta renders 1`] = `
 <div>
   <meta
+    content="en_US"
+    property="og:locale"
+  />
+  <meta
     content="website"
     property="og:type"
   />
@@ -35,31 +39,39 @@ exports[`Meta renders 1`] = `
   />
   <link
     color="#ec3750"
-    href="https://hackclub.com/safari-pinned-tab.svg"
+    href="https://assets.hackclub.com/favicons/safari-pinned-tab.svg"
     rel="mask-icon"
   />
   <link
-    href="https://hackclub.com/apple-touch-icon.png"
+    href="https://assets.hackclub.com/favicons/apple-touch-icon.png"
     rel="apple-touch-icon"
     sizes="180x180"
   />
   <link
-    href="https://hackclub.com/favicon-32x32.png"
+    href="https://assets.hackclub.com/favicons/favicon-32x32.png"
     rel="icon"
     sizes="32x32"
     type="image/png"
   />
   <link
-    href="https://hackclub.com/favicon-16x16.png"
+    href="https://assets.hackclub.com/favicons/favicon-16x16.png"
     rel="icon"
     sizes="16x16"
     type="image/png"
+  />
+  <link
+    href="https://assets.hackclub.com/favicons/site.webmanifest"
+    rel="manifest"
   />
 </div>
 `;
 
 exports[`Meta renders custom color 1`] = `
 <div>
+  <meta
+    content="en_US"
+    property="og:locale"
+  />
   <meta
     content="website"
     property="og:type"
@@ -93,31 +105,39 @@ exports[`Meta renders custom color 1`] = `
   />
   <link
     color="#0069ff"
-    href="https://hackclub.com/safari-pinned-tab.svg"
+    href="https://assets.hackclub.com/favicons/safari-pinned-tab.svg"
     rel="mask-icon"
   />
   <link
-    href="https://hackclub.com/apple-touch-icon.png"
+    href="https://assets.hackclub.com/favicons/apple-touch-icon.png"
     rel="apple-touch-icon"
     sizes="180x180"
   />
   <link
-    href="https://hackclub.com/favicon-32x32.png"
+    href="https://assets.hackclub.com/favicons/favicon-32x32.png"
     rel="icon"
     sizes="32x32"
     type="image/png"
   />
   <link
-    href="https://hackclub.com/favicon-16x16.png"
+    href="https://assets.hackclub.com/favicons/favicon-16x16.png"
     rel="icon"
     sizes="16x16"
     type="image/png"
+  />
+  <link
+    href="https://assets.hackclub.com/favicons/site.webmanifest"
+    rel="manifest"
   />
 </div>
 `;
 
 exports[`Meta renders custom title 1`] = `
 <div>
+  <meta
+    content="en_US"
+    property="og:locale"
+  />
   <meta
     content="website"
     property="og:type"
@@ -151,31 +171,39 @@ exports[`Meta renders custom title 1`] = `
   />
   <link
     color="#ec3750"
-    href="https://hackclub.com/safari-pinned-tab.svg"
+    href="https://assets.hackclub.com/favicons/safari-pinned-tab.svg"
     rel="mask-icon"
   />
   <link
-    href="https://hackclub.com/apple-touch-icon.png"
+    href="https://assets.hackclub.com/favicons/apple-touch-icon.png"
     rel="apple-touch-icon"
     sizes="180x180"
   />
   <link
-    href="https://hackclub.com/favicon-32x32.png"
+    href="https://assets.hackclub.com/favicons/favicon-32x32.png"
     rel="icon"
     sizes="32x32"
     type="image/png"
   />
   <link
-    href="https://hackclub.com/favicon-16x16.png"
+    href="https://assets.hackclub.com/favicons/favicon-16x16.png"
     rel="icon"
     sizes="16x16"
     type="image/png"
+  />
+  <link
+    href="https://assets.hackclub.com/favicons/site.webmanifest"
+    rel="manifest"
   />
 </div>
 `;
 
 exports[`Meta renders image 1`] = `
 <div>
+  <meta
+    content="en_US"
+    property="og:locale"
+  />
   <meta
     content="website"
     property="og:type"
@@ -221,25 +249,29 @@ exports[`Meta renders image 1`] = `
   />
   <link
     color="#ec3750"
-    href="https://hackclub.com/safari-pinned-tab.svg"
+    href="https://assets.hackclub.com/favicons/safari-pinned-tab.svg"
     rel="mask-icon"
   />
   <link
-    href="https://hackclub.com/apple-touch-icon.png"
+    href="https://assets.hackclub.com/favicons/apple-touch-icon.png"
     rel="apple-touch-icon"
     sizes="180x180"
   />
   <link
-    href="https://hackclub.com/favicon-32x32.png"
+    href="https://assets.hackclub.com/favicons/favicon-32x32.png"
     rel="icon"
     sizes="32x32"
     type="image/png"
   />
   <link
-    href="https://hackclub.com/favicon-16x16.png"
+    href="https://assets.hackclub.com/favicons/favicon-16x16.png"
     rel="icon"
     sizes="16x16"
     type="image/png"
+  />
+  <link
+    href="https://assets.hackclub.com/favicons/site.webmanifest"
+    rel="manifest"
   />
 </div>
 `;
