@@ -19,6 +19,8 @@ const colors = {
   green: '#33d6a6',
   cyan: '#5bc0de',
   blue: '#338eda',
+  purple: '#800080',
+  brown: '#8b4513',
 
   twitter: '#1da1f2',
   facebook: '#3b5998',
