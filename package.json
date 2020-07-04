@@ -4,7 +4,7 @@
     "prepare": "lerna run prepare",
     "clean": "lerna run clean",
     "test": "jest",
-    "fmt": "npx prettier --write \"**/*.js{,on}\" \"**/*.md{,x}\""
+    "fmt": "npx prettier --write \"**/*.js{,on}\" \"**/*.md{,x}\" \"**/*.ts{,x}\""
   },
   "workspaces": {
     "packages": [
@@ -20,7 +20,7 @@
     "babel-jest": "^25.1.0",
     "jest": "^25.1.0",
     "lerna": "^3.20.2",
-    "microbundle": "^0.11.0"
+    "microbundle": "^0.12.0"
   },
   "jest": {
     "testMatch": [

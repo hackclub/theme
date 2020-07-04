@@ -340,7 +340,7 @@ const theme = {
       my: 4,
       borderCollapse: 'separate',
       borderSpacing: 0,
-      [['th', 'td']]: {
+      'th,td': {
         textAlign: 'left',
         py: '4px',
         pr: '4px',
