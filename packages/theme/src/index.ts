@@ -19,6 +19,7 @@ const colors = {
   green: '#33d6a6',
   cyan: '#5bc0de',
   blue: '#338eda',
+  purple: '#a633d6',
 
   twitter: '#1da1f2',
   facebook: '#3b5998',
@@ -26,7 +27,7 @@ const colors = {
 }
 
 const theme = {
-  breakpoints: [32, 48, 64, 96, 128].map((w) => `${w}em`),
+  breakpoints: [32, 48, 64, 96, 128].map(w => `${w}em`),
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [12, 16, 20, 24, 32, 48, 64, 96, 128, 160, 192],
   initialColorModeName: 'light',
@@ -67,6 +68,7 @@ const theme = {
     monospace: '"SF Mono", "Roboto Mono", Menlo, Consolas, monospace'
   },
   lineHeights: {
+    limit: 0.875,
     title: 1,
     heading: 1.125,
     subheading: 1.25,
@@ -118,7 +120,7 @@ const theme = {
       lineHeight: 'title'
     },
     subtitle: {
-      fontSize: [2, 3, null, null, 4],
+      fontSize: [2, 3],
       fontWeight: 'body',
       letterSpacing: 'headline',
       lineHeight: 'subheading'
@@ -137,6 +139,20 @@ const theme = {
       mt: 0,
       mb: 3
     },
+    eyebrow: {
+      color: 'muted',
+      fontSize: [3, 4],
+      fontWeight: 'heading',
+      letterSpacing: 'headline',
+      lineHeight: 'subheading',
+      textTransform: 'uppercase',
+      mt: 0,
+      mb: 2
+    },
+    lead: {
+      fontSize: [2, 3],
+      my: [2, 3]
+    },
     caption: {
       color: 'muted',
       fontWeight: 'medium',
@@ -154,19 +170,30 @@ const theme = {
   },
   badges: {
     pill: {
-      borderRadius: 'circle'
+      borderRadius: 'circle',
+      px: 3,
+      py: 1,
+      fontSize: 1
+    },
+    outline: {
+      variant: 'badges.pill',
+      bg: 'transparent',
+      border: '1px solid',
+      borderColor: 'currentColor',
+      fontWeight: 'body'
     }
   },
   buttons: {
     primary: {
       bg: 'primary',
-      color: 'background',
+      color: 'white',
       cursor: 'pointer',
       fontFamily: 'inherit',
       fontWeight: 'bold',
       borderRadius: 'default',
       display: 'inline-flex',
       alignItems: 'center',
+      justifyContent: 'center',
       svg: { ml: -1, mr: 2 }
     },
     outline: {
@@ -176,34 +203,6 @@ const theme = {
       border: '2px solid currentColor'
     }
   },
-  forms: {
-    input: {
-      bg: 'elevated',
-      color: 'text',
-      fontFamily: 'inherit',
-      borderRadius: 'base',
-      boxShadow: 'small',
-      transition: 'box-shadow .125s ease-in-out',
-      border: 0,
-      ':hover,:focus': { boxShadow: 'card' },
-      '::-webkit-input-placeholder': { color: 'placeholder' },
-      '::-moz-placeholder': { color: 'placeholder' },
-      ':-ms-input-placeholder': { color: 'placeholder' },
-      '&[type="search"]::-webkit-search-decoration': { display: 'none' }
-    },
-    label: {
-      color: 'text',
-      fontWeight: 'medium'
-    },
-    hidden: {
-      position: 'absolute',
-      height: '1px',
-      width: '1px',
-      overflow: 'hidden',
-      clip: 'rect(1px, 1px, 1px, 1px)',
-      whiteSpace: 'nowrap'
-    }
-  },
   cards: {
     primary: {
       bg: 'elevated',
@@ -211,14 +210,12 @@ const theme = {
       p: [3, 4],
       borderRadius: 'extra',
       boxShadow: 'card',
-      overflow: 'hidden',
-      input: { boxShadow: 'none !important' }
+      overflow: 'hidden'
     },
     sunken: {
       bg: 'sunken',
       p: [3, 4],
-      borderRadius: 'extra',
-      'input, a': { bg: 'header', boxShadow: 'none !important' }
+      borderRadius: 'extra'
     },
     interactive: {
       variant: 'cards.primary',
@@ -230,24 +227,63 @@ const theme = {
       }
     }
   },
+  forms: {
+    input: {
+      bg: 'elevated',
+      color: 'text',
+      fontFamily: 'inherit',
+      borderRadius: 'base',
+      border: 0,
+      '::-webkit-input-placeholder': { color: 'placeholder' },
+      '::-moz-placeholder': { color: 'placeholder' },
+      ':-ms-input-placeholder': { color: 'placeholder' },
+      '&[type="search"]::-webkit-search-decoration': { display: 'none' }
+    },
+    textarea: { variant: 'forms.input' },
+    select: { variant: 'forms.input' },
+    label: {
+      color: 'text',
+      display: 'flex',
+      flexDirection: 'column',
+      textAlign: 'left',
+      fontSize: 2
+    },
+    labelHoriz: {
+      variant: 'forms.label',
+      flexDirection: 'row !important',
+      alignItems: 'center',
+      svg: { color: 'muted' }
+    },
+    slider: {
+      color: 'primary'
+    },
+    hidden: {
+      position: 'absolute',
+      height: '1px',
+      width: '1px',
+      overflow: 'hidden',
+      clip: 'rect(1px, 1px, 1px, 1px)',
+      whiteSpace: 'nowrap'
+    }
+  },
   layout: {
     container: {
-      maxWidth: ['layout', null, 'layoutPlus', null, 'wide'],
+      maxWidth: ['layout', null, 'layoutPlus'],
       width: '100%',
       mx: 'auto',
       px: 3
     },
     wide: {
       variant: 'layout.container',
-      maxWidth: ['wide', null, null, null, 'widePlus']
+      maxWidth: ['layout', null, 'wide']
     },
     copy: {
       variant: 'layout.container',
-      maxWidth: ['copy', null, null, null, 'copyPlus']
+      maxWidth: ['copy', null, 'copyPlus']
     },
     narrow: {
       variant: 'layout.container',
-      maxWidth: ['narrow', null, 'narrowPlus', null, 'layout']
+      maxWidth: ['narrow', null, 'narrowPlus']
     }
   },
   styles: {
@@ -357,7 +393,34 @@ const theme = {
       verticalAlign: 'top',
       borderBottomWidth: '1px'
     }
+  },
+  util: {
+    motion: '@media (prefers-reduced-motion: no-preference)',
+    reduceMotion: '@media (prefers-reduced-motion: reduce)',
+    reduceTransparency: '@media (prefers-reduced-transparency: reduce)',
+    supportsClipText: '@supports (-webkit-background-clip: text)',
+    supportsBackdrop:
+      '@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none)',
+    cx: null,
+    gx: null,
+    gxText: null
   }
 }
+
+theme.util.cx = (c: string): string => theme.colors[c] || c
+theme.util.gx = (from: string, to: string): string => `radial-gradient(
+  ellipse farthest-corner at top left,
+  ${theme.util.cx(from)},
+  ${theme.util.cx(to)}
+)`
+theme.util.gxText = (from: string, to: string) => ({
+  color: theme.util.cx(to),
+  [theme.util.supportsClipText]: {
+    backgroundImage: theme.util.gx(from, to),
+    backgroundRepeat: 'no-repeat',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent'
+  }
+})
 
 export default theme
