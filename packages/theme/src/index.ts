@@ -185,15 +185,21 @@ const theme = {
   },
   buttons: {
     primary: {
-      bg: 'primary',
-      color: 'white',
       cursor: 'pointer',
       fontFamily: 'inherit',
       fontWeight: 'bold',
-      borderRadius: 'default',
+      borderRadius: 'circle',
       display: 'inline-flex',
       alignItems: 'center',
       justifyContent: 'center',
+      boxShadow: 'card',
+      letterSpacing: 'headline',
+      WebkitTapHighlightColor: 'transparent',
+      transition: 'transform .125s ease-in-out, box-shadow .125s ease-in-out',
+      ':focus,:hover': {
+        boxShadow: 'elevated',
+        transform: 'scale(1.0625)'
+      },
       svg: { ml: -1, mr: 2 }
     },
     outline: {
@@ -201,6 +207,18 @@ const theme = {
       bg: 'transparent',
       color: 'primary',
       border: '2px solid currentColor'
+    },
+    cta: {
+      variant: 'buttons.primary',
+      fontSize: 2,
+      backgroundImage: t => t.util.gx('orange', 'red')
+    },
+    ctaLg: {
+      variant: 'buttons.primary',
+      fontSize: 3,
+      px: 4,
+      py: 3,
+      backgroundImage: t => t.util.gx('orange', 'red')
     }
   },
   cards: {
@@ -293,7 +311,10 @@ const theme = {
       fontWeight: 'body',
       color: 'text',
       margin: 0,
-      minHeight: '100vh'
+      minHeight: '100vh',
+      textRendering: 'optimizeLegibility',
+      WebkitFontSmoothing: 'antialiased',
+      MozOsxFontSmoothing: 'grayscale'
     },
     h1: {
       variant: 'text.heading',
@@ -394,19 +415,20 @@ const theme = {
       borderBottomWidth: '1px'
     }
   },
-  util: {
-    motion: '@media (prefers-reduced-motion: no-preference)',
-    reduceMotion: '@media (prefers-reduced-motion: reduce)',
-    reduceTransparency: '@media (prefers-reduced-transparency: reduce)',
-    supportsClipText: '@supports (-webkit-background-clip: text)',
-    supportsBackdrop:
-      '@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none)',
-    cx: null,
-    gx: null,
-    gxText: null
-  }
+  util: Object.create(null)
 }
 
+theme.util = {
+  motion: '@media (prefers-reduced-motion: no-preference)',
+  reduceMotion: '@media (prefers-reduced-motion: reduce)',
+  reduceTransparency: '@media (prefers-reduced-transparency: reduce)',
+  supportsClipText: '@supports (-webkit-background-clip: text)',
+  supportsBackdrop:
+    '@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none)',
+  cx: null,
+  gx: null,
+  gxText: null
+}
 theme.util.cx = (c: string): string => theme.colors[c] || c
 theme.util.gx = (from: string, to: string): string => `radial-gradient(
   ellipse farthest-corner at top left,
