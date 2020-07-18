@@ -1,8 +1,8 @@
 {
   "name": "@hackclub/theme",
   "description": "Hack Club’s theme for Theme UI websites",
-  "version": "0.1.2",
-  "author": "Lachlan Campbell <lachlan@hackclub.com> (https://lachlanjc.me)",
+  "version": "0.2.0",
+  "author": "Lachlan Campbell <lachlan@hackclub.com> (https://lachlanjc.com)",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -10,7 +10,7 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prepare": "rm -rf ./dist && microbundle",
+    "prepare": "microbundle",
     "watch": "microbundle watch --no-compress"
   },
   "publishConfig": {
