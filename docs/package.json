@@ -10,13 +10,13 @@
     "start": "yarn run dev"
   },
   "dependencies": {
-    "@hackclub/meta": "^0.1.1",
-    "@hackclub/theme": "^0.1.1",
-    "@mdx-js/loader": "^1.6.1",
-    "@next/mdx": "^9.4.1",
+    "@hackclub/meta": "^1.0.0",
+    "@hackclub/theme": "^0.2.0",
+    "@mdx-js/loader": "^1.6.11",
+    "@next/mdx": "^9.4.4",
     "@theme-ui/style-guide": "^0.3.0",
-    "lodash": "^4.17.15",
-    "next": "^9.4.1",
+    "lodash": "^4.17.19",
+    "next": "^9.4.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "theme-ui": "^0.3.1"
