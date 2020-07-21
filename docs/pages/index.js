@@ -66,7 +66,7 @@ export default () => (
       <Container>
         <Heading variant="headline">Containers</Heading>
       </Container>
-      {Object.keys(theme.layout).map(key => (
+      {Object.keys(theme.layout).map((key) => (
         <Container
           variant={key}
           sx={{ my: 3, py: 3, bg: 'sunken', borderRadius: 'default' }}
@@ -82,7 +82,7 @@ export default () => (
       <Container>
         <Heading variant="headline">Text</Heading>
         <Card sx={{ columnCount: [null, 2] }}>
-          {Object.keys(theme.text).map(key => {
+          {Object.keys(theme.text).map((key) => {
             const Component = key.includes('head') ? Heading : Text
             return (
               <Component key={key} variant={key} sx={{ mt: 0, mb: 3 }}>
@@ -92,7 +92,7 @@ export default () => (
           })}
         </Card>
         <Heading variant="headline">Buttons</Heading>
-        {Object.keys(theme.buttons).map(key => (
+        {Object.keys(theme.buttons).map((key) => (
           <Button variant={key} sx={{ mr: 3 }}>
             {key} button
           </Button>
@@ -103,12 +103,12 @@ export default () => (
           gap={3}
           sx={{ code: { mt: 1, ml: -1, fontSize: 0 } }}
         >
-          {Object.keys(theme.cards).map(key => (
+          {Object.keys(theme.cards).map((key) => (
             <Card variant={key}>{key}</Card>
           ))}
           <Card
             sx={{
-              backgroundImage: t => t.util.gx('cyan', 'blue'),
+              backgroundImage: (t) => t.util.gx('cyan', 'blue'),
               color: 'white'
             }}
           >
@@ -123,7 +123,7 @@ export default () => (
             <Heading
               variant="headline"
               as="h3"
-              sx={t => t.util.gxText('cyan', 'blue')}
+              sx={(t) => t.util.gxText('cyan', 'blue')}
               my={0}
             >
               Gradient text
@@ -183,7 +183,7 @@ export default () => (
           />
         </Grid>
         <Heading variant="headline">Badges</Heading>
-        {Object.keys(theme.badges).map(key => (
+        {Object.keys(theme.badges).map((key) => (
           <Badge
             variant={key}
             mr={3}
