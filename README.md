@@ -1,5 +1,8 @@
 # Hack Club Theme
 
+![format](https://github.com/hackclub/theme/workflows/format/badge.svg)
+![build](https://github.com/hackclub/theme/workflows/build/badge.svg)
+
 [Hack Club](https://hackclub.com)’s frontend design system/tools,
 made for [Theme UI](https://theme-ui.com).
 
