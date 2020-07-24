@@ -1,7 +1,7 @@
 {
   "name": "@hackclub/theme",
   "description": "Hack Club’s theme for Theme UI websites",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Lachlan Campbell <lachlan@hackclub.com> (https://lachlanjc.com)",
   "source": "src/index.ts",
   "main": "dist/index.js",
