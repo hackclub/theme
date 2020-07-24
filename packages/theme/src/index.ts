@@ -111,7 +111,15 @@ const theme = {
   text: {
     heading: {
       fontWeight: 'bold',
-      lineHeight: 'heading'
+      lineHeight: 'heading',
+      mt: 0,
+      mb: 0
+    },
+    ultratitle: {
+      fontSize: [5, 6, 7],
+      lineHeight: 'limit',
+      fontWeight: 'bold',
+      letterSpacing: 'title'
     },
     title: {
       fontSize: [4, 5, 6],
@@ -120,6 +128,7 @@ const theme = {
       lineHeight: 'title'
     },
     subtitle: {
+      mt: 3,
       fontSize: [2, 3],
       fontWeight: 'body',
       letterSpacing: 'headline',
@@ -128,6 +137,7 @@ const theme = {
     headline: {
       variant: 'text.heading',
       letterSpacing: 'headline',
+      lineHeight: 'heading',
       fontSize: 4,
       mt: 3,
       mb: 3
@@ -202,11 +212,28 @@ const theme = {
       },
       svg: { ml: -1, mr: 2 }
     },
+    lg: {
+      variant: 'buttons.primary',
+      fontSize: 3,
+      lineHeight: 'title',
+      px: 4,
+      py: 3
+    },
     outline: {
       variant: 'buttons.primary',
       bg: 'transparent',
       color: 'primary',
       border: '2px solid currentColor'
+    },
+    outlineLg: {
+      variant: 'buttons.primary',
+      bg: 'transparent',
+      color: 'primary',
+      border: '2px solid currentColor',
+      lineHeight: 'title',
+      fontSize: 3,
+      px: 4,
+      py: 3
     },
     cta: {
       variant: 'buttons.primary',
@@ -215,6 +242,7 @@ const theme = {
     },
     ctaLg: {
       variant: 'buttons.primary',
+      lineHeight: 'title',
       fontSize: 3,
       px: 4,
       py: 3,
@@ -244,7 +272,9 @@ const theme = {
         transform: 'scale(1.0625)',
         boxShadow: 'elevated'
       }
-    }
+    },
+    translucent: null,
+    translucentDark: null
   },
   forms: {
     input: {
@@ -265,12 +295,16 @@ const theme = {
       display: 'flex',
       flexDirection: 'column',
       textAlign: 'left',
+      lineHeight: 'caption',
       fontSize: 2
     },
     labelHoriz: {
-      variant: 'forms.label',
-      flexDirection: 'row !important',
+      color: 'text',
+      display: 'flex',
       alignItems: 'center',
+      textAlign: 'left',
+      lineHeight: 'caption',
+      fontSize: 2,
       svg: { color: 'muted' }
     },
     slider: {
@@ -445,5 +479,36 @@ theme.util.gxText = (from: string, to: string) => ({
     WebkitTextFillColor: 'transparent'
   }
 })
+
+theme.cards.translucent = {
+  // variant: 'cards.primary',
+  backgroundColor: 'rgba(255, 255, 255, 0.98)',
+  color: 'text',
+  boxShadow: 'none',
+  [theme.util.supportsBackdrop]: {
+    backgroundColor: 'rgba(255, 255, 255, 0.75)',
+    backdropFilter: 'saturate(180%) blur(20px)',
+    WebkitBackdropFilter: 'saturate(180%) blur(20px)'
+  },
+  [theme.util.reduceTransparency]: {
+    backdropFilter: 'none',
+    WebkitBackdropFilter: 'none'
+  }
+}
+theme.cards.translucentDark = {
+  // variant: 'cards.primary',
+  backgroundColor: 'rgba(0, 0, 0, 0.875)',
+  color: 'white',
+  boxShadow: 'none',
+  [theme.util.supportsBackdrop]: {
+    backgroundColor: 'rgba(0, 0, 0, 0.625)',
+    backdropFilter: 'saturate(180%) blur(16px)',
+    WebkitBackdropFilter: 'saturate(180%) blur(16px)'
+  },
+  [theme.util.reduceTransparency]: {
+    backdropFilter: 'none',
+    WebkitBackdropFilter: 'none'
+  }
+}
 
 export default theme

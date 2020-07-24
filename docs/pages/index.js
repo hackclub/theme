@@ -34,7 +34,7 @@ export default () => (
       />
     </Head>
     <Box as="header" sx={{ bg: 'sheet', color: 'text' }}>
-      <Container sx={{ pt: [4, 5], pb: [3, 4], textAlign: 'center' }}>
+      <Container sx={{ pt: 5, pb: [3, 4], textAlign: 'center' }}>
         <ColorSwitcher />
         <Heading as="h1" variant="title" color="red">
           Hack Club Theme
@@ -66,10 +66,17 @@ export default () => (
       <Container>
         <Heading variant="headline">Containers</Heading>
       </Container>
-      {Object.keys(theme.layout).map((key) => (
+      {Object.keys(theme.layout).map(key => (
         <Container
+          key={key}
           variant={key}
-          sx={{ my: 3, py: 3, bg: 'sunken', borderRadius: 'default' }}
+          sx={{
+            my: 3,
+            py: 3,
+            border: '2px dashed',
+            borderColor: 'sunken',
+            borderRadius: 'default'
+          }}
         >
           {key}
         </Container>
@@ -82,7 +89,7 @@ export default () => (
       <Container>
         <Heading variant="headline">Text</Heading>
         <Card sx={{ columnCount: [null, 2] }}>
-          {Object.keys(theme.text).map((key) => {
+          {Object.keys(theme.text).map(key => {
             const Component = key.includes('head') ? Heading : Text
             return (
               <Component key={key} variant={key} sx={{ mt: 0, mb: 3 }}>
@@ -92,23 +99,25 @@ export default () => (
           })}
         </Card>
         <Heading variant="headline">Buttons</Heading>
-        {Object.keys(theme.buttons).map((key) => (
-          <Button variant={key} sx={{ mr: 3 }}>
-            {key} button
+        {Object.keys(theme.buttons).map(key => (
+          <Button key={key} variant={key} sx={{ mr: 3, mb: 3 }}>
+            {key} btn
           </Button>
         ))}
         <Heading variant="headline">Cards</Heading>
         <Grid
-          columns={[2, 3]}
+          columns={[null, 2, 3]}
           gap={3}
           sx={{ code: { mt: 1, ml: -1, fontSize: 0 } }}
         >
-          {Object.keys(theme.cards).map((key) => (
-            <Card variant={key}>{key}</Card>
+          {Object.keys(theme.cards).map(key => (
+            <Card variant={key} key={key} p={[3, 4]}>
+              {key}
+            </Card>
           ))}
           <Card
             sx={{
-              backgroundImage: (t) => t.util.gx('cyan', 'blue'),
+              backgroundImage: t => t.util.gx('cyan', 'blue'),
               color: 'white'
             }}
           >
@@ -123,7 +132,7 @@ export default () => (
             <Heading
               variant="headline"
               as="h3"
-              sx={(t) => t.util.gxText('cyan', 'blue')}
+              sx={t => t.util.gxText('cyan', 'blue')}
               my={0}
             >
               Gradient text
@@ -136,7 +145,7 @@ export default () => (
         <Heading variant="headline">Forms</Heading>
         <Grid gap={3} columns={[null, 2]} as="form" variant="cards.sunken">
           <Label>
-            Full Name
+            Full name
             <Input placeholder="Zach Latta" />
           </Label>
           <Label>
@@ -156,7 +165,7 @@ export default () => (
             <Checkbox />
             Remember me
           </Label>
-          <Flex>
+          <Flex sx={{ flexWrap: 'wrap' }}>
             <Label variant="labelHoriz">
               <Radio name="letter" /> Alpha
             </Label>
@@ -179,12 +188,13 @@ export default () => (
             as="button"
             type="submit"
             children="RSVP"
-            sx={{ gridColumn: 'span 2' }}
+            sx={{ gridColumn: [null, 'span 2'] }}
           />
         </Grid>
         <Heading variant="headline">Badges</Heading>
-        {Object.keys(theme.badges).map((key) => (
+        {Object.keys(theme.badges).map(key => (
           <Badge
+            key={key}
             variant={key}
             mr={3}
             color={key === 'outline' ? 'muted' : null}
@@ -192,6 +202,7 @@ export default () => (
             {key}
           </Badge>
         ))}
+        <Heading variant="headline">Colors</Heading>
         <ColorPalette
           omit={['modes', 'placeholder', 'twitter', 'instagram', 'facebook']}
         />
