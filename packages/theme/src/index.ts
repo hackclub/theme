@@ -392,7 +392,7 @@ const theme = {
     a: {
       color: 'primary',
       textDecoration: 'underline',
-      textUnderlinePosition: 'under',
+      textUnderlinePosition: 'under'
       /* 
        * Temporarily removed due to lack of proper support for text-decoration style
         ':focus,:hover': {
