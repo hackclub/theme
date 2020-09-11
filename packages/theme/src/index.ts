@@ -393,9 +393,12 @@ const theme = {
       color: 'primary',
       textDecoration: 'underline',
       textUnderlinePosition: 'under',
-      ':focus,:hover': {
-        textDecorationStyle: 'wavy'
-      }
+      /* 
+       * Temporarily removed due to lack of proper support for text-decoration style
+        ':focus,:hover': {
+          textDecorationStyle: 'wavy'
+        }
+       */
     },
     pre: {
       fontFamily: 'monospace',
