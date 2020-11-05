@@ -68,7 +68,7 @@ const Meta = ({
       href="https://assets.hackclub.com/favicons/favicon-16x16.png"
     />
     {manifest && <link key="manifest" rel="manifest" href={manifest} />}
-  {children}
+    {children}
   </ElementType>
 )
 
