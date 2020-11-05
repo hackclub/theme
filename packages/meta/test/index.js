@@ -49,3 +49,15 @@ test('Meta renders custom color', () => {
   ).toBeTruthy()
   expect(container).toMatchSnapshot()
 })
+
+test('Meta renders children', () => {
+  const { container } = render(
+    <Meta>
+      <meta name="children" content="present" />
+    </Meta>
+  )
+  expect(
+    container.querySelector('meta[name="children"][content="present"]')
+  ).toBeTruthy()
+  expect(container).toMatchSnapshot()
+})

@@ -10,7 +10,8 @@ const Meta = ({
   description,
   image,
   color = '#ec3750',
-  manifest = 'https://assets.hackclub.com/favicons/site.webmanifest'
+  manifest = 'https://assets.hackclub.com/favicons/site.webmanifest',
+  children
 }) => (
   <ElementType>
     <meta key="og_locale" property="og:locale" content="en_US" />
@@ -67,6 +68,7 @@ const Meta = ({
       href="https://assets.hackclub.com/favicons/favicon-16x16.png"
     />
     {manifest && <link key="manifest" rel="manifest" href={manifest} />}
+  {children}
   </ElementType>
 )
 
