@@ -1,4 +1,5 @@
 import {
+  BaseStyles,
   Badge,
   Box,
   Button,
@@ -24,7 +25,7 @@ import theme from '@hackclub/theme'
 import ColorSwitcher from '../components/color-switcher'
 import { TypeScale, ColorPalette } from '@theme-ui/style-guide'
 
-export default () => (
+const DocsPage = () => (
   <>
     <Head>
       <title>Hack Club Theme</title>
@@ -88,7 +89,7 @@ export default () => (
     >
       <Container>
         <Heading variant="headline">Text</Heading>
-        <Card sx={{ columnCount: [null, 2] }}>
+        <Card>
           {Object.keys(theme.text).map(key => {
             const Component = key.includes('head') ? Heading : Text
             return (
@@ -97,6 +98,22 @@ export default () => (
               </Component>
             )
           })}
+        </Card>
+        <Card as={BaseStyles} sx={{ mt: [3, 4], p: { fontSize: 2 } }}>
+          <p>
+            This is a whole paragraph of text, include{' '}
+            <code>code like this</code>, as well as{' '}
+            <a href="https://hackclub.com/">
+              <code>linked code</code>
+            </a>
+            {' & '}
+            <a href="https://hackclub.com/">regular links</a>. The paragraph
+            ended up being 1 sentence, but now I guess it’s <strong>two</strong>
+            .
+          </p>
+          <pre>
+            <code>Here’s a code block! No highlighting to be found.</code>
+          </pre>
         </Card>
         <Heading variant="headline">Buttons</Heading>
         {Object.keys(theme.buttons).map(key => (
@@ -214,3 +231,5 @@ export default () => (
     </Box>
   </>
 )
+
+export default DocsPage

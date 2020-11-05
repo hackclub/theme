@@ -408,21 +408,26 @@ const theme = {
       code: {
         color: 'inherit',
         mx: 0,
+        px: 0,
         ...prism
       }
     },
     code: {
       fontFamily: 'monospace',
       fontSize: 'inherit',
-      color: 'accent',
+      color: 'purple',
       bg: 'sunken',
       borderRadius: 'small',
       mx: 1,
       px: 1
     },
     'p > code, li > code': {
-      color: 'accent',
-      fontSize: 1
+      color: 'purple',
+      fontSize: '0.875em'
+    },
+    'p > a > code, li > a > code': {
+      color: 'red',
+      fontSize: '0.875em'
     },
     li: {
       my: 2
