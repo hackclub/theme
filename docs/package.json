@@ -11,14 +11,14 @@
   },
   "dependencies": {
     "@hackclub/meta": "^1.0.0",
-    "@hackclub/theme": "^0.3.0",
-    "@mdx-js/loader": "^1.6.19",
+    "@hackclub/theme": "^0.3.1",
+    "@mdx-js/loader": "^1.6.21",
     "@next/mdx": "^10.0.1",
-    "@theme-ui/style-guide": "^0.3.0",
+    "@theme-ui/style-guide": "^0.3.3",
     "lodash": "^4.17.20",
     "next": "^10.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "theme-ui": "^0.3.1"
+    "theme-ui": "^0.3.3"
   }
 }
