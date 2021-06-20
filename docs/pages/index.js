@@ -58,7 +58,10 @@ const DocsPage = () => (
         >
           <NavLink href="https://github.com/hackclub/theme">GitHub</NavLink>
           <NavLink href="https://npmjs.com/package/@hackclub/theme">
-            npm
+            NPM
+          </NavLink>
+          <NavLink href="https://github.com/hackclub/theme-starter">
+            Starter
           </NavLink>
         </Grid>
       </Container>
