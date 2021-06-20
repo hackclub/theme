@@ -46,7 +46,7 @@ const DocsPage = () => (
         </Text>
         <Grid
           gap={4}
-          columns="auto auto"
+          columns="auto auto auto"
           sx={{
             alignItems: 'center',
             justifyContent: 'center',
