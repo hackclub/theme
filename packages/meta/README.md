@@ -24,7 +24,7 @@ Example for [hackathons.hackclub.com](https://hackathons.hackclub.com):
   description="List of upcoming high school hackathons" // page description
   image="https://hackathons.hackclub.com/card.png" // large summary image URL
   color="#ec3750" // theme color
-  darkcolor="#17171d" // theme color but for dark mode
+  darkColor="#17171d" // theme color but for dark mode
   manifest="/site.webmanifest" // link to site manifest
 />
 ```
