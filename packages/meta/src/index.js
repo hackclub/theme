@@ -10,6 +10,7 @@ const Meta = ({
   description,
   image,
   color = '#ec3750',
+  darkcolor = '#17171d'
   manifest = 'https://assets.hackclub.com/favicons/site.webmanifest',
   children
 }) => (
@@ -39,7 +40,8 @@ const Meta = ({
         <meta key="tw_img" name="twitter:image" content={image} />
       </React.Fragment>
     )}
-    <meta key="theme_color" name="theme-color" content={color} />
+    <meta key="theme_color" name="theme-color" content={color} media="(prefers-color-scheme: light)" />
+    <meta key="theme_color" name="theme-color" content={darkcolor} media="(prefers-color-scheme: dark)" />
     <meta key="tile_color" name="msapplication-TileColor" content={color} />
     <link
       key="safari_icon"
