@@ -10,7 +10,7 @@ const Meta = ({
   description,
   image,
   color = '#ec3750',
-  darkcolor = '#17171d'
+  darkcolor = '#17171d',
   manifest = 'https://assets.hackclub.com/favicons/site.webmanifest',
   children
 }) => (
