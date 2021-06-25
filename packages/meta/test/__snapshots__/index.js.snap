@@ -32,6 +32,12 @@ exports[`Meta renders 1`] = `
   <meta
     content="#ec3750"
     name="theme-color"
+    media="(prefers-color-scheme: light)"
+  />
+  <meta
+    content="#17171d"
+    name="theme-color"
+    media="(prefers-color-scheme: dark)"
   />
   <meta
     content="#ec3750"
