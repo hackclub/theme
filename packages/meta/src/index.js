@@ -41,7 +41,7 @@ const Meta = ({
       </React.Fragment>
     )}
     <meta key="theme_color" name="theme-color" content={color} media="(prefers-color-scheme: light)" />
-    <meta key="theme_color" name="theme-color" content={darkcolor} media="(prefers-color-scheme: dark)" />
+    <meta key="dark_theme_color" name="theme-color" content={darkcolor} media="(prefers-color-scheme: dark)" />
     <meta key="tile_color" name="msapplication-TileColor" content={color} />
     <link
       key="safari_icon"
