@@ -43,7 +43,7 @@ test('Meta renders image', () => {
 
 test('Meta renders custom color', () => {
   const color = '#17171d'
-  const { container } = render(<Meta color={color} />)
+  const { container } = render(<Meta safariColor={color} />)
   expect(
     container.querySelector(`meta[name="theme-color"][content="${color}"]`)
   ).toBeTruthy()
