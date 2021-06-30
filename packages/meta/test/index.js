@@ -42,7 +42,7 @@ test('Meta renders image', () => {
 })
 
 test('Meta renders custom color', () => {
-  const color = '#0069ff'
+  const color = '#17171d'
   const { container } = render(<Meta color={color} />)
   expect(
     container.querySelector(`meta[name="theme-color"][content="${color}"]`)
