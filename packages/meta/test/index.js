@@ -46,7 +46,9 @@ test('Meta renders custom color', () => {
   const color = '#0069ff'
   const { container } = render(<Meta safariColor={safariColor} color={color} />)
   expect(
-    container.querySelector(`meta[name="theme-color"][content="${safariColor}"]`)
+    container.querySelector(
+      `meta[name="theme-color"][content="${safariColor}"]`
+    )
   ).toBeTruthy()
   expect(container).toMatchSnapshot()
 })
