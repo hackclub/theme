@@ -166,15 +166,15 @@ exports[`Meta renders custom color 1`] = `
     name="twitter:title"
   />
   <meta
-    content="#0069ff"
+    content="#17171d"
     name="theme-color"
   />
   <meta
-    content="#0069ff"
+    content="#ec3750"
     name="msapplication-TileColor"
   />
   <link
-    color="#0069ff"
+    color="#ec3750"
     href="https://assets.hackclub.com/favicons/safari-pinned-tab.svg"
     rel="mask-icon"
   />
