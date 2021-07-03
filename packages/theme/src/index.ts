@@ -32,7 +32,7 @@ const theme = {
   fontSizes: [12, 16, 20, 24, 32, 48, 64, 96, 128, 160, 192],
   config: {
     initialColorModeName: 'light',
-    useColorSchemeMediaQuery: true,
+    useColorSchemeMediaQuery: true
   },
   colors: {
     ...colors,
