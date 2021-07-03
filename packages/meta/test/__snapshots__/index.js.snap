@@ -30,7 +30,7 @@ exports[`Meta renders 1`] = `
     name="twitter:title"
   />
   <meta
-    content="#17171d"
+    content="#ec3750"
     name="theme-color"
   />
   <meta
@@ -96,7 +96,7 @@ exports[`Meta renders children 1`] = `
     name="twitter:title"
   />
   <meta
-    content="#17171d"
+    content="#ec3750"
     name="theme-color"
   />
   <meta
@@ -166,7 +166,7 @@ exports[`Meta renders custom color 1`] = `
     name="twitter:title"
   />
   <meta
-    content="#17171a"
+    content="#0069ff"
     name="theme-color"
   />
   <meta
@@ -232,7 +232,7 @@ exports[`Meta renders custom title 1`] = `
     name="twitter:title"
   />
   <meta
-    content="#17171d"
+    content="#ec3750"
     name="theme-color"
   />
   <meta
@@ -310,7 +310,7 @@ exports[`Meta renders image 1`] = `
     name="twitter:image"
   />
   <meta
-    content="#17171d"
+    content="#ec3750"
     name="theme-color"
   />
   <meta
