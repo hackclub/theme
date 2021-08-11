@@ -78,7 +78,7 @@ const DocsPage = () => (
             my: 3,
             py: 3,
             border: '2px dashed',
-            borderColor: 'sunken',
+            borderColor: 'border',
             borderRadius: 'default'
           }}
         >
