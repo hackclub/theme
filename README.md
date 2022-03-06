@@ -4,7 +4,8 @@
 ![test](https://github.com/hackclub/theme/workflows/test/badge.svg)
 
 [Hack Club](https://hackclub.com)’s frontend design system/tools,
-made for [Theme UI](https://theme-ui.com).
+made for [Theme UI](https://theme-ui.com). An alternative for CSS
+projects is [available here](https://github.com/hackclub/css-theme).
 
 > For getting started, check out [theme-starter](https://github.com/hackclub/theme-starter)!
 
