@@ -5,7 +5,7 @@
 
 [Hack Club](https://hackclub.com)’s frontend design system/tools,
 made for [Theme UI](https://theme-ui.com). An alternative for CSS
-projects is [available here](https://github.com/hackclub/css-theme).
+projects is [available here](https://github.com/hackclub/css).
 
 > For getting started, check out [theme-starter](https://github.com/hackclub/theme-starter)!
 
