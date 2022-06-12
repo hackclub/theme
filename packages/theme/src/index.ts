@@ -26,7 +26,7 @@ const colors = {
   instagram: '#e1306c'
 }
 
-const CSS_QUERIES = {
+const cssQueries = {
   motion: '@media (prefers-reduced-motion: no-preference)',
   reduceMotion: '@media (prefers-reduced-motion: reduce)',
   reduceTransparency: '@media (prefers-reduced-transparency: reduce)',
@@ -74,7 +74,8 @@ const theme: Theme = {
   fonts: {
     heading:
       '"Phantom Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    body: '"Phantom Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    body:
+      '"Phantom Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     monospace: '"SF Mono", "Roboto Mono", Menlo, Consolas, monospace'
   },
   lineHeights: {
@@ -288,12 +289,12 @@ const theme: Theme = {
       backgroundColor: 'rgba(255, 255, 255, 0.98)',
       color: 'text',
       boxShadow: 'none',
-      [CSS_QUERIES.supportsBackdrop]: {
+      [cssQueries.supportsBackdrop]: {
         backgroundColor: 'rgba(255, 255, 255, 0.75)',
         backdropFilter: 'saturate(180%) blur(20px)',
         WebkitBackdropFilter: 'saturate(180%) blur(20px)'
       },
-      [CSS_QUERIES.reduceTransparency]: {
+      [cssQueries.reduceTransparency]: {
         backdropFilter: 'none',
         WebkitBackdropFilter: 'none'
       }
@@ -303,12 +304,12 @@ const theme: Theme = {
       backgroundColor: 'rgba(0, 0, 0, 0.875)',
       color: 'white',
       boxShadow: 'none',
-      [CSS_QUERIES.supportsBackdrop]: {
+      [cssQueries.supportsBackdrop]: {
         backgroundColor: 'rgba(0, 0, 0, 0.625)',
         backdropFilter: 'saturate(180%) blur(16px)',
         WebkitBackdropFilter: 'saturate(180%) blur(16px)'
       },
-      [CSS_QUERIES.reduceTransparency]: {
+      [cssQueries.reduceTransparency]: {
         backdropFilter: 'none',
         WebkitBackdropFilter: 'none'
       }
@@ -509,7 +510,7 @@ const theme: Theme = {
         WebkitTextFillColor: 'transparent'
       }
     }),
-    ...CSS_QUERIES
+    ...cssQueries
   }
 }
 
