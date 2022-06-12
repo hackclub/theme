@@ -31,5 +31,6 @@
     "testPathIgnorePatterns": [
       "/node_modules/"
     ]
-  }
+  },
+  "dependencies": {}
 }
