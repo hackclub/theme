@@ -5,9 +5,10 @@ export default {
   '.comment': {
     fontStyle: 'italic'
   },
-  '.property, .tag, .boolean, .number, .constant, .symbol, .deleted, .function, .class-name, .regex, .important, .variable': {
-    color: 'red'
-  },
+  '.property, .tag, .boolean, .number, .constant, .symbol, .deleted, .function, .class-name, .regex, .important, .variable':
+    {
+      color: 'red'
+    },
   '.atrule, .attr-value, .keyword': {
     color: 'blue'
   },
