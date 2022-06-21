@@ -22,5 +22,8 @@
     "url": "https://github.com/hackclub/theme.git",
     "directory": "packages/theme"
   },
-  "gitHead": "029e83b336da014076112a68048dfa65565013ee"
+  "gitHead": "029e83b336da014076112a68048dfa65565013ee",
+  "dependencies": {
+    "theme-ui": "^0.14.5"
+  }
 }
