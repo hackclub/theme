@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Wack Club Sans';
-  src: url('https://assets.hackclub.com/fonts/Wack_Club_Sans/Regular.woff')
+  src:
+    url('https://assets.hackclub.com/fonts/Wack_Club_Sans/Regular.woff')
       format('woff'),
     url('https://assets.hackclub.com/fonts/Wack_Club_Sans/Regular.woff2')
       format('woff2');
