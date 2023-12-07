@@ -22,8 +22,8 @@ export default ({ children }) => (
 
 ### Fonts
 
-This package also bundles 3 CSS files that include Hack Club’s webfonts:
-`reg.css`, `reg-bold.css`, & `reg-ital-bold.css`.
+This package also bundles 4 CSS files that include Hack Club’s webfonts:
+`reg.css`, `reg-bold.css`, `reg-ital-bold.css`, & `wack-reg.css`.
 To use, just import straight from the package:
 
 ```js
