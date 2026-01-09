@@ -11,22 +11,22 @@ exports[`Meta renders 1`] = `
     property="og:type"
   />
   <meta
-    content="Hack Club"
+    content="BioX"
     property="og:site_name"
   />
   <meta
-    content="@hackclub"
+    content="@BioX"
     name="twitter:site"
   />
   <title>
-    Hack Club
+    BioX
   </title>
   <meta
-    content="Hack Club"
+    content="BioX"
     property="og:title"
   />
   <meta
-    content="Hack Club"
+    content="BioX"
     name="twitter:title"
   />
   <meta
@@ -43,9 +43,15 @@ exports[`Meta renders 1`] = `
     rel="mask-icon"
   />
   <link
-    href="https://assets.hackclub.com/favicons/apple-touch-icon.png"
+    href="/apple-touch-icon.png"
     rel="apple-touch-icon"
     sizes="180x180"
+  />
+  <link
+    href="https://assets.hackclub.com/favicons/favicon-16x16.png"
+    rel="icon"
+    sizes="16x16"
+    type="image/png"
   />
   <link
     href="https://assets.hackclub.com/favicons/favicon-32x32.png"
@@ -54,9 +60,15 @@ exports[`Meta renders 1`] = `
     type="image/png"
   />
   <link
-    href="https://assets.hackclub.com/favicons/favicon-16x16.png"
+    href="https://assets.hackclub.com/favicons/favicon-48x48.png"
     rel="icon"
-    sizes="16x16"
+    sizes="48x48"
+    type="image/png"
+  />
+  <link
+    href="https://assets.hackclub.com/favicons/favicon-64x64.png"
+    rel="icon"
+    sizes="64x64"
     type="image/png"
   />
   <link
@@ -77,22 +89,22 @@ exports[`Meta renders children 1`] = `
     property="og:type"
   />
   <meta
-    content="Hack Club"
+    content="BioX"
     property="og:site_name"
   />
   <meta
-    content="@hackclub"
+    content="@BioX"
     name="twitter:site"
   />
   <title>
-    Hack Club
+    BioX
   </title>
   <meta
-    content="Hack Club"
+    content="BioX"
     property="og:title"
   />
   <meta
-    content="Hack Club"
+    content="BioX"
     name="twitter:title"
   />
   <meta
@@ -109,9 +121,15 @@ exports[`Meta renders children 1`] = `
     rel="mask-icon"
   />
   <link
-    href="https://assets.hackclub.com/favicons/apple-touch-icon.png"
+    href="/apple-touch-icon.png"
     rel="apple-touch-icon"
     sizes="180x180"
+  />
+  <link
+    href="https://assets.hackclub.com/favicons/favicon-16x16.png"
+    rel="icon"
+    sizes="16x16"
+    type="image/png"
   />
   <link
     href="https://assets.hackclub.com/favicons/favicon-32x32.png"
@@ -120,9 +138,15 @@ exports[`Meta renders children 1`] = `
     type="image/png"
   />
   <link
-    href="https://assets.hackclub.com/favicons/favicon-16x16.png"
+    href="https://assets.hackclub.com/favicons/favicon-48x48.png"
     rel="icon"
-    sizes="16x16"
+    sizes="48x48"
+    type="image/png"
+  />
+  <link
+    href="https://assets.hackclub.com/favicons/favicon-64x64.png"
+    rel="icon"
+    sizes="64x64"
     type="image/png"
   />
   <link
@@ -147,22 +171,22 @@ exports[`Meta renders custom color 1`] = `
     property="og:type"
   />
   <meta
-    content="Hack Club"
+    content="BioX"
     property="og:site_name"
   />
   <meta
-    content="@hackclub"
+    content="@BioX"
     name="twitter:site"
   />
   <title>
-    Hack Club
+    BioX
   </title>
   <meta
-    content="Hack Club"
+    content="BioX"
     property="og:title"
   />
   <meta
-    content="Hack Club"
+    content="BioX"
     name="twitter:title"
   />
   <meta
@@ -179,9 +203,15 @@ exports[`Meta renders custom color 1`] = `
     rel="mask-icon"
   />
   <link
-    href="https://assets.hackclub.com/favicons/apple-touch-icon.png"
+    href="/apple-touch-icon.png"
     rel="apple-touch-icon"
     sizes="180x180"
+  />
+  <link
+    href="https://assets.hackclub.com/favicons/favicon-16x16.png"
+    rel="icon"
+    sizes="16x16"
+    type="image/png"
   />
   <link
     href="https://assets.hackclub.com/favicons/favicon-32x32.png"
@@ -190,9 +220,15 @@ exports[`Meta renders custom color 1`] = `
     type="image/png"
   />
   <link
-    href="https://assets.hackclub.com/favicons/favicon-16x16.png"
+    href="https://assets.hackclub.com/favicons/favicon-48x48.png"
     rel="icon"
-    sizes="16x16"
+    sizes="48x48"
+    type="image/png"
+  />
+  <link
+    href="https://assets.hackclub.com/favicons/favicon-64x64.png"
+    rel="icon"
+    sizes="64x64"
     type="image/png"
   />
   <link
@@ -213,22 +249,22 @@ exports[`Meta renders custom title 1`] = `
     property="og:type"
   />
   <meta
-    content="Hack Club"
+    content="BioX"
     property="og:site_name"
   />
   <meta
-    content="@hackclub"
+    content="@BioX"
     name="twitter:site"
   />
   <title>
-    Custom Title – Hack Club
+    Custom Title – BioX
   </title>
   <meta
-    content="Custom Title – Hack Club"
+    content="Custom Title – BioX"
     property="og:title"
   />
   <meta
-    content="Custom Title – Hack Club"
+    content="Custom Title – BioX"
     name="twitter:title"
   />
   <meta
@@ -245,9 +281,15 @@ exports[`Meta renders custom title 1`] = `
     rel="mask-icon"
   />
   <link
-    href="https://assets.hackclub.com/favicons/apple-touch-icon.png"
+    href="/apple-touch-icon.png"
     rel="apple-touch-icon"
     sizes="180x180"
+  />
+  <link
+    href="https://assets.hackclub.com/favicons/favicon-16x16.png"
+    rel="icon"
+    sizes="16x16"
+    type="image/png"
   />
   <link
     href="https://assets.hackclub.com/favicons/favicon-32x32.png"
@@ -256,9 +298,15 @@ exports[`Meta renders custom title 1`] = `
     type="image/png"
   />
   <link
-    href="https://assets.hackclub.com/favicons/favicon-16x16.png"
+    href="https://assets.hackclub.com/favicons/favicon-48x48.png"
     rel="icon"
-    sizes="16x16"
+    sizes="48x48"
+    type="image/png"
+  />
+  <link
+    href="https://assets.hackclub.com/favicons/favicon-64x64.png"
+    rel="icon"
+    sizes="64x64"
     type="image/png"
   />
   <link
@@ -279,26 +327,26 @@ exports[`Meta renders image 1`] = `
     property="og:type"
   />
   <meta
-    content="Hack Club"
+    content="BioX"
     property="og:site_name"
   />
   <meta
-    content="@hackclub"
+    content="@BioX"
     name="twitter:site"
   />
   <title>
-    Hack Club
+    BioX
   </title>
   <meta
-    content="Hack Club"
+    content="BioX"
     property="og:title"
   />
   <meta
-    content="Hack Club"
+    content="BioX"
     name="twitter:title"
   />
   <meta
-    content="https://hackclub.com/cards/bank.jpg"
+    content="https://example.com/cards/image.jpg"
     property="og:image"
   />
   <meta
@@ -306,7 +354,7 @@ exports[`Meta renders image 1`] = `
     name="twitter:card"
   />
   <meta
-    content="https://hackclub.com/cards/bank.jpg"
+    content="https://example.com/cards/image.jpg"
     name="twitter:image"
   />
   <meta
@@ -323,9 +371,15 @@ exports[`Meta renders image 1`] = `
     rel="mask-icon"
   />
   <link
-    href="https://assets.hackclub.com/favicons/apple-touch-icon.png"
+    href="/apple-touch-icon.png"
     rel="apple-touch-icon"
     sizes="180x180"
+  />
+  <link
+    href="https://assets.hackclub.com/favicons/favicon-16x16.png"
+    rel="icon"
+    sizes="16x16"
+    type="image/png"
   />
   <link
     href="https://assets.hackclub.com/favicons/favicon-32x32.png"
@@ -334,9 +388,15 @@ exports[`Meta renders image 1`] = `
     type="image/png"
   />
   <link
-    href="https://assets.hackclub.com/favicons/favicon-16x16.png"
+    href="https://assets.hackclub.com/favicons/favicon-48x48.png"
     rel="icon"
-    sizes="16x16"
+    sizes="48x48"
+    type="image/png"
+  />
+  <link
+    href="https://assets.hackclub.com/favicons/favicon-64x64.png"
+    rel="icon"
+    sizes="64x64"
     type="image/png"
   />
   <link

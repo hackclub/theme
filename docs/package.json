@@ -1,7 +1,7 @@
 {
-  "name": "@hackclub/theme-docs",
-  "version": "0.0.1",
-  "author": "Lachlan Campbell (https://lachlanjc.me) <lachlan@hackclub.com>",
+  "name": "@doctordatadata/theme-docs",
+  "version": "1.0.0",
+  "author": "Dr Data",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -10,8 +10,8 @@
     "start": "yarn run dev"
   },
   "dependencies": {
-    "@hackclub/meta": "^1.0.0",
-    "@hackclub/theme": "^0.3.1",
+    "@doctordatadata/meta": "^1.0.0",
+    "@doctordatadata/theme": "^1.0.0",
     "@mdx-js/loader": "^1.6.21",
     "@next/mdx": "^10.0.1",
     "@theme-ui/style-guide": "^0.3.3",

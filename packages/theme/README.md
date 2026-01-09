@@ -1,19 +1,17 @@
-# @hackclub/theme
+# @doctordatadata/theme
 
-[Theme UI](https://theme-ui.com) theme for [Hack Club](https://hackclub.com)
+[Theme UI](https://theme-ui.com) theme for BioX projects
 
 ```bash
-yarn add @hackclub/theme
-# npm i @hackclub/theme
+yarn add @doctordatadata/theme
+# npm i @doctordatadata/theme
 ```
-
-Check out theme: [**theme.hackclub.com**](https://theme.hackclub.com)
 
 ## Usage
 
 ```js
 import { ThemeProvider } from 'theme-ui'
-import theme from '@hackclub/theme'
+import theme from '@doctordatadata/theme'
 
 export default ({ children }) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
@@ -22,12 +20,12 @@ export default ({ children }) => (
 
 ### Fonts
 
-This package also bundles 3 CSS files that include Hack Club’s webfonts:
+This package also bundles 3 CSS files that include webfonts:
 `reg.css`, `reg-bold.css`, & `reg-ital-bold.css`.
 To use, just import straight from the package:
 
 ```js
-import '@hackclub/theme/fonts/reg-bold.css'
+import '@doctordatadata/theme/fonts/reg-bold.css'
 ```
 
 (In a Next.js project, [place](https://nextjs.org/docs/basic-features/built-in-css-support) in the `pages/_app.js` file.)

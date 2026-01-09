@@ -20,29 +20,29 @@ import {
   Textarea
 } from 'theme-ui'
 import Head from 'next/head'
-import Meta from '@hackclub/meta'
-import theme from '@hackclub/theme'
+import Meta from '@doctordatadata/meta'
+import theme from '@doctordatadata/theme'
 import ColorSwitcher from '../components/color-switcher'
 import { TypeScale, ColorPalette } from '@theme-ui/style-guide'
 
 const DocsPage = () => (
   <>
     <Head>
-      <title>Hack Club Theme</title>
+      <title>BioX Theme</title>
       <Meta
         name="Theme"
-        description="Hack Club’s theme + React components for Theme UI"
+        description="BioX theme + React components for Theme UI"
       />
     </Head>
     <Box as="header" sx={{ bg: 'sheet', color: 'text' }}>
       <Container sx={{ pt: 5, pb: [3, 4], textAlign: 'center' }}>
         <ColorSwitcher />
         <Heading as="h1" variant="title" color="red">
-          Hack Club Theme
+          BioX Theme
         </Heading>
         <Text as="p" variant="subtitle" mt={3}>
-          <Link href="https://hackclub.com/">Hack Club’s</Link> theme + React
-          components for <Link href="https://theme-ui.com">Theme UI</Link>.
+          BioX theme + React components for{' '}
+          <Link href="https://theme-ui.com">Theme UI</Link>.
         </Text>
         <Grid
           gap={4}
@@ -56,12 +56,12 @@ const DocsPage = () => (
             a: { color: 'muted', transition: 'color .125s ease-in-out' }
           }}
         >
-          <NavLink href="https://github.com/hackclub/theme">GitHub</NavLink>
-          <NavLink href="https://npmjs.com/package/@hackclub/theme">
+          <NavLink href="https://github.com/dr-data/biox-theme">GitHub</NavLink>
+          <NavLink href="https://npmjs.com/package/@doctordatadata/theme">
             NPM
           </NavLink>
-          <NavLink href="https://github.com/hackclub/theme-starter">
-            Starter
+          <NavLink href="https://github.com/dr-data/biox-theme">
+            Docs
           </NavLink>
         </Grid>
       </Container>

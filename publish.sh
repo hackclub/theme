@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# BioX Theme - One-Click Publish Script
+# Usage: ./publish.sh
+
+set -e
+
+echo "🚀 BioX Theme Publisher"
+echo "======================="
+
+# Check if npm is logged in
+if ! npm whoami &> /dev/null; then
+    echo "❌ You are not logged into npm."
+    echo "   Please run: npm login"
+    exit 1
+fi
+
+CURRENT_USER=$(npm whoami)
+echo "✓ Logged in as: $CURRENT_USER"
+
+# Build all packages
+echo ""
+echo "📦 Building packages..."
+yarn prepare
+
+# Run tests
+echo ""
+echo "🧪 Running tests..."
+yarn test
+
+# Publish theme package
+echo ""
+echo "📤 Publishing @doctordatadata/theme..."
+cd packages/theme
+npm publish --access public
+cd ../..
+
+# Publish meta package
+echo ""
+echo "📤 Publishing @doctordatadata/meta..."
+cd packages/meta
+npm publish --access public
+cd ../..
+
+echo ""
+echo "✅ All packages published successfully!"
+echo ""
+echo "Packages published:"
+echo "  - @doctordatadata/theme"
+echo "  - @doctordatadata/meta"
+echo ""
+echo "Install with: npm i @doctordatadata/theme @doctordatadata/meta"

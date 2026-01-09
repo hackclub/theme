@@ -6,18 +6,18 @@ afterEach(cleanup)
 
 test('Meta renders', () => {
   const { container, getByText } = render(<Meta />)
-  expect(getByText('Hack Club')).toBeTruthy()
+  expect(getByText('BioX')).toBeTruthy()
   expect(
-    container.querySelector('[property="og:title"][content="Hack Club"]')
+    container.querySelector('[property="og:title"][content="BioX"]')
   ).toBeTruthy()
   expect(
-    container.querySelector('[name="twitter:title"][content="Hack Club"]')
+    container.querySelector('[name="twitter:title"][content="BioX"]')
   ).toBeTruthy()
   expect(container).toMatchSnapshot()
 })
 
 test('Meta renders custom title', () => {
-  const title = 'Custom Title – Hack Club'
+  const title = 'Custom Title – BioX'
   const { container, getByText } = render(<Meta title="Custom Title" />)
   expect(getByText(title)).toBeTruthy()
   expect(
@@ -30,7 +30,7 @@ test('Meta renders custom title', () => {
 })
 
 test('Meta renders image', () => {
-  const url = 'https://hackclub.com/cards/bank.jpg'
+  const url = 'https://example.com/cards/image.jpg'
   const { container } = render(<Meta image={url} />)
   expect(
     container.querySelector(

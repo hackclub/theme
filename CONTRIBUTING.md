@@ -1,6 +1,6 @@
 # Contributing
 
-Hey—thanks for your interest in contributing! We follow the [Hack Club Code of Conduct](https://hackclub.com/conduct/), so please be kind and reach out if you have any questions or concerns.
+Thanks for your interest in contributing!
 
 ## Local Development
 
@@ -13,19 +13,19 @@ Install dependencies and link local packages in the root directory:
 yarn
 ```
 
-After yarn has linked packages and installed dependences in the repo, you can run whatever you’re looking for.
+After yarn has linked packages and installed dependences in the repo, you can run whatever you're looking for.
 
 ```bash
 yarn workspace <name-of-package> <command>
 ```
 
-Where name of package is something like `@hackclub/theme` or `@hackclub/meta` (one of the packages
+Where name of package is something like `@doctordatadata/theme` or `@doctordatadata/meta` (one of the packages
 listed by yarn when you run the `yarn workspaces info` command)
 
 Example:
 
 ```bash
-yarn workspace @hackclub/meta prepare
+yarn workspace @doctordatadata/meta prepare
 ```
 
 ## Tests
@@ -44,16 +44,21 @@ Running tests in watch mode:
 yarn test --watch
 ```
 
+## Publishing
+
+To publish to npm, use the publish script:
+
+```bash
+./publish.sh
+```
+
 ## Pull Requests
 
 When opening a pull request, please be sure to update any relevant documentation.
 
 ---
 
-_Doc adapted from [Theme UI][]_
-
 [yarn]: https://yarnpkg.com
 [yarn workspaces]: https://yarnpkg.com/en/docs/workspaces
 [lerna]: https://github.com/lerna/lerna
 [jest]: https://jestjs.io/
-[theme ui]: https://github.com/system-ui/theme-ui/blob/master/CONTRIBUTING.md

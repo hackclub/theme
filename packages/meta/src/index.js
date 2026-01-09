@@ -5,8 +5,8 @@ const makeTitle = (title, name) =>
 
 const Meta = ({
   as: ElementType = React.Fragment,
-  name = 'Hack Club', // site name
-  title = 'Hack Club', // page title
+  name = 'BioX', // site name
+  title = 'BioX', // page title
   description,
   image,
   color = '#ec3750',
@@ -17,7 +17,7 @@ const Meta = ({
     <meta key="og_locale" property="og:locale" content="en_US" />
     <meta key="og_type" property="og:type" content="website" />
     <meta key="og_site" property="og:site_name" content={name} />
-    <meta key="tw_site" name="twitter:site" content="@hackclub" />
+    <meta key="tw_site" name="twitter:site" content="@BioX" />
     <title key="title">{makeTitle(title, name)}</title>
     <meta key="og_title" property="og:title" content={makeTitle(title, name)} />
     <meta

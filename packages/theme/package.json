@@ -1,8 +1,8 @@
 {
-  "name": "@hackclub/theme",
-  "description": "Hack Club’s theme for Theme UI websites",
-  "version": "0.3.3",
-  "author": "Lachlan Campbell <lachlan@hackclub.com> (https://lachlanjc.com)",
+  "name": "@doctordatadata/theme",
+  "description": "BioX theme for Theme UI websites",
+  "version": "1.0.0",
+  "author": "Dr Data",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -19,7 +19,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hackclub/theme.git",
+    "url": "https://github.com/dr-data/biox-theme.git",
     "directory": "packages/theme"
   },
   "gitHead": "029e83b336da014076112a68048dfa65565013ee",

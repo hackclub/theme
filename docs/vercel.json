@@ -1,8 +1,13 @@
 {
   "public": true,
   "trailingSlash": true,
-  "github": { "silent": true },
+  "github": {
+    "silent": true
+  },
   "redirects": [
-    { "source": "/gh/", "destination": "https://github.com/hackclub/theme" }
+    {
+      "source": "/gh/",
+      "destination": "https://github.com/dr-data/biox-theme"
+    }
   ]
 }
