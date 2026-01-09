@@ -5,7 +5,10 @@
     "clean": "lerna run clean",
     "test": "jest",
     "format": "prettier --write .",
-    "checkFormat": "prettier --check ."
+    "checkFormat": "prettier --check .",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "workspaces": {
     "packages": [
@@ -24,6 +27,18 @@
     "microbundle": "^0.12.4",
     "prettier": "2.6.2"
   },
+  "dependencies": {
+    "@doctordatadata/meta": "^1.0.0",
+    "@doctordatadata/theme": "^1.0.0",
+    "@mdx-js/loader": "^1.6.21",
+    "@next/mdx": "^10.0.1",
+    "@theme-ui/style-guide": "^0.3.3",
+    "lodash": "^4.17.21",
+    "next": "^12.1.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "theme-ui": "^0.3.3"
+  },
   "jest": {
     "testMatch": [
       "**/packages/**/test/*.js"
@@ -31,6 +46,5 @@
     "testPathIgnorePatterns": [
       "/node_modules/"
     ]
-  },
-  "dependencies": {}
+  }
 }

@@ -12,7 +12,7 @@ BioX's frontend design system/tools, made for [Theme UI](https://theme-ui.com).
 
 ## Docs
 
-The docs site source is in `/docs`. It is made with Next.js & deployed on Vercel.
+The docs site is at the project root. It is made with Next.js & deployed on Vercel. Build with `yarn build` and start with `yarn start`.
 
 ## Quick Start
 
