@@ -34,6 +34,8 @@ const DocsPage = () => (
         name="Theme"
         description="BioX theme + React components for Theme UI"
       />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" />
     </Head>
     <Box as="header" sx={{ bg: 'sheet', color: 'text' }}>
       <Container sx={{ pt: 5, pb: [3, 4], textAlign: 'center' }}>
@@ -112,13 +114,44 @@ const DocsPage = () => (
             </a>
             {' & '}
             <a href="https://hackclub.com/">regular links</a>. The paragraph
-            ended up being 1 sentence, but now I guess it’s <strong>two</strong>
+            ended up being 1 sentence, but now I guess it's <strong>two</strong>
             .
           </p>
           <pre>
-            <code>Here’s a code block! No highlighting to be found.</code>
+            <code>Here's a code block! No highlighting to be found.</code>
           </pre>
         </Card>
+        <Heading variant="headline">Chinese Fonts</Heading>
+        <Grid gap={3} columns={[null, 2]} sx={{ code: { mt: 1, ml: -1, fontSize: 0 } }}>
+          <Card sx={{ fontFamily: '"Noto Sans TC", system-ui, sans-serif' }}>
+            <Heading as="h3" variant="headline" my={0}>
+              Traditional Chinese (繁體中文)
+            </Heading>
+            <Text as="p" sx={{ mt: 3, mb: 2, fontSize: 3 }}>
+              BioX 主題
+            </Text>
+            <Text as="p" sx={{ mt: 0, mb: 2, fontSize: 2 }}>
+              歡迎使用我們的設計系統。這是一個基於 Theme UI 的現代化前端設計工具。
+            </Text>
+            <Text as="code" variant="styles.code">
+              Noto Sans TC (Regular 400 & Bold 700)
+            </Text>
+          </Card>
+          <Card sx={{ fontFamily: '"Noto Sans SC", system-ui, sans-serif' }}>
+            <Heading as="h3" variant="headline" my={0}>
+              Simplified Chinese (简体中文)
+            </Heading>
+            <Text as="p" sx={{ mt: 3, mb: 2, fontSize: 3 }}>
+              BioX 主题
+            </Text>
+            <Text as="p" sx={{ mt: 0, mb: 2, fontSize: 2 }}>
+              欢迎使用我们的设计系统。这是一个基于 Theme UI 的现代化前端设计工具。
+            </Text>
+            <Text as="code" variant="styles.code">
+              Noto Sans SC (Regular 400 & Bold 700)
+            </Text>
+          </Card>
+        </Grid>
         <Heading variant="headline">Buttons</Heading>
         {Object.keys(theme.buttons).map(key => (
           <Button key={key} variant={key} sx={{ mr: 3, mb: 3 }}>
