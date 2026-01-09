@@ -121,7 +121,47 @@ const DocsPage = () => (
             <code>Here's a code block! No highlighting to be found.</code>
           </pre>
         </Card>
-        <Heading variant="headline">Chinese Fonts</Heading>
+        <Heading variant="headline">Fonts & References</Heading>
+        <Grid gap={3} columns={[null, 3]}>
+          <Card>
+            <Heading as="h3" variant="headline" my={0} sx={{ fontSize: 2 }}>
+              English
+            </Heading>
+            <Text as="p" sx={{ mt: 2, mb: 1, fontSize: 1 }}>
+              Phantom Sans (Custom)
+            </Text>
+            <Text as="p" sx={{ mt: 0, fontSize: 0, color: 'muted' }}>
+              System fallbacks: Segoe UI, Roboto
+            </Text>
+          </Card>
+          <Card>
+            <Heading as="h3" variant="headline" my={0} sx={{ fontSize: 2 }}>
+              Traditional Chinese
+            </Heading>
+            <Text as="p" sx={{ mt: 2, mb: 1, fontSize: 1 }}>
+              <Link href="https://fonts.google.com/noto/specimen/Noto+Sans+TC" target="_blank">
+                Noto Sans TC
+              </Link>
+            </Text>
+            <Text as="p" sx={{ mt: 0, fontSize: 0, color: 'muted' }}>
+              Regular 400 & Bold 700
+            </Text>
+          </Card>
+          <Card>
+            <Heading as="h3" variant="headline" my={0} sx={{ fontSize: 2 }}>
+              Simplified Chinese
+            </Heading>
+            <Text as="p" sx={{ mt: 2, mb: 1, fontSize: 1 }}>
+              <Link href="https://fonts.google.com/noto/specimen/Noto+Sans+SC" target="_blank">
+                Noto Sans SC
+              </Link>
+            </Text>
+            <Text as="p" sx={{ mt: 0, fontSize: 0, color: 'muted' }}>
+              Regular 400 & Bold 700
+            </Text>
+          </Card>
+        </Grid>
+        <Heading variant="headline" sx={{ mt: 5 }}>Chinese Fonts</Heading>
         <Grid gap={3} columns={[null, 2]} sx={{ code: { mt: 1, ml: -1, fontSize: 0 } }}>
           <Card sx={{ fontFamily: '"Noto Sans TC", system-ui, sans-serif' }}>
             <Heading as="h3" variant="headline" my={0}>
@@ -153,109 +193,303 @@ const DocsPage = () => (
           </Card>
         </Grid>
         <Heading variant="headline">Buttons</Heading>
-        {Object.keys(theme.buttons).map(key => (
-          <Button key={key} variant={key} sx={{ mr: 3, mb: 3 }}>
-            {key} btn
-          </Button>
-        ))}
+        <Box sx={{ mb: 4 }}>
+          <Heading as="h3" sx={{ fontSize: 2, mb: 2 }}>English</Heading>
+          <Box sx={{ mb: 3 }}>
+            {Object.keys(theme.buttons).map(key => (
+              <Button key={key} variant={key} sx={{ mr: 3, mb: 3 }}>
+                {key} btn
+              </Button>
+            ))}
+          </Box>
+        </Box>
+        <Box sx={{ mb: 4 }}>
+          <Heading as="h3" sx={{ fontSize: 2, mb: 2, fontFamily: '"Noto Sans TC", system-ui, sans-serif' }}>
+            Traditional Chinese (繁體中文)
+          </Heading>
+          <Box sx={{ mb: 3, fontFamily: '"Noto Sans TC", system-ui, sans-serif' }}>
+            {Object.keys(theme.buttons).map(key => (
+              <Button key={`tc-${key}`} variant={key} sx={{ mr: 3, mb: 3 }}>
+                按鈕
+              </Button>
+            ))}
+          </Box>
+        </Box>
+        <Box sx={{ mb: 4 }}>
+          <Heading as="h3" sx={{ fontSize: 2, mb: 2, fontFamily: '"Noto Sans SC", system-ui, sans-serif' }}>
+            Simplified Chinese (简体中文)
+          </Heading>
+          <Box sx={{ mb: 3, fontFamily: '"Noto Sans SC", system-ui, sans-serif' }}>
+            {Object.keys(theme.buttons).map(key => (
+              <Button key={`sc-${key}`} variant={key} sx={{ mr: 3, mb: 3 }}>
+                按钮
+              </Button>
+            ))}
+          </Box>
+        </Box>
         <Heading variant="headline">Cards</Heading>
-        <Grid
-          columns={[null, 2, 3]}
-          gap={3}
-          sx={{ code: { mt: 1, ml: -1, fontSize: 0 } }}
-        >
-          {Object.keys(theme.cards).map(key => (
-            <Card variant={key} key={key} p={[3, 4]}>
-              {key}
-            </Card>
-          ))}
-          <Card
-            sx={{
-              backgroundImage: t => t.util.gx('cyan', 'blue'),
-              color: 'white'
-            }}
+        <Box sx={{ mb: 4 }}>
+          <Heading as="h3" sx={{ fontSize: 2, mb: 2 }}>English</Heading>
+          <Grid
+            columns={[null, 2, 3]}
+            gap={3}
+            sx={{ code: { mt: 1, ml: -1, fontSize: 0 } }}
           >
-            <Heading variant="headline" as="h3" my={0}>
-              Gradient BG
-            </Heading>
-            <Text as="code" variant="styles.code">
-              theme.util.gx('color1', 'color2')
-            </Text>
-          </Card>
-          <Card>
-            <Heading
-              variant="headline"
-              as="h3"
-              sx={t => t.util.gxText('cyan', 'blue')}
-              my={0}
+            {Object.keys(theme.cards).map(key => (
+              <Card variant={key} key={key} p={[3, 4]}>
+                {key}
+              </Card>
+            ))}
+            <Card
+              sx={{
+                backgroundImage: t => t.util.gx('cyan', 'blue'),
+                color: 'white'
+              }}
             >
-              Gradient text
-            </Heading>
-            <Text as="code" variant="styles.code">
-              theme.util.gxText('color1', 'color2')
-            </Text>
-          </Card>
-        </Grid>
+              <Heading variant="headline" as="h3" my={0}>
+                Gradient BG
+              </Heading>
+              <Text as="code" variant="styles.code">
+                theme.util.gx('color1', 'color2')
+              </Text>
+            </Card>
+            <Card>
+              <Heading
+                variant="headline"
+                as="h3"
+                sx={t => t.util.gxText('cyan', 'blue')}
+                my={0}
+              >
+                Gradient text
+              </Heading>
+              <Text as="code" variant="styles.code">
+                theme.util.gxText('color1', 'color2')
+              </Text>
+            </Card>
+          </Grid>
+        </Box>
+        <Box sx={{ mb: 4 }}>
+          <Heading as="h3" sx={{ fontSize: 2, mb: 2, fontFamily: '"Noto Sans TC", system-ui, sans-serif' }}>
+            Traditional Chinese (繁體中文)
+          </Heading>
+          <Grid columns={[null, 2, 3]} gap={3} sx={{ fontFamily: '"Noto Sans TC", system-ui, sans-serif' }}>
+            {Object.keys(theme.cards).map(key => (
+              <Card variant={key} key={`tc-${key}`} p={[3, 4]}>
+                {key === 'default' ? '預設' : key === 'primary' ? '主要' : '次要'}
+              </Card>
+            ))}
+            <Card
+              sx={{
+                backgroundImage: t => t.util.gx('cyan', 'blue'),
+                color: 'white'
+              }}
+            >
+              <Text sx={{ fontSize: 2 }}>漸變背景</Text>
+            </Card>
+            <Card>
+              <Text sx={{ fontSize: 2, background: t => t.util.gxText('cyan', 'blue'), WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>漸變文字</Text>
+            </Card>
+          </Grid>
+        </Box>
+        <Box sx={{ mb: 4 }}>
+          <Heading as="h3" sx={{ fontSize: 2, mb: 2, fontFamily: '"Noto Sans SC", system-ui, sans-serif' }}>
+            Simplified Chinese (简体中文)
+          </Heading>
+          <Grid columns={[null, 2, 3]} gap={3} sx={{ fontFamily: '"Noto Sans SC", system-ui, sans-serif' }}>
+            {Object.keys(theme.cards).map(key => (
+              <Card variant={key} key={`sc-${key}`} p={[3, 4]}>
+                {key === 'default' ? '默认' : key === 'primary' ? '主要' : '次要'}
+              </Card>
+            ))}
+            <Card
+              sx={{
+                backgroundImage: t => t.util.gx('cyan', 'blue'),
+                color: 'white'
+              }}
+            >
+              <Text sx={{ fontSize: 2 }}>渐变背景</Text>
+            </Card>
+            <Card>
+              <Text sx={{ fontSize: 2, background: t => t.util.gxText('cyan', 'blue'), WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>渐变文字</Text>
+            </Card>
+          </Grid>
+        </Box>
         <Heading variant="headline">Forms</Heading>
-        <Grid gap={3} columns={[null, 2]} as="form" variant="cards.sunken">
-          <Label>
-            Full name
-            <Input placeholder="Zach Latta" />
-          </Label>
-          <Label>
-            How are you primarily associated with Hack Club?
-            <Select>
-              <option value="" disabled hidden>
-                Select one…
-              </option>
-              <option value="club-leader">I lead a club</option>
-              <option value="club-member">I am a club member</option>
-              <option value="slack-member">I am active on Slack</option>
-              <option value="alum">I am a Hack Club alum</option>
-              <option value="none">None of the above</option>
-            </Select>
-          </Label>
-          <Label variant="labelHoriz">
-            <Checkbox />
-            Remember me
-          </Label>
-          <Flex sx={{ flexWrap: 'wrap' }}>
-            <Label variant="labelHoriz">
-              <Radio name="letter" /> Alpha
+        <Box sx={{ mb: 4 }}>
+          <Heading as="h3" sx={{ fontSize: 2, mb: 2 }}>English</Heading>
+          <Grid gap={3} columns={[null, 2]} as="form" variant="cards.sunken">
+            <Label>
+              Full name
+              <Input placeholder="Zach Latta" />
+            </Label>
+            <Label>
+              How are you primarily associated with Hack Club?
+              <Select>
+                <option value="" disabled hidden>
+                  Select one…
+                </option>
+                <option value="club-leader">I lead a club</option>
+                <option value="club-member">I am a club member</option>
+                <option value="slack-member">I am active on Slack</option>
+                <option value="alum">I am a Hack Club alum</option>
+                <option value="none">None of the above</option>
+              </Select>
             </Label>
             <Label variant="labelHoriz">
-              <Radio name="letter" /> Bravo
+              <Checkbox />
+              Remember me
+            </Label>
+            <Flex sx={{ flexWrap: 'wrap' }}>
+              <Label variant="labelHoriz">
+                <Radio name="letter" /> Alpha
+              </Label>
+              <Label variant="labelHoriz">
+                <Radio name="letter" /> Bravo
+              </Label>
+              <Label variant="labelHoriz">
+                <Radio name="letter" /> Charlie
+              </Label>
+            </Flex>
+            <Label>
+              Why do you want to come?
+              <Textarea placeholder="Write a few sentences." />
+            </Label>
+            <Label>
+              Slider
+              <Slider color="red" />
+            </Label>
+            <Button
+              as="button"
+              type="submit"
+              children="RSVP"
+              sx={{ gridColumn: [null, 'span 2'] }}
+            />
+          </Grid>
+        </Box>
+        <Box sx={{ mb: 4, fontFamily: '"Noto Sans TC", system-ui, sans-serif' }}>
+          <Heading as="h3" sx={{ fontSize: 2, mb: 2, fontFamily: '"Noto Sans TC", system-ui, sans-serif' }}>
+            Traditional Chinese (繁體中文)
+          </Heading>
+          <Grid gap={3} columns={[null, 2]} as="form" variant="cards.sunken">
+            <Label>
+              全名
+              <Input placeholder="您的姓名" />
+            </Label>
+            <Label>
+              您與本組織的關係
+              <Select>
+                <option value="" disabled hidden>
+                  選擇一個…
+                </option>
+                <option value="member">成員</option>
+                <option value="leader">領導者</option>
+                <option value="partner">合作夥伴</option>
+              </Select>
             </Label>
             <Label variant="labelHoriz">
-              <Radio name="letter" /> Charlie
+              <Checkbox />
+              記住我
             </Label>
-          </Flex>
-          <Label>
-            Why do you want to come?
-            <Textarea placeholder="Write a few sentences." />
-          </Label>
-          <Label>
-            Slider
-            <Slider color="red" />
-          </Label>
-          <Button
-            as="button"
-            type="submit"
-            children="RSVP"
-            sx={{ gridColumn: [null, 'span 2'] }}
-          />
-        </Grid>
+            <Label>
+              留言
+              <Textarea placeholder="請輸入您的消息" />
+            </Label>
+            <Button
+              as="button"
+              type="submit"
+              children="提交"
+              sx={{ gridColumn: [null, 'span 2'] }}
+            />
+          </Grid>
+        </Box>
+        <Box sx={{ mb: 4, fontFamily: '"Noto Sans SC", system-ui, sans-serif' }}>
+          <Heading as="h3" sx={{ fontSize: 2, mb: 2, fontFamily: '"Noto Sans SC", system-ui, sans-serif' }}>
+            Simplified Chinese (简体中文)
+          </Heading>
+          <Grid gap={3} columns={[null, 2]} as="form" variant="cards.sunken">
+            <Label>
+              全名
+              <Input placeholder="您的姓名" />
+            </Label>
+            <Label>
+              您与本组织的关系
+              <Select>
+                <option value="" disabled hidden>
+                  选择一个…
+                </option>
+                <option value="member">成员</option>
+                <option value="leader">领导者</option>
+                <option value="partner">合作伙伴</option>
+              </Select>
+            </Label>
+            <Label variant="labelHoriz">
+              <Checkbox />
+              记住我
+            </Label>
+            <Label>
+              留言
+              <Textarea placeholder="请输入您的消息" />
+            </Label>
+            <Button
+              as="button"
+              type="submit"
+              children="提交"
+              sx={{ gridColumn: [null, 'span 2'] }}
+            />
+          </Grid>
+        </Box>
         <Heading variant="headline">Badges</Heading>
-        {Object.keys(theme.badges).map(key => (
-          <Badge
-            key={key}
-            variant={key}
-            mr={3}
-            color={key === 'outline' ? 'muted' : null}
-          >
-            {key}
-          </Badge>
-        ))}
+        <Box sx={{ mb: 4 }}>
+          <Heading as="h3" sx={{ fontSize: 2, mb: 2 }}>English</Heading>
+          <Box sx={{ mb: 3 }}>
+            {Object.keys(theme.badges).map(key => (
+              <Badge
+                key={key}
+                variant={key}
+                mr={3}
+                color={key === 'outline' ? 'muted' : null}
+              >
+                {key}
+              </Badge>
+            ))}
+          </Box>
+        </Box>
+        <Box sx={{ mb: 4, fontFamily: '"Noto Sans TC", system-ui, sans-serif' }}>
+          <Heading as="h3" sx={{ fontSize: 2, mb: 2, fontFamily: '"Noto Sans TC", system-ui, sans-serif' }}>
+            Traditional Chinese (繁體中文)
+          </Heading>
+          <Box sx={{ mb: 3 }}>
+            {Object.keys(theme.badges).map(key => (
+              <Badge
+                key={`tc-${key}`}
+                variant={key}
+                mr={3}
+                color={key === 'outline' ? 'muted' : null}
+                sx={{ fontFamily: '"Noto Sans TC", system-ui, sans-serif' }}
+              >
+                {key === 'primary' ? '主要' : key === 'secondary' ? '次要' : key === 'accent' ? '強調' : '標籤'}
+              </Badge>
+            ))}
+          </Box>
+        </Box>
+        <Box sx={{ mb: 4, fontFamily: '"Noto Sans SC", system-ui, sans-serif' }}>
+          <Heading as="h3" sx={{ fontSize: 2, mb: 2, fontFamily: '"Noto Sans SC", system-ui, sans-serif' }}>
+            Simplified Chinese (简体中文)
+          </Heading>
+          <Box sx={{ mb: 3 }}>
+            {Object.keys(theme.badges).map(key => (
+              <Badge
+                key={`sc-${key}`}
+                variant={key}
+                mr={3}
+                color={key === 'outline' ? 'muted' : null}
+                sx={{ fontFamily: '"Noto Sans SC", system-ui, sans-serif' }}
+              >
+                {key === 'primary' ? '主要' : key === 'secondary' ? '次要' : key === 'accent' ? '强调' : '标签'}
+              </Badge>
+            ))}
+          </Box>
+        </Box>
         <Heading variant="headline">Colors</Heading>
         <ColorPalette
           omit={['modes', 'placeholder', 'twitter', 'instagram', 'facebook']}
