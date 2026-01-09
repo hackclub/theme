@@ -1,3 +1,4 @@
+import React from 'react'
 import { IconButton, useColorMode } from 'theme-ui'
 
 const ColorSwitcher = props => {
