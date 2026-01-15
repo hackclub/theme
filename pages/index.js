@@ -26,7 +26,6 @@ import {
   Textarea
 } from '@theme-ui/components'
 import Head from 'next/head'
-import Meta from '@doctordatadata/meta'
 import ColorSwitcher from '../components/color-switcher'
 import { TypeScale, ColorPalette } from '@theme-ui/style-guide'
 import { useThemeStyle } from '../components/theme-context'
@@ -109,10 +108,9 @@ const DocsPage = () => {
     <>
       <Head>
         <title>BioX Theme - {themeName}</title>
-        <Meta
-          name="Theme"
-          description="BioX theme + React components for Theme UI"
-        />
+        <meta name="description" content="BioX theme + React components for Theme UI" />
+        <meta property="og:title" content={`BioX Theme - ${themeName}`} />
+        <meta property="og:description" content="BioX theme + React components for Theme UI" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" />
       </Head>

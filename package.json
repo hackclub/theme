@@ -28,8 +28,7 @@
     "prettier": "2.6.2"
   },
   "dependencies": {
-    "@doctordatadata/meta": "^1.0.0",
-    "@doctordatadata/theme": "^1.0.0",
+    "@bio-x/theme": "^1.0.0",
     "@mdx-js/loader": "^1.6.21",
     "@next/mdx": "^10.0.1",
     "@theme-ui/style-guide": "^0.3.3",
