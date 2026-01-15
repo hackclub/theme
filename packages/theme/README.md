@@ -1,10 +1,10 @@
-# @doctordatadata/theme
+# @bio-x/theme
 
 [Theme UI](https://theme-ui.com) theme for BioX projects
 
 ```bash
-yarn add @doctordatadata/theme
-# npm i @doctordatadata/theme
+yarn add @bio-x/theme
+# npm i @bio-x/theme
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ yarn add @doctordatadata/theme
 
 ```js
 import { ThemeProvider } from 'theme-ui'
-import theme from '@doctordatadata/theme'
+import theme from '@bio-x/theme'
 
 export default ({ children }) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
@@ -26,8 +26,8 @@ The retro theme features a Mac OS9/Classic Macintosh aesthetic with 3D beveled b
 
 ```js
 import { ThemeProvider } from 'theme-ui'
-import { retroTheme } from '@doctordatadata/theme'
-// or: import retroTheme from '@doctordatadata/theme/retro'
+import { retroTheme } from '@bio-x/theme'
+// or: import retroTheme from '@bio-x/theme/retro'
 
 export default ({ children }) => (
   <ThemeProvider theme={retroTheme}>{children}</ThemeProvider>
@@ -49,7 +49,7 @@ This package also bundles 3 CSS files that include webfonts:
 To use, just import straight from the package:
 
 ```js
-import '@doctordatadata/theme/fonts/reg-bold.css'
+import '@bio-x/theme/fonts/reg-bold.css'
 ```
 
 (In a Next.js project, [place](https://nextjs.org/docs/basic-features/built-in-css-support) in the `pages/_app.js` file.)

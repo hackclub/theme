@@ -1,7 +1,7 @@
 {
   "name": "@bio-x/theme",
   "description": "BioX theme for Theme UI websites",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Dr Data",
   "source": "src/index.ts",
   "main": "dist/index.js",
