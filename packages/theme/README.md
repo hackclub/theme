@@ -9,6 +9,8 @@ yarn add @doctordatadata/theme
 
 ## Usage
 
+### Default Theme
+
 ```js
 import { ThemeProvider } from 'theme-ui'
 import theme from '@doctordatadata/theme'
@@ -17,6 +19,28 @@ export default ({ children }) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
 )
 ```
+
+### Retro Theme (Mac OS9 Inspired)
+
+The retro theme features a Mac OS9/Classic Macintosh aesthetic with 3D beveled borders, hard pixel shadows, and gradient backgrounds.
+
+```js
+import { ThemeProvider } from 'theme-ui'
+import { retroTheme } from '@doctordatadata/theme'
+// or: import retroTheme from '@doctordatadata/theme/retro'
+
+export default ({ children }) => (
+  <ThemeProvider theme={retroTheme}>{children}</ThemeProvider>
+)
+```
+
+**Retro Theme Features:**
+- 3D beveled borders (raised and inset effects)
+- Hard pixel shadows (no blur)
+- Mac OS9 Platinum color scheme (light mode) and dark navy (dark mode)
+- Sharp border radii (2-8px)
+- Gradient backgrounds on buttons and cards
+- Both `retro` and `retroDark` color modes
 
 ### Fonts
 

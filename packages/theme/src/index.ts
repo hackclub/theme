@@ -35,7 +35,7 @@ const cssQueries = {
     '@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none)'
 }
 
-const theme: Theme = {
+const theme = {
   breakpoints: [32, 48, 64, 96, 128].map(w => `${w}em`),
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [12, 16, 20, 24, 32, 48, 64, 96, 128, 160, 192],
@@ -193,7 +193,9 @@ const theme: Theme = {
       borderRadius: 'circle',
       px: 3,
       py: 1,
-      fontSize: 1
+      fontSize: 1,
+      bg: 'muted',
+      color: 'background'
     },
     outline: {
       variant: 'badges.pill',
@@ -201,6 +203,26 @@ const theme: Theme = {
       border: '1px solid',
       borderColor: 'currentColor',
       fontWeight: 'body'
+    },
+    success: {
+      variant: 'badges.pill',
+      bg: 'green',
+      color: 'white'
+    },
+    danger: {
+      variant: 'badges.pill',
+      bg: 'red',
+      color: 'white'
+    },
+    warning: {
+      variant: 'badges.pill',
+      bg: 'yellow',
+      color: 'black'
+    },
+    info: {
+      variant: 'badges.pill',
+      bg: 'blue',
+      color: 'white'
     }
   },
   buttons: {
@@ -377,6 +399,36 @@ const theme: Theme = {
       maxWidth: ['narrow', null, 'narrowPlus']
     }
   },
+  nav: {
+    sticky: {
+      position: 'sticky',
+      top: 0,
+      zIndex: 1000,
+      bg: 'rgba(255, 255, 255, 0.95)',
+      backdropFilter: 'blur(10px)',
+      WebkitBackdropFilter: 'blur(10px)',
+      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+    }
+  },
+  hero: {
+    gradient: {
+      py: [5, 6],
+      textAlign: 'center',
+      position: 'relative',
+      overflow: 'hidden',
+      color: 'white'
+    }
+  },
+  footer: {
+    default: {
+      bg: 'sheet',
+      borderTop: '1px solid',
+      borderColor: 'border',
+      py: 5,
+      mt: 6,
+      position: 'relative'
+    }
+  },
   styles: {
     root: {
       fontFamily: 'body',
@@ -513,4 +565,4 @@ const theme: Theme = {
   }
 }
 
-export default theme
+export default theme as Theme

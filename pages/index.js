@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   BaseStyles,
+  useThemeUI
+} from 'theme-ui'
+import {
+  Alert,
   Badge,
   Box,
   Button,
@@ -14,61 +18,106 @@ import {
   Label,
   Link,
   NavLink,
+  Progress,
   Radio,
   Select,
   Slider,
   Text,
   Textarea
-} from 'theme-ui'
+} from '@theme-ui/components'
 import Head from 'next/head'
 import Meta from '@doctordatadata/meta'
-import theme from '@doctordatadata/theme'
 import ColorSwitcher from '../components/color-switcher'
 import { TypeScale, ColorPalette } from '@theme-ui/style-guide'
+import { useThemeStyle } from '../components/theme-context'
+import NavHeader from '../components/nav-header'
+import HeroSection from '../components/hero-section'
+import FooterSection from '../components/footer-section'
+import {
+  useKonamiCode,
+  triggerMatrixRain,
+  showAchievement,
+  triggerConfetti,
+  triggerColorExplosion,
+  useRapidActionDetector
+} from '../components/easter-eggs'
 
-const DocsPage = () => (
-  <>
-    <Head>
-      <title>BioX Theme</title>
-      <Meta
-        name="Theme"
-        description="BioX theme + React components for Theme UI"
-      />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" />
-    </Head>
-    <Box as="header" sx={{ bg: 'sheet', color: 'text' }}>
-      <Container sx={{ pt: 5, pb: [3, 4], textAlign: 'center' }}>
-        <ColorSwitcher />
-        <Heading as="h1" variant="title" color="red">
-          BioX Theme
-        </Heading>
-        <Text as="p" variant="subtitle" mt={3}>
-          BioX theme + React components for{' '}
-          <Link href="https://theme-ui.com">Theme UI</Link>.
-        </Text>
-        <Grid
-          gap={4}
-          columns="auto auto auto"
-          sx={{
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: 2,
-            mt: 3,
-            mb: 4,
-            a: { color: 'muted', transition: 'color .125s ease-in-out' }
-          }}
-        >
-          <NavLink href="https://github.com/dr-data/biox-theme">GitHub</NavLink>
-          <NavLink href="https://npmjs.com/package/@doctordatadata/theme">
-            NPM
-          </NavLink>
-          <NavLink href="https://github.com/dr-data/biox-theme">
-            Docs
-          </NavLink>
-        </Grid>
-      </Container>
-    </Box>
+const DocsPage = () => {
+  const { theme } = useThemeUI()
+  const { themeStyle } = useThemeStyle()
+
+  // State for easter eggs
+  const [progressValue, setProgressValue] = useState(0)
+  const [switchState, setSwitchState] = useState(false)
+  const [sliderValue, setSliderValue] = useState(50)
+  const [dismissedAlerts, setDismissedAlerts] = useState([])
+
+  // Konami code easter egg
+  useKonamiCode(() => {
+    triggerMatrixRain()
+    showAchievement('🎮 Konami Code Unlocked! Welcome to the Matrix...')
+  })
+
+  // Rapid toggle detection
+  const { recordAction } = useRapidActionDetector(10, 3000, () => {
+    showAchievement('🔄 Indecisive! You toggled 10 times in 3 seconds!')
+  })
+
+  // Handle progress click
+  const handleProgressClick = () => {
+    setProgressValue(0)
+    let current = 0
+    const interval = setInterval(() => {
+      current += 2
+      setProgressValue(current)
+      if (current >= 100) {
+        clearInterval(interval)
+        showAchievement('📊 Progress Complete! Well done!')
+      }
+    }, 20)
+  }
+
+  // Handle slider change
+  const handleSliderChange = (e) => {
+    const value = parseInt(e.target.value)
+    setSliderValue(value)
+    if (value === 100) {
+      triggerColorExplosion(e.target)
+      triggerConfetti()
+      showAchievement('🎯 Max Power! You reached 100%!')
+    }
+  }
+
+  // Handle switch toggle
+  const handleSwitchToggle = () => {
+    setSwitchState(!switchState)
+    recordAction()
+  }
+
+  // Handle alert dismiss
+  const handleAlertDismiss = (id) => {
+    const newDismissed = [...dismissedAlerts, id]
+    setDismissedAlerts(newDismissed)
+    if (newDismissed.length === 4) {
+      showAchievement('⚡ Speed Runner! All alerts dismissed!')
+    }
+  }
+
+  const themeName = themeStyle === 'retro' ? 'Retro (Mac OS9)' : 'Default'
+
+  return (
+    <>
+      <Head>
+        <title>BioX Theme - {themeName}</title>
+        <Meta
+          name="Theme"
+          description="BioX theme + React components for Theme UI"
+        />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" />
+      </Head>
+      <NavHeader />
+      <HeroSection />
     <Box as="section" sx={{ bg: 'background', py: 4 }}>
       <Container>
         <Heading variant="headline">Containers</Heading>
@@ -192,7 +241,7 @@ const DocsPage = () => (
             </Text>
           </Card>
         </Grid>
-        <Heading variant="headline">Buttons</Heading>
+        <Heading id="components-section" variant="headline">Buttons</Heading>
         <Box sx={{ mb: 4 }}>
           <Heading as="h3" sx={{ fontSize: 2, mb: 2 }}>English</Heading>
           <Box sx={{ mb: 3 }}>
@@ -314,6 +363,125 @@ const DocsPage = () => (
             </Card>
           </Grid>
         </Box>
+
+        {/* Alert Section with Easter Egg */}
+        <Heading variant="headline">Alerts</Heading>
+        <Box sx={{ mb: 4 }}>
+          <Text sx={{ fontSize: 1, color: 'muted', mb: 3, fontStyle: 'italic' }}>
+            💡 Tip: Dismiss all alerts quickly for a surprise!
+          </Text>
+          <Box sx={{ mb: 3 }}>
+            {!dismissedAlerts.includes('success') && (
+              <Alert variant="primary" sx={{ mb: 3, bg: 'green', color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Text sx={{ color: 'white' }}>✅ Success! Your changes have been saved.</Text>
+                <Button onClick={() => handleAlertDismiss('success')} sx={{ ml: 3, fontSize: 0, px: 2, py: 1, color: 'white' }}>
+                  Dismiss
+                </Button>
+              </Alert>
+            )}
+            {!dismissedAlerts.includes('warning') && (
+              <Alert variant="primary" sx={{ mb: 3, bg: 'yellow', color: 'black', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Text sx={{ color: 'black' }}>⚠️ Warning: Please review your input carefully.</Text>
+                <Button onClick={() => handleAlertDismiss('warning')} sx={{ ml: 3, fontSize: 0, px: 2, py: 1, color: 'black' }}>
+                  Dismiss
+                </Button>
+              </Alert>
+            )}
+            {!dismissedAlerts.includes('error') && (
+              <Alert variant="primary" sx={{ mb: 3, bg: 'red', color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Text sx={{ color: 'white' }}>❌ Error: Something went wrong. Please try again.</Text>
+                <Button onClick={() => handleAlertDismiss('error')} sx={{ ml: 3, fontSize: 0, px: 2, py: 1, color: 'white' }}>
+                  Dismiss
+                </Button>
+              </Alert>
+            )}
+            {!dismissedAlerts.includes('info') && (
+              <Alert variant="primary" sx={{ mb: 3, bg: 'blue', color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Text sx={{ color: 'white' }}>ℹ️ Info: Check out the new features in Settings.</Text>
+                <Button onClick={() => handleAlertDismiss('info')} sx={{ ml: 3, fontSize: 0, px: 2, py: 1, color: 'white' }}>
+                  Dismiss
+                </Button>
+              </Alert>
+            )}
+            {dismissedAlerts.length === 4 && (
+              <Alert variant="primary" sx={{ mb: 3, bg: 'purple', color: 'white', textAlign: 'center' }}>
+                <Text sx={{ color: 'white' }}>🎉 All alerts dismissed! You're a speed runner!</Text>
+              </Alert>
+            )}
+          </Box>
+        </Box>
+
+        {/* Progress Section with Easter Egg */}
+        <Heading variant="headline">Progress Bars</Heading>
+        <Box sx={{ mb: 4 }}>
+          <Text sx={{ fontSize: 1, color: 'muted', mb: 3, fontStyle: 'italic' }}>
+            💡 Tip: Click the progress bar to watch it fill up!
+          </Text>
+          <Box sx={{ mb: 3 }}>
+            <Text sx={{ mb: 2, fontSize: 1, fontWeight: 'bold' }}>Static Examples</Text>
+            <Progress value={0.2} sx={{ mb: 2 }} />
+            <Progress value={0.5} sx={{ mb: 2, color: 'blue' }} />
+            <Progress value={0.8} sx={{ mb: 2, color: 'green' }} />
+            <Progress value={1} sx={{ mb: 3, color: 'purple' }} />
+
+            <Text sx={{ mb: 2, fontSize: 1, fontWeight: 'bold' }}>Interactive Progress (Click Me!)</Text>
+            <Box
+              onClick={handleProgressClick}
+              sx={{
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease',
+                '&:hover': { transform: 'scale(1.02)' }
+              }}
+            >
+              <Progress value={progressValue / 100} sx={{ height: '24px' }} />
+            </Box>
+            <Text sx={{ mt: 2, fontSize: 0, color: 'muted' }}>
+              Click to animate: {progressValue}%
+            </Text>
+          </Box>
+        </Box>
+
+        {/* Switch & Toggle Section with Easter Egg */}
+        <Heading variant="headline">Switches & Toggles</Heading>
+        <Box sx={{ mb: 4 }}>
+          <Text sx={{ fontSize: 1, color: 'muted', mb: 3, fontStyle: 'italic' }}>
+            💡 Tip: Toggle rapidly 10 times in 3 seconds for a surprise!
+          </Text>
+          <Grid gap={3} columns={[null, 2]} variant="cards.sunken" sx={{ mb: 3 }}>
+            <Label variant="labelHoriz">
+              <Checkbox checked={switchState} onChange={handleSwitchToggle} />
+              {switchState ? '✅ Enabled' : '❌ Disabled'}
+            </Label>
+
+            <Label variant="labelHoriz">
+              <Checkbox />
+              Checkbox Option 1
+            </Label>
+
+            <Label variant="labelHoriz">
+              <Radio name="radio-group" />
+              Radio Option A
+            </Label>
+
+            <Label variant="labelHoriz">
+              <Radio name="radio-group" />
+              Radio Option B
+            </Label>
+          </Grid>
+
+          <Box>
+            <Text sx={{ mb: 2, fontSize: 1, fontWeight: 'bold' }}>Interactive Slider (Drag to 100%!)</Text>
+            <Slider
+              value={sliderValue}
+              onChange={handleSliderChange}
+              sx={{ mb: 2 }}
+            />
+            <Text sx={{ fontSize: 0, color: 'muted' }}>
+              Current value: {sliderValue}%
+            </Text>
+          </Box>
+        </Box>
+
         <Heading variant="headline">Forms</Heading>
         <Box sx={{ mb: 4 }}>
           <Heading as="h3" sx={{ fontSize: 2, mb: 2 }}>English</Heading>
@@ -490,7 +658,7 @@ const DocsPage = () => (
             ))}
           </Box>
         </Box>
-        <Heading variant="headline">Colors</Heading>
+        <Heading id="colors-section" variant="headline">Colors</Heading>
         <ColorPalette
           omit={['modes', 'placeholder', 'twitter', 'instagram', 'facebook']}
         />
@@ -500,7 +668,9 @@ const DocsPage = () => (
         </Text>
       </Container>
     </Box>
-  </>
-)
+    <FooterSection />
+    </>
+  )
+}
 
 export default DocsPage
