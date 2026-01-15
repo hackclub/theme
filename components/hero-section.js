@@ -59,6 +59,7 @@ const HeroSection = () => {
           sx={{
             gap: 3,
             justifyContent: 'center',
+            alignItems: 'center',
             flexWrap: 'wrap',
             mt: 4
           }}
