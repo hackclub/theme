@@ -60,18 +60,79 @@ const NavHeader = () => {
             }}
           >
             <NavLink
-              href="#components-section"
+              href="#buttons-section"
               sx={{
                 color: 'text',
                 textDecoration: 'none',
                 fontWeight: 'body',
+                fontSize: 1,
                 transition: 'color 0.2s ease',
                 '&:hover': {
                   color: 'primary'
                 }
               }}
             >
-              Components
+              Buttons
+            </NavLink>
+            <NavLink
+              href="#cards-section"
+              sx={{
+                color: 'text',
+                textDecoration: 'none',
+                fontWeight: 'body',
+                fontSize: 1,
+                transition: 'color 0.2s ease',
+                '&:hover': {
+                  color: 'primary'
+                }
+              }}
+            >
+              Cards
+            </NavLink>
+            <NavLink
+              href="#forms-section"
+              sx={{
+                color: 'text',
+                textDecoration: 'none',
+                fontWeight: 'body',
+                fontSize: 1,
+                transition: 'color 0.2s ease',
+                '&:hover': {
+                  color: 'primary'
+                }
+              }}
+            >
+              Forms
+            </NavLink>
+            <NavLink
+              href="#alerts-section"
+              sx={{
+                color: 'text',
+                textDecoration: 'none',
+                fontWeight: 'body',
+                fontSize: 1,
+                transition: 'color 0.2s ease',
+                '&:hover': {
+                  color: 'primary'
+                }
+              }}
+            >
+              Alerts
+            </NavLink>
+            <NavLink
+              href="#badges-section"
+              sx={{
+                color: 'text',
+                textDecoration: 'none',
+                fontWeight: 'body',
+                fontSize: 1,
+                transition: 'color 0.2s ease',
+                '&:hover': {
+                  color: 'primary'
+                }
+              }}
+            >
+              Badges
             </NavLink>
             <NavLink
               href="#colors-section"
@@ -79,6 +140,7 @@ const NavHeader = () => {
                 color: 'text',
                 textDecoration: 'none',
                 fontWeight: 'body',
+                fontSize: 1,
                 transition: 'color 0.2s ease',
                 '&:hover': {
                   color: 'primary'
@@ -94,7 +156,8 @@ const NavHeader = () => {
               sx={{
                 color: 'text',
                 textDecoration: 'none',
-                fontWeight: 'body',
+                fontWeight: 'bold',
+                fontSize: 1,
                 transition: 'color 0.2s ease',
                 '&:hover': {
                   color: 'primary'

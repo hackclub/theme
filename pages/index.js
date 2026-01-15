@@ -241,7 +241,7 @@ const DocsPage = () => {
             </Text>
           </Card>
         </Grid>
-        <Heading id="components-section" variant="headline">Buttons</Heading>
+        <Heading id="buttons-section" variant="headline">Buttons</Heading>
         <Box sx={{ mb: 4 }}>
           <Heading as="h3" sx={{ fontSize: 2, mb: 2 }}>English</Heading>
           <Box sx={{ mb: 3 }}>
@@ -276,7 +276,7 @@ const DocsPage = () => {
             ))}
           </Box>
         </Box>
-        <Heading variant="headline">Cards</Heading>
+        <Heading id="cards-section" variant="headline">Cards</Heading>
         <Box sx={{ mb: 4 }}>
           <Heading as="h3" sx={{ fontSize: 2, mb: 2 }}>English</Heading>
           <Grid
@@ -365,7 +365,7 @@ const DocsPage = () => {
         </Box>
 
         {/* Alert Section with Easter Egg */}
-        <Heading variant="headline">Alerts</Heading>
+        <Heading id="alerts-section" variant="headline">Alerts</Heading>
         <Box sx={{ mb: 4 }}>
           <Text sx={{ fontSize: 1, color: 'muted', mb: 3, fontStyle: 'italic' }}>
             💡 Tip: Dismiss all alerts quickly for a surprise!
@@ -482,7 +482,7 @@ const DocsPage = () => {
           </Box>
         </Box>
 
-        <Heading variant="headline">Forms</Heading>
+        <Heading id="forms-section" variant="headline">Forms</Heading>
         <Box sx={{ mb: 4 }}>
           <Heading as="h3" sx={{ fontSize: 2, mb: 2 }}>English</Heading>
           <Grid gap={3} columns={[null, 2]} as="form" variant="cards.sunken">
@@ -606,7 +606,7 @@ const DocsPage = () => {
             />
           </Grid>
         </Box>
-        <Heading variant="headline">Badges</Heading>
+        <Heading id="badges-section" variant="headline">Badges</Heading>
         <Box sx={{ mb: 4 }}>
           <Heading as="h3" sx={{ fontSize: 2, mb: 2 }}>English</Heading>
           <Box sx={{ mb: 3 }}>
