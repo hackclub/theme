@@ -17,13 +17,10 @@ const NavHeader = () => {
         position: 'sticky',
         top: 0,
         zIndex: 1000,
-        bg: 'rgba(255, 255, 255, 0.95)',
+        bg: 'background',
         backdropFilter: 'blur(10px)',
         WebkitBackdropFilter: 'blur(10px)',
-        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
-        '@media (prefers-color-scheme: dark)': {
-          bg: 'rgba(23, 23, 29, 0.95)'
-        }
+        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
       }}
     >
       <Container>
@@ -148,6 +145,23 @@ const NavHeader = () => {
               }}
             >
               Colors
+            </NavLink>
+            <NavLink
+              href="https://docs.biox-theme.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: 'text',
+                textDecoration: 'none',
+                fontWeight: 'body',
+                fontSize: 1,
+                transition: 'color 0.2s ease',
+                '&:hover': {
+                  color: 'primary'
+                }
+              }}
+            >
+              Documentation
             </NavLink>
             <NavLink
               href="https://github.com/dr-data/biox-theme"

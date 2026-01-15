@@ -10,7 +10,7 @@ BioX Theme is a Theme UI-based design system for React applications, organized a
 - `@doctordatadata/theme` - Theme UI base theme with colors, typography, components
 - `@doctordatadata/meta` - React component for generating social/meta tags
 
-**Documentation Site:** Next.js app at project root, deployed on Vercel
+**Documentation Site:** Separate repository [biox-theme-doc](https://github.com/dr-data/biox-theme-doc), deployed on Vercel
 
 ## Development Commands
 
@@ -24,13 +24,11 @@ yarn test                 # Run Jest tests (packages/*/test/*.js)
 yarn format               # Format code with Prettier
 yarn checkFormat          # Check Prettier formatting
 
-# Documentation Site
-yarn dev                  # Start Next.js dev server
-yarn build                # Build Next.js site
-yarn start                # Start production Next.js server
-
 # Publishing (requires npm auth)
 ./publish.sh              # Build, test, and publish both packages to npm
+
+# Documentation Site (separate repository)
+# See https://github.com/dr-data/biox-theme-doc for documentation development
 ```
 
 ## Architecture
@@ -52,12 +50,8 @@ packages/
     ├── src/index.js   # Meta component export
     └── test/          # Jest snapshot tests
 
-pages/                  # Next.js docs site
-├── _app.js            # ThemeProvider setup
-├── _document.js       # Color mode initialization
-└── index.js           # Documentation page
-
-docs/                   # Mirror of pages/ for Vercel deployment
+pages/                  # (Deprecated - moved to separate repo)
+docs/                   # (Deprecated - moved to biox-theme-doc repo)
 ```
 
 ### Theme Package (`@doctordatadata/theme`)
@@ -141,7 +135,21 @@ Tests are in `packages/*/test/*.js` using Jest with snapshot testing. The Meta c
 
 ## Deployment
 
-The documentation site is deployed to Vercel. The `/docs` directory contains a mirror of the root Next.js app for Vercel compatibility.
+**Theme Packages:** Published to npm as `@doctordatadata/theme` and `@doctordatadata/meta`
+
+**Documentation Site:** Hosted separately in private repository [biox-theme-doc](https://github.com/dr-data/biox-theme-doc)
+- Deployed to Vercel: https://docs.biox-theme.com
+- Uses local `file:` protocol to import packages during build
+- See docs repo README for setup instructions
+
+## Documentation Development
+
+The `/docs` directory in this repository is **deprecated**. Documentation has been migrated to a separate repository for independent deployment while maintaining monorepo coupling during development.
+
+**To update documentation:**
+1. Make changes in `biox-theme-doc` repository
+2. Push to trigger Vercel deployment
+3. Documentation automatically rebuilds with latest theme packages
 
 ## Notes
 
