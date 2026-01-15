@@ -5,10 +5,9 @@
 
 BioX's frontend design system/tools, made for [Theme UI](https://theme-ui.com).
 
-## Packages
+## Package
 
-1. `@bio-x/theme` – Theme UI base theme
-2. `@doctordatadata/meta` – React component for generating social tags for `<head>`
+`@bio-x/theme` – Theme UI base theme with default and retro themes
 
 ## Documentation Site
 
@@ -52,7 +51,7 @@ When ready to decouple documentation from monorepo:
 ## Quick Start
 
 ```bash
-yarn add @bio-x/theme @doctordatadata/meta
+yarn add @bio-x/theme
 ```
 
 ## Development

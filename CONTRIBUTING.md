@@ -19,13 +19,12 @@ After yarn has linked packages and installed dependences in the repo, you can ru
 yarn workspace <name-of-package> <command>
 ```
 
-Where name of package is something like `@bio-x/theme` or `@doctordatadata/meta` (one of the packages
-listed by yarn when you run the `yarn workspaces info` command)
+Where name of package is `@bio-x/theme` (listed by yarn when you run the `yarn workspaces info` command)
 
 Example:
 
 ```bash
-yarn workspace @doctordatadata/meta prepare
+yarn workspace @bio-x/theme prepare
 ```
 
 ## Tests

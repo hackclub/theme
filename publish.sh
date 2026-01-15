@@ -35,18 +35,10 @@ cd packages/theme
 npm publish --access public
 cd ../..
 
-# Publish meta package
 echo ""
-echo "📤 Publishing @doctordatadata/meta..."
-cd packages/meta
-npm publish --access public
-cd ../..
-
+echo "✅ Package published successfully!"
 echo ""
-echo "✅ All packages published successfully!"
-echo ""
-echo "Packages published:"
+echo "Package published:"
 echo "  - @bio-x/theme"
-echo "  - @doctordatadata/meta"
 echo ""
-echo "Install with: npm i @bio-x/theme @doctordatadata/meta"
+echo "Install with: npm i @bio-x/theme"

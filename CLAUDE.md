@@ -6,9 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 BioX Theme is a Theme UI-based design system for React applications, organized as a Yarn workspaces monorepo with Lerna.
 
-**Packages:**
-- `@bio-x/theme` - Theme UI base theme with colors, typography, components
-- `@doctordatadata/meta` - React component for generating social/meta tags
+**Package:**
+- `@bio-x/theme` - Theme UI base theme with colors, typography, components (includes default and retro themes)
 
 **Documentation Site:** Separate repository [biox-theme-doc](https://github.com/dr-data/biox-theme-doc), deployed on Vercel
 
@@ -45,10 +44,6 @@ packages/
 │       ├── reg-bold.css
 │       ├── reg-ital-bold.css
 │       └── noto-sans-chinese.css
-│
-└── meta/               # @doctordatadata/meta
-    ├── src/index.js   # Meta component export
-    └── test/          # Jest snapshot tests
 
 pages/                  # (Deprecated - moved to separate repo)
 docs/                   # (Deprecated - moved to biox-theme-doc repo)
@@ -96,21 +91,6 @@ import retroTheme from '@bio-x/theme/retro'
 import '@bio-x/theme/fonts/reg-bold.css'
 ```
 
-### Meta Package (`@doctordatadata/meta`)
-
-React component for Open Graph/social meta tags:
-```jsx
-<Meta
-  as={Head}                              // Wrapper component (optional)
-  name="BioX"                            // Site name
-  title="Dashboard"                      // Page title
-  description="Your project description" // Description
-  image="https://example.com/card.png"  // Social image
-  color="#ec3750"                        // Theme color
-  manifest="/site.webmanifest"          // Manifest link
-/>
-```
-
 ## Build System
 
 - **Monorepo:** Lerna 3.22.1 with Yarn workspaces
@@ -131,11 +111,11 @@ React component for Open Graph/social meta tags:
 
 ## Testing
 
-Tests are in `packages/*/test/*.js` using Jest with snapshot testing. The Meta component has 5 snapshot tests covering various prop combinations.
+Tests are in `packages/*/test/*.js` using Jest with snapshot testing.
 
 ## Deployment
 
-**Theme Packages:** Published to npm as `@bio-x/theme` and `@doctordatadata/meta`
+**Theme Package:** Published to npm as `@bio-x/theme`
 
 **Documentation Site:** Hosted separately in private repository [biox-theme-doc](https://github.com/dr-data/biox-theme-doc)
 - Deployed to Vercel: https://docs.biox-theme.com
