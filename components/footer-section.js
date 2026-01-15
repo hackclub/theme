@@ -77,7 +77,7 @@ const FooterSection = () => {
             GitHub
           </Link>
           <Link
-            href="https://www.npmjs.com/package/@doctordatadata/theme"
+            href="https://www.npmjs.com/package/@bio-x/theme"
             target="_blank"
             rel="noopener noreferrer"
             sx={{

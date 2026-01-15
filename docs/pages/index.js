@@ -21,7 +21,7 @@ import {
   Textarea
 } from 'theme-ui'
 import Head from 'next/head'
-import theme from '@doctordatadata/theme'
+import theme from '@bio-x/theme'
 import ColorSwitcher from '../components/color-switcher'
 import { TypeScale, ColorPalette } from '@theme-ui/style-guide'
 
@@ -58,7 +58,7 @@ const DocsPage = () => (
           }}
         >
           <NavLink href="https://github.com/dr-data/biox-theme">GitHub</NavLink>
-          <NavLink href="https://npmjs.com/package/@doctordatadata/theme">
+          <NavLink href="https://npmjs.com/package/@bio-x/theme">
             NPM
           </NavLink>
           <NavLink href="https://github.com/dr-data/biox-theme">

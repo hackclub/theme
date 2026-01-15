@@ -1,8 +1,8 @@
 import * as React from 'react'
 import NextApp from 'next/app'
 
-import '@doctordatadata/theme/fonts/reg-ital-bold.css'
-import theme from '@doctordatadata/theme'
+import '@bio-x/theme/fonts/reg-ital-bold.css'
+import theme from '@bio-x/theme'
 import { ThemeProvider } from 'theme-ui'
 
 export default class App extends NextApp {

@@ -30,7 +30,7 @@ yarn test
 
 # Publish theme package
 echo ""
-echo "📤 Publishing @doctordatadata/theme..."
+echo "📤 Publishing @bio-x/theme..."
 cd packages/theme
 npm publish --access public
 cd ../..
@@ -46,7 +46,7 @@ echo ""
 echo "✅ All packages published successfully!"
 echo ""
 echo "Packages published:"
-echo "  - @doctordatadata/theme"
+echo "  - @bio-x/theme"
 echo "  - @doctordatadata/meta"
 echo ""
-echo "Install with: npm i @doctordatadata/theme @doctordatadata/meta"
+echo "Install with: npm i @bio-x/theme @doctordatadata/meta"

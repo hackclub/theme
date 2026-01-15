@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 BioX Theme is a Theme UI-based design system for React applications, organized as a Yarn workspaces monorepo with Lerna.
 
 **Packages:**
-- `@doctordatadata/theme` - Theme UI base theme with colors, typography, components
+- `@bio-x/theme` - Theme UI base theme with colors, typography, components
 - `@doctordatadata/meta` - React component for generating social/meta tags
 
 **Documentation Site:** Separate repository [biox-theme-doc](https://github.com/dr-data/biox-theme-doc), deployed on Vercel
@@ -36,7 +36,7 @@ yarn checkFormat          # Check Prettier formatting
 ### Monorepo Structure
 ```
 packages/
-├── theme/              # @doctordatadata/theme
+├── theme/              # @bio-x/theme
 │   ├── src/
 │   │   ├── index.ts   # Main theme export (TypeScript)
 │   │   └── prism.ts   # Prism syntax highlighting theme
@@ -54,7 +54,7 @@ pages/                  # (Deprecated - moved to separate repo)
 docs/                   # (Deprecated - moved to biox-theme-doc repo)
 ```
 
-### Theme Package (`@doctordatadata/theme`)
+### Theme Package (`@bio-x/theme`)
 
 **TypeScript Theme:** Built with Microbundle, exports as CommonJS, ESM, and UMD.
 
@@ -83,17 +83,17 @@ Mac OS9/Classic Macintosh inspired theme with:
 **Usage:**
 ```js
 // Default theme
-import theme from '@doctordatadata/theme'
+import theme from '@bio-x/theme'
 
 // Retro theme (two ways)
-import { retroTheme } from '@doctordatadata/theme'
+import { retroTheme } from '@bio-x/theme'
 // or
-import retroTheme from '@doctordatadata/theme/retro'
+import retroTheme from '@bio-x/theme/retro'
 ```
 
 **Font Loading:**
 ```js
-import '@doctordatadata/theme/fonts/reg-bold.css'
+import '@bio-x/theme/fonts/reg-bold.css'
 ```
 
 ### Meta Package (`@doctordatadata/meta`)
@@ -135,7 +135,7 @@ Tests are in `packages/*/test/*.js` using Jest with snapshot testing. The Meta c
 
 ## Deployment
 
-**Theme Packages:** Published to npm as `@doctordatadata/theme` and `@doctordatadata/meta`
+**Theme Packages:** Published to npm as `@bio-x/theme` and `@doctordatadata/meta`
 
 **Documentation Site:** Hosted separately in private repository [biox-theme-doc](https://github.com/dr-data/biox-theme-doc)
 - Deployed to Vercel: https://docs.biox-theme.com

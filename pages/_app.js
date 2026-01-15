@@ -1,9 +1,9 @@
 import * as React from 'react'
 import NextApp from 'next/app'
 
-import '@doctordatadata/theme/fonts/reg-ital-bold.css'
-import theme from '@doctordatadata/theme'
-import retroTheme from '@doctordatadata/theme/retro'
+import '@bio-x/theme/fonts/reg-ital-bold.css'
+import theme from '@bio-x/theme'
+import retroTheme from '@bio-x/theme/retro'
 import { ThemeProvider } from 'theme-ui'
 import { ThemeStyleProvider, useThemeStyle } from '../components/theme-context'
 
