@@ -1,6 +1,5 @@
 import { IconButton, useColorMode } from 'theme-ui'
 
-
 const ColorSwitcher = () => {
   const [mode, setMode] = useColorMode()
   const nextMode = mode === 'dark' ? 'light' : 'dark'
