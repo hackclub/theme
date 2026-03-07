@@ -1,11 +1,14 @@
 import { IconButton, useColorMode } from 'theme-ui'
 
-const ColorSwitcher = props => {
+
+const ColorSwitcher = () => {
   const [mode, setMode] = useColorMode()
+  const nextMode = mode === 'dark' ? 'light' : 'dark'
   return (
     <IconButton
-      onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')}
-      title="Invert Colors"
+      onClick={() => setMode(nextMode)}
+      title={`Switch to ${nextMode} mode`}
+      aria-label={`Switch to ${nextMode} mode`}
       sx={{
         position: 'absolute',
         top: 3,
@@ -19,17 +22,31 @@ const ColorSwitcher = props => {
         }
       }}
     >
-      <svg viewBox="0 0 32 32" width="24" height="24" fill="currentcolor">
-        <circle
-          cx="16"
-          cy="16"
-          r="14"
-          fill="none"
-          stroke="currentcolor"
-          strokeWidth="4"
-        />
-        <path d="M 16 0 A 16 16 0 0 0 16 32 z" />
-      </svg>
+      {mode === 'dark' ? (
+        <svg viewBox="0 0 32 32" width="24" height="24" fill="currentcolor">
+          <circle
+            cx="16"
+            cy="16"
+            r="14"
+            fill="none"
+            stroke="currentcolor"
+            strokeWidth="4"
+          />
+          <path d="M 16 0 A 16 16 0 0 0 16 32 z" />
+        </svg>
+      ) : (
+        <svg viewBox="0 0 32 32" width="24" height="24" fill="currentcolor">
+          <circle
+            cx="16"
+            cy="16"
+            r="14"
+            fill="none"
+            stroke="currentcolor"
+            strokeWidth="4"
+          />
+          <path d="M 16 0 A 16 16 0 0 1 16 32 z" />
+        </svg>
+      )}
     </IconButton>
   )
 }
