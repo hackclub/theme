@@ -10,8 +10,10 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prepare": "microbundle",
-    "watch": "microbundle watch --no-compress"
+    "build": "microbundle",
+    "prepare": "yarn build",
+    "watch": "microbundle watch --no-compress",
+    "clean": "rm -rf ./dist"
   },
   "publishConfig": {
     "access": "public"
@@ -23,7 +25,8 @@
     "directory": "packages/theme"
   },
   "peerDependencies": {
-    "react": "^19.0.0"
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0"
   },
   "devDependencies": {
     "react": "^19.2.4",
