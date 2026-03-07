@@ -1,5 +1,5 @@
 const path = require('path')
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.VERCEL_ENV === 'production'
 const withMDX = require('@next/mdx')({ extension: /\.mdx?$/ })
 module.exports = withMDX({
   pageExtensions: ['js', 'jsx', 'mdx'],
