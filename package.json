@@ -17,14 +17,17 @@
     "@babel/core": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
-    "@testing-library/react": "^11.1.2",
-    "babel-jest": "^26.6.3",
-    "jest": "^26.6.3",
+    "@testing-library/dom": "^10.0.0",
+    "@testing-library/react": "^16.0.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "lerna": "^3.22.1",
     "microbundle": "^0.12.4",
     "prettier": "2.6.2"
   },
   "jest": {
+    "testEnvironment": "jsdom",
     "testMatch": [
       "**/packages/**/test/*.js"
     ],

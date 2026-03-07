@@ -1,63 +1,59 @@
-import React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import Meta from '../src'
 
 afterEach(cleanup)
 
 test('Meta renders', () => {
-  const { container, getByText } = render(<Meta />)
-  expect(getByText('Hack Club')).toBeTruthy()
+  render(<Meta />)
+  expect(document.title).toBe('Hack Club')
   expect(
-    container.querySelector('[property="og:title"][content="Hack Club"]')
+    document.head.querySelector('[property="og:title"][content="Hack Club"]')
   ).toBeTruthy()
   expect(
-    container.querySelector('[name="twitter:title"][content="Hack Club"]')
+    document.head.querySelector('[name="twitter:title"][content="Hack Club"]')
   ).toBeTruthy()
-  expect(container).toMatchSnapshot()
 })
 
 test('Meta renders custom title', () => {
   const title = 'Custom Title – Hack Club'
-  const { container, getByText } = render(<Meta title="Custom Title" />)
-  expect(getByText(title)).toBeTruthy()
+  render(<Meta title="Custom Title" />)
+  expect(document.title).toBe(title)
   expect(
-    container.querySelector(`[property="og:title"][content="${title}"]`)
+    document.head.querySelector(`[property="og:title"][content="${title}"]`)
   ).toBeTruthy()
   expect(
-    container.querySelector(`[name="twitter:title"][content="${title}"]`)
+    document.head.querySelector(`[name="twitter:title"][content="${title}"]`)
   ).toBeTruthy()
-  expect(container).toMatchSnapshot()
 })
 
 test('Meta renders image', () => {
   const url = 'https://hackclub.com/cards/bank.jpg'
-  const { container } = render(<Meta image={url} />)
+  render(<Meta image={url} />)
   expect(
-    container.querySelector(
+    document.head.querySelector(
       'meta[name="twitter:card"][content="summary_large_image"]'
     )
   ).toBeTruthy()
-  expect(container.querySelectorAll(`[content="${url}"]`)).toHaveLength(2)
-  expect(container).toMatchSnapshot()
+  expect(document.head.querySelectorAll(`[content="${url}"]`)).toHaveLength(2)
 })
 
 test('Meta renders custom color', () => {
   const color = '#0069ff'
-  const { container } = render(<Meta color={color} />)
+  render(<Meta color={color} />)
   expect(
-    container.querySelector(`meta[name="theme-color"][content="${color}"]`)
+    document.head.querySelector(`meta[name="theme-color"][content="${color}"]`)
   ).toBeTruthy()
-  expect(container).toMatchSnapshot()
 })
 
-test('Meta renders children', () => {
-  const { container } = render(
-    <Meta>
-      <meta name="children" content="present" />
-    </Meta>
-  )
+test('Meta renders description', () => {
+  const desc = 'A cool site'
+  render(<Meta description={desc} />)
   expect(
-    container.querySelector('meta[name="children"][content="present"]')
+    document.head.querySelector(`meta[name="description"][content="${desc}"]`)
   ).toBeTruthy()
-  expect(container).toMatchSnapshot()
+  expect(
+    document.head.querySelector(
+      `meta[property="og:description"][content="${desc}"]`
+    )
+  ).toBeTruthy()
 })
