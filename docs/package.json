@@ -10,15 +10,17 @@
     "start": "yarn run dev"
   },
   "dependencies": {
-    "@hackclub/meta": "^1.0.0",
-    "@hackclub/theme": "^0.3.1",
-    "@mdx-js/loader": "^1.6.21",
-    "@next/mdx": "^10.0.1",
-    "@theme-ui/style-guide": "^0.3.3",
-    "lodash": "^4.17.21",
-    "next": "^12.1.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "theme-ui": "^0.3.3"
+    "@emotion/react": "^11.14.0",
+    "@hackclub/meta": "file:../packages/meta",
+    "@hackclub/theme": "file:../packages/theme",
+    "@mdx-js/loader": "^3.1.1",
+    "@next/mdx": "^16.1.6",
+    "@theme-ui/css": "^0.17.4",
+    "@theme-ui/style-guide": "^0.17.4",
+    "lodash": "^4.17.23",
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "theme-ui": "^0.17.4"
   }
 }

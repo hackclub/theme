@@ -1,10 +1,8 @@
-import React from 'react'
-
 const makeTitle = (title, name) =>
   title === name ? title : `${title} – ${name}`
 
 const Meta = ({
-  as: ElementType = React.Fragment,
+  as: ElementType = 'div',
   name = 'Hack Club', // site name
   title = 'Hack Club', // page title
   description,
@@ -26,18 +24,18 @@ const Meta = ({
       content={makeTitle(title, name)}
     />
     {description && (
-      <React.Fragment>
+      <>
         <meta key="desc" name="description" content={description} />
         <meta key="og_desc" property="og:description" content={description} />
         <meta key="tw_desc" name="twitter:description" content={description} />
-      </React.Fragment>
+      </>
     )}
     {image && (
-      <React.Fragment>
+      <>
         <meta key="og_img" property="og:image" content={image} />
         <meta key="tw_card" name="twitter:card" content="summary_large_image" />
         <meta key="tw_img" name="twitter:image" content={image} />
-      </React.Fragment>
+      </>
     )}
     <meta key="theme_color" name="theme-color" content={color} />
     <meta key="tile_color" name="msapplication-TileColor" content={color} />

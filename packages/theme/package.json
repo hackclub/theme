@@ -1,7 +1,7 @@
 {
   "name": "@hackclub/theme",
   "description": "Hack Club’s theme for Theme UI websites",
-  "version": "0.3.3",
+  "version": "1.0.0",
   "author": "Lachlan Campbell <lachlan@hackclub.com> (https://lachlanjc.com)",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -10,8 +10,10 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prepare": "microbundle",
-    "watch": "microbundle watch --no-compress"
+    "build": "microbundle",
+    "prepare": "yarn build",
+    "watch": "microbundle watch --no-compress",
+    "clean": "rm -rf ./dist"
   },
   "publishConfig": {
     "access": "public"
@@ -22,8 +24,17 @@
     "url": "https://github.com/hackclub/theme.git",
     "directory": "packages/theme"
   },
+  "peerDependencies": {
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0"
+  },
+  "devDependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
   "gitHead": "029e83b336da014076112a68048dfa65565013ee",
   "dependencies": {
-    "theme-ui": "^0.14.5"
+    "@emotion/react": "^11.14.0",
+    "theme-ui": "^0.17.4"
   }
 }
