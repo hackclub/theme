@@ -10,7 +10,8 @@
     "checkFormat": "prettier --check ."
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "docs"
   ],
   "devDependencies": {
     "@swc/core": "^1.15.18",
