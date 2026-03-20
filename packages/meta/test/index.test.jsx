@@ -1,3 +1,4 @@
+import { test, expect, afterEach } from 'bun:test'
 import { render, cleanup } from '@testing-library/react'
 import Meta from '../src'
 

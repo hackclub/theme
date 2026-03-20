@@ -2,15 +2,31 @@
   "name": "@hackclub/meta",
   "description": "Generate meta tags for Hack Club pages",
   "version": "1.2.0",
-  "source": "src/index.js",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.esm.mjs",
+  "unpkg": "dist/index.esm.mjs",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.esm.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
   "sideEffects": false,
   "scripts": {
-    "build": "rm -rf ./dist && microbundle --jsxImportSource react --jsx jsx --globals react/jsx-runtime=jsxRuntime",
+    "build": "bun run build.ts",
     "prepare": "bun run build",
-    "watch": "microbundle watch --jsxImportSource react --jsx jsx --globals react/jsx-runtime=jsxRuntime --no-compress",
+    "watch": "bun run --watch build.ts",
     "clean": "rm -rf ./dist"
   },
   "publishConfig": {
@@ -27,9 +43,7 @@
     "react-dom": ">=19.0.0"
   },
   "devDependencies": {
-    "microbundle": "^0.15.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
-  },
-  "gitHead": "029e83b336da014076112a68048dfa65565013ee"
+  }
 }

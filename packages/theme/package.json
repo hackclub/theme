@@ -3,16 +3,33 @@
   "description": "Hack Club’s theme for Theme UI websites",
   "version": "1.0.0",
   "author": "Lachlan Campbell <lachlan@hackclub.com> (https://lachlanjc.com)",
-  "source": "src/index.ts",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "unpkg": "dist/index.umd.js",
+  "module": "dist/index.esm.mjs",
+  "unpkg": "dist/index.esm.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.esm.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "default": "./dist/index.js"
+    },
+    "./fonts/*": "./fonts/*"
+  },
+  "files": [
+    "dist/",
+    "fonts/"
+  ],
   "sideEffects": false,
   "scripts": {
-    "build": "microbundle",
+    "build": "bun run build.ts",
     "prepare": "bun run build",
-    "watch": "microbundle watch --no-compress",
+    "watch": "bun run --watch build.ts",
     "clean": "rm -rf ./dist"
   },
   "publishConfig": {
@@ -29,11 +46,9 @@
     "react-dom": ">=19.0.0"
   },
   "devDependencies": {
-    "microbundle": "^0.15.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
-  "gitHead": "029e83b336da014076112a68048dfa65565013ee",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "theme-ui": "^0.17.4"

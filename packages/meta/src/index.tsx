@@ -1,16 +1,29 @@
-const makeTitle = (title, name) =>
+import type { ReactNode, ElementType as ReactElementType } from 'react'
+
+interface MetaProps {
+  as?: ReactElementType
+  name?: string
+  title?: string
+  description?: string
+  image?: string
+  color?: string
+  manifest?: string | false
+  children?: ReactNode
+}
+
+const makeTitle = (title: string, name: string) =>
   title === name ? title : `${title} – ${name}`
 
 const Meta = ({
   as: ElementType = 'div',
-  name = 'Hack Club', // site name
-  title = 'Hack Club', // page title
+  name = 'Hack Club',
+  title = 'Hack Club',
   description,
   image,
   color = '#ec3750',
   manifest = 'https://assets.hackclub.com/favicons/site.webmanifest',
   children
-}) => (
+}: MetaProps) => (
   <ElementType>
     <meta key="og_locale" property="og:locale" content="en_US" />
     <meta key="og_type" property="og:type" content="website" />

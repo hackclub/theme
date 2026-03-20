@@ -35,18 +35,18 @@ const assertThemeShape = theme => {
 
 const main = async () => {
   const metaCjs = require('../packages/meta/dist/index.js')
-  const metaModern = await importModule('packages/meta/dist/index.modern.mjs')
+  const metaEsm = await importModule('packages/meta/dist/index.esm.js')
   const themeCjs = require('../packages/theme/dist/index.js')
-  const themeModern = await importModule('packages/theme/dist/index.modern.mjs')
+  const themeEsm = await importModule('packages/theme/dist/index.esm.js')
 
   assert.equal(typeof getDefault(metaCjs), 'function')
-  assert.equal(typeof getDefault(metaModern), 'function')
+  assert.equal(typeof getDefault(metaEsm), 'function')
 
   assertMetaRender(getDefault(metaCjs))
-  assertMetaRender(getDefault(metaModern))
+  assertMetaRender(getDefault(metaEsm))
 
   assertThemeShape(getDefault(themeCjs))
-  assertThemeShape(getDefault(themeModern))
+  assertThemeShape(getDefault(themeEsm))
 
   console.log(
     'Distribution smoke checks passed for @hackclub/meta and @hackclub/theme'
