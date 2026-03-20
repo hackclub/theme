@@ -18,7 +18,8 @@
         "default": "./dist/index.js"
       },
       "default": "./dist/index.js"
-    }
+    },
+    "./fonts/*": "./fonts/*"
   },
   "files": [
     "dist/",
