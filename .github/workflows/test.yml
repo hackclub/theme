@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  jest:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6

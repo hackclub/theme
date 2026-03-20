@@ -7,20 +7,17 @@
   "scripts": {
     "dev": "next",
     "prebuild": "bun run build:meta && bun run build:theme",
-    "build:meta": "cd ../packages/meta && bunx microbundle --jsxImportSource react --jsx jsx --globals react/jsx-runtime=jsxRuntime",
-    "build:theme": "cd ../packages/theme && bunx microbundle",
+    "build:meta": "cd ../packages/meta && bun run build.ts",
+    "build:theme": "cd ../packages/theme && bun run build.ts",
     "build": "next build",
     "start": "bun run dev"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
     "@hackclub/meta": "workspace:*",
     "@hackclub/theme": "workspace:*",
     "@mdx-js/loader": "^3.1.1",
     "@next/mdx": "^16.1.6",
-    "@theme-ui/css": "^0.17.4",
     "@theme-ui/style-guide": "^0.17.4",
-    "lodash": "^4.17.23",
     "next": "^16.2.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
