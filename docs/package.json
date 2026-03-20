@@ -7,8 +7,8 @@
   "scripts": {
     "dev": "next",
     "prebuild": "yarn build:meta && yarn build:theme",
-    "build:meta": "cd ../packages/meta && npx -y microbundle --jsxImportSource react --jsx jsx --globals react/jsx-runtime=jsxRuntime",
-    "build:theme": "cd ../packages/theme && npx -y microbundle",
+    "build:meta": "cd ../packages/meta && npx microbundle --jsxImportSource react --jsx jsx --globals react/jsx-runtime=jsxRuntime",
+    "build:theme": "cd ../packages/theme && npx microbundle",
     "build": "next build",
     "start": "yarn run dev"
   },
