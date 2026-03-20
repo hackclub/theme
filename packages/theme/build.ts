@@ -1,4 +1,4 @@
-import { rmSync } from 'fs'
+import { rmSync, readFileSync, writeFileSync } from 'fs'
 
 rmSync('./dist', { recursive: true, force: true })
 
@@ -18,7 +18,7 @@ await Bun.build({
 await Bun.build({
   ...shared,
   outdir: './dist',
-  naming: 'index.esm.js',
+  naming: 'index.esm.mjs',
   format: 'esm'
 })
 
@@ -30,3 +30,9 @@ if (tsc.exitCode !== 0) {
   console.error(tsc.stderr.toString())
   process.exit(1)
 }
+
+const dtsPath = './dist/index.d.ts'
+const dts = readFileSync(dtsPath, 'utf-8')
+writeFileSync('./dist/index.d.mts', dts)
+
+writeFileSync(dtsPath, dts.replace(/export default (\w+)/g, 'export = $1'))
