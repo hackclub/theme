@@ -7,7 +7,10 @@
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "files": ["dist/", "fonts/"],
+  "files": [
+    "dist/",
+    "fonts/"
+  ],
   "sideEffects": false,
   "scripts": {
     "build": "bun run build.ts",

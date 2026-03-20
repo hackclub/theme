@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.esm.js",
-  "files": ["dist/"],
+  "files": [
+    "dist/"
+  ],
   "sideEffects": false,
   "scripts": {
     "build": "bun run build.ts",

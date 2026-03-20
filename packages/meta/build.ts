@@ -4,7 +4,12 @@ rmSync('./dist', { recursive: true, force: true })
 
 const shared = {
   entrypoints: ['./src/index.js'],
-  external: ['react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime'],
+  external: [
+    'react',
+    'react-dom',
+    'react/jsx-runtime',
+    'react/jsx-dev-runtime'
+  ],
   minify: true,
   sourcemap: 'linked' as const,
   define: {
