@@ -2,18 +2,16 @@
   "private": true,
   "scripts": {
     "build": "lerna run build",
-    "prepare": "yarn build",
+    "prepare": "bun run build",
     "clean": "lerna run clean",
     "test": "jest",
-    "test:e2e": "yarn clean && yarn build && yarn test && node scripts/dist-smoke.cjs && yarn --cwd docs build",
+    "test:e2e": "bun run clean && bun run build && bun run test && node scripts/dist-smoke.cjs && bun run --cwd docs build",
     "format": "prettier --write .",
     "checkFormat": "prettier --check ."
   },
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  },
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "@swc/core": "^1.15.18",
     "@swc/jest": "^0.2.39",

@@ -9,7 +9,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "rm -rf ./dist && microbundle --jsxImportSource react --jsx jsx --globals react/jsx-runtime=jsxRuntime",
-    "prepare": "yarn build",
+    "prepare": "bun run build",
     "watch": "microbundle watch --jsxImportSource react --jsx jsx --globals react/jsx-runtime=jsxRuntime --no-compress",
     "clean": "rm -rf ./dist"
   },
