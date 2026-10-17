@@ -305,6 +305,13 @@
   white-space: nowrap;
 }
 
+.values th:last-child, 
+.values td:last-child {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .table-scroll {
   overflow-x: auto;
 }
@@ -405,11 +412,6 @@
   gap: var(--hc-space-4);
   padding: var(--hc-space-2) 0;
   font-size: var(--hc-text-sm);
-}
-
-.scale-row code {
-  flex: 0 0 160px;
-  background: none;
 }
 
 .scale-bar {
