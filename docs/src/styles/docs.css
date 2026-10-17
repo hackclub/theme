@@ -40,10 +40,17 @@
 
 /* ── Home ──────────────────────────────────────────────────────────── */
 
+/* The hero runs up behind the (transparent, sticky) nav, as on hackclub.com */
 .hero {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: clamp(640px, 92vh, 1100px);
+  margin-top: calc(-1 * var(--hc-nav-height));
   overflow: hidden;
-  padding: clamp(64px, 10vw, 128px) 0 clamp(96px, 12vw, 160px);
+  padding: calc(var(--hc-nav-height) + clamp(48px, 8vw, 112px)) 0
+    clamp(96px, 12vw, 160px);
   background: var(--hc-gradient-red-wash), var(--hc-background);
   text-align: center;
 }
