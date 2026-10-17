@@ -44,15 +44,14 @@ const swatches = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'] 
 <Base>
   <section class="hero">
     <div class="hero-photos" aria-hidden="true">
-      <hc-polaroid src={photo(1)} alt="" rotate="-10" style="left: 4%; top: 12%; --hc-polaroid-width: 200px"></hc-polaroid>
-      <hc-polaroid src={photo(4)} alt="" rotate="8" style="left: 8%; bottom: 10%; --hc-polaroid-width: 180px"></hc-polaroid>
-      <hc-polaroid src={photo(2)} alt="" rotate="12" style="right: 5%; top: 10%; --hc-polaroid-width: 210px"></hc-polaroid>
-      <hc-polaroid src={photo(3)} alt="" rotate="-6" style="right: 9%; bottom: 8%; --hc-polaroid-width: 180px"></hc-polaroid>
-      <hc-sticker src={sticker(1)} alt="" rotate="-12" movable style="left: 3%; top: 42%; --hc-sticker-width: 110px"></hc-sticker>
-      <hc-sticker src={sticker(3)} alt="" rotate="14" movable style="right: 3%; top: 44%; --hc-sticker-width: 100px"></hc-sticker>
+      <hc-polaroid src={photo(1)} alt="" rotate="-10" style="left: 4%; top: 16%; --hc-polaroid-width: clamp(160px, 15vw, 340px)"></hc-polaroid>
+      <hc-polaroid src={photo(4)} alt="" rotate="8" style="left: 8%; bottom: 8%; --hc-polaroid-width: clamp(150px, 13.5vw, 300px)"></hc-polaroid>
+      <hc-polaroid src={photo(2)} alt="" rotate="12" style="right: 5%; top: 14%; --hc-polaroid-width: clamp(170px, 16vw, 360px)"></hc-polaroid>
+      <hc-polaroid src={photo(3)} alt="" rotate="-6" style="right: 9%; bottom: 6%; --hc-polaroid-width: clamp(150px, 13.5vw, 300px)"></hc-polaroid>
+      <hc-sticker src={sticker(1)} alt="" rotate="-12" movable style="left: 3%; top: 46%; --hc-sticker-width: clamp(100px, 8.5vw, 220px)"></hc-sticker>
+      <hc-sticker src={sticker(3)} alt="" rotate="14" movable style="right: 3%; top: 48%; --hc-sticker-width: clamp(90px, 8vw, 200px)"></hc-sticker>
     </div>
     <div class="hc-container" style="position: relative">
-      <span class="hc-kicker">Hack Club Theme v2</span>
       <h1 class="hc-display">
         Build like<br /><hc-gradient-text variant="rainbow">hackclub.com</hc-gradient-text>
       </h1>
