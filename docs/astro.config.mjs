@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config'
 export default defineConfig({
   site: 'https://theme.hackclub.com',
   devToolbar: { enabled: false },
-  trailingSlash: 'always',
+  trailingSlash: 'ignore',
   markdown: {
     shikiConfig: {
       themes: { light: 'github-light', dark: 'github-dark' }
