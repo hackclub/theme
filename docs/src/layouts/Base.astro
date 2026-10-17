@@ -10,7 +10,7 @@ interface Props {
 
 const {
   title,
-  description = 'Hack Club’s design system: tokens, CSS and framework-agnostic web components for building sites that look like hackclub.com.'
+  description = 'Hack Club\'s design system: tokens, CSS and framework-agnostic web components for building sites that look like hackclub.com.'
 } = Astro.props
 
 const fullTitle = title ? `${title} – Hack Club Theme` : 'Hack Club Theme'
@@ -43,7 +43,7 @@ const links = [
     <a class="hc-skip-link" href="#main">Skip to content</a>
     <hc-nav sticky>
       <span slot="logo" class="docs-logo">
-        <img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club" />
+        <img src="https://assets.hackclub.com/flag-standalone.svg" alt="Hack Club" />
         <span>Theme</span>
       </span>
       {

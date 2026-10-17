@@ -1,4 +1,4 @@
-/* Long-form content styling, matching hackclub.com’s Markdown pages */
+/* Long-form content styling, matching hackclub.com's Markdown pages */
 
 :where(hc-prose, .hc-prose) {
   display: block;

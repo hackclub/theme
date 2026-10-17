@@ -3,7 +3,7 @@
 ![format](https://github.com/hackclub/theme/workflows/format/badge.svg)
 ![test](https://github.com/hackclub/theme/workflows/test/badge.svg)
 
-[Hack Club](https://hackclub.com)’s design system: the look of
+[Hack Club](https://hackclub.com)'s design system: the look of
 [hackclub.com](https://github.com/hackclub/site) as design tokens, CSS and
 framework-agnostic web components.
 
@@ -33,7 +33,7 @@ framework-agnostic web components.
 | [`@hackclub/meta`](packages/meta)             | React component for generating social tags for `<head>`                      |
 
 > Looking for the Theme UI theme for the previous version of hackclub.com?
-> It’s `@hackclub/theme@1` on npm, and in this repo’s history before v2.
+> It's `@hackclub/theme@1` on npm, and in this repo's history before v2.
 
 ## Development
 
@@ -54,5 +54,5 @@ and deployed on Vercel. It imports the built packages, so run
 ## License
 
 Code is MIT. The Phantom Sans and Zarathustra font files in
-`packages/css-base/fonts` are Hack Club’s brand typefaces, taken from
+`packages/css-base/fonts` are Hack Club's brand typefaces, taken from
 hackclub.com, and are not covered by the MIT license.

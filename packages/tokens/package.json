@@ -1,6 +1,6 @@
 {
   "name": "@hackclub/tokens",
-  "description": "Hack Club’s design tokens as JS, JSON, CSS custom properties and a Tailwind CSS theme",
+  "description": "Hack Club's design tokens as JS, JSON, CSS custom properties and a Tailwind CSS theme",
   "version": "1.0.0",
   "type": "module",
   "main": "dist/index.cjs",

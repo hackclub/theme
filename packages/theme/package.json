@@ -1,6 +1,6 @@
 {
   "name": "@hackclub/theme",
-  "description": "Hack Club’s design system: tokens, CSS and framework-agnostic web components",
+  "description": "Hack Club's design system: tokens, CSS and framework-agnostic web components",
   "version": "2.0.0",
   "author": "Hack Club <team@hackclub.com> (https://hackclub.com)",
   "type": "module",

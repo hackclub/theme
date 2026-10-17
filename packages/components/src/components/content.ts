@@ -26,7 +26,7 @@ const adoptProse = (root: Document | ShadowRoot) => {
 }
 
 /**
- * Styles long-form HTML (e.g. rendered Markdown) like hackclub.com’s text
+ * Styles long-form HTML (e.g. rendered Markdown) like hackclub.com's text
  * pages. Content stays in the light DOM so any nested markup is styled.
  *
  * @slot - Rendered HTML
