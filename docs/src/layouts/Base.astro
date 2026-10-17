@@ -13,7 +13,7 @@ const {
   description = 'Hack Club\'s design system: tokens, CSS and framework-agnostic web components for building sites that look like hackclub.com.'
 } = Astro.props
 
-const fullTitle = title ? `${title} – Hack Club Theme` : 'Hack Club Theme'
+const fullTitle = title ? `${title} – Hack Club design system` : 'Hack Club design system'
 const path = Astro.url.pathname
 const links = [
   { href: '/getting-started/', label: 'Get started' },
@@ -44,7 +44,7 @@ const links = [
     <hc-nav sticky>
       <span slot="logo" class="docs-logo">
         <img src="https://assets.hackclub.com/flag-standalone.svg" alt="Hack Club" />
-        <span>Theme</span>
+        <span>design system</span>
       </span>
       {
         links.map(link => (
@@ -83,7 +83,14 @@ const links = [
         <a href="/tokens/">Tokens</a>
         <a href="/components/">Components</a>
       </hc-footer-column>
-      <hc-footer-column heading="Hack Club">
+      <hc-footer-column heading="Packages">
+        <a href="https://www.npmjs.com/package/@hackclub/theme">@hackclub/theme</a>
+        <a href="https://www.npmjs.com/package/@hackclub/tokens">@hackclub/tokens</a>
+        <a href="https://www.npmjs.com/package/@hackclub/css-base">@hackclub/css-base</a>
+        <a href="https://www.npmjs.com/package/@hackclub/components">@hackclub/components</a>
+        <a href="https://www.npmjs.com/package/@hackclub/meta">@hackclub/meta</a>
+      </hc-footer-column>
+      <hc-footer-column heading="Branding">
         <a href="https://hackclub.com/">Website</a>
         <a href="https://hackclub.com/brand/">Brand guide</a>
         <a href="https://icons.hackclub.com/">Icons</a>
