@@ -361,7 +361,7 @@ export const components: ComponentDoc[] = [
         '"default"'
       ],
       ['hc-section compact', 'Halve the vertical padding', 'boolean'],
-      ['hc-section bleed', 'Don\'t constrain content width', 'boolean'],
+      ['hc-section bleed', "Don't constrain content width", 'boolean'],
       ['hc-container size', '', '"default" | "prose" | "full"', '"default"']
     ],
     parts: [['inner', 'The centered wrapper inside `<hc-section>`']]
@@ -398,7 +398,7 @@ export const components: ComponentDoc[] = [
     group: 'Site chrome',
     tags: ['hc-nav', 'hc-nav-menu'],
     summary:
-      'The hackclub.com header, with the flag logo, links, dropdown menus and a call to action. Below 1024px it collapses behind a hamburger into a full-screen menu, and dropdowns become inline disclosures. `sticky` pins it with a frosted background once the page scrolls; `invert` uses light text over dark heroes. This site\'s header is a live example: resize the window to see the mobile menu.',
+      "The hackclub.com header, with the flag logo, links, dropdown menus and a call to action. Below 1024px it collapses behind a hamburger into a full-screen menu, and dropdowns become inline disclosures. `sticky` pins it with a frosted background once the page scrolls; `invert` uses light text over dark heroes. This site's header is a live example: resize the window to see the mobile menu.",
     demos: [
       {
         layout: 'flush',
@@ -432,7 +432,7 @@ export const components: ComponentDoc[] = [
       ['hc-nav-menu label', 'Dropdown trigger text', 'string'],
       [
         'hc-nav-menu align',
-        'Align the panel to the trigger\'s start or end',
+        "Align the panel to the trigger's start or end",
         '"start" | "end"',
         '"start"'
       ]

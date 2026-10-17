@@ -2,9 +2,31 @@
   "name": "@hackclub/css-base",
   "description": "Hack Club's fonts, element defaults and utility classes as plain CSS",
   "version": "1.0.0",
+  "keywords": [
+    "hack club",
+    "css",
+    "fonts",
+    "phantom sans"
+  ],
+  "homepage": "https://theme.hackclub.com",
+  "bugs": "https://github.com/hackclub/theme/issues",
+  "license": "MIT",
+  "author": "Hack Club <team@hackclub.com> (https://hackclub.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackclub/theme.git",
+    "directory": "packages/css-base"
+  },
   "type": "module",
-  "style": "dist/index.css",
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist/",
+    "src/"
+  ],
   "main": "dist/index.css",
+  "style": "dist/index.css",
   "exports": {
     ".": "./dist/index.css",
     "./index.css": "./dist/index.css",
@@ -14,34 +36,16 @@
     "./fonts/*": "./dist/fonts/*",
     "./src/prose.css": "./src/prose.css"
   },
-  "files": [
-    "dist/",
-    "src/"
-  ],
-  "sideEffects": [
-    "*.css"
-  ],
-  "keywords": [
-    "hack club",
-    "css",
-    "fonts",
-    "phantom sans"
-  ],
   "scripts": {
     "build": "bun run build.ts",
-    "prepublishOnly": "bun run build",
-    "clean": "rm -rf ./dist"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hackclub/theme.git",
-    "directory": "packages/css-base"
+    "watch": "bun run --watch build.ts",
+    "clean": "rm -rf ./dist",
+    "prepublishOnly": "bun run build"
   },
   "devDependencies": {
     "@hackclub/tokens": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

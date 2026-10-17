@@ -131,11 +131,13 @@ export class HcCallout extends LitElement {
     return html`<div class="callout" part="callout" role="note">
       <hc-icon glyph=${calloutIcons[this.tone] ?? 'info'} size="28"></hc-icon>
       <div class="content">
-        ${hasHeading
-          ? html`<strong class="heading"
-              ><slot name="heading">${this.heading}</slot></strong
-            >`
-          : nothing}
+        ${
+          hasHeading
+            ? html`<strong class="heading"
+                ><slot name="heading">${this.heading}</slot></strong
+              >`
+            : nothing
+        }
         <slot></slot>
       </div>
     </div>`
@@ -265,21 +267,25 @@ export class HcCode extends LitElement {
   }
 
   render() {
-    return html`${this.filename
-        ? html`<div class="header"><span>${this.filename}</span></div>`
-        : nothing}
+    return html`${
+        this.filename
+          ? html`<div class="header"><span>${this.filename}</span></div>`
+          : nothing
+      }
       <pre part="pre"><code>${this.code}</code></pre>
       <slot hidden @slotchange=${this.#onSlotChange}></slot>
-      ${this.nocopy
-        ? nothing
-        : html`<button
-            class="copy ${this.copied ? 'copied' : ''}"
-            part="copy"
-            type="button"
-            @click=${this.#copy}
-          >
-            ${this.copied ? 'Copied!' : 'Copy'}
-          </button>`}`
+      ${
+        this.nocopy
+          ? nothing
+          : html`<button
+              class="copy ${this.copied ? 'copied' : ''}"
+              part="copy"
+              type="button"
+              @click=${this.#copy}
+            >
+              ${this.copied ? 'Copied!' : 'Copy'}
+            </button>`
+      }`
   }
 }
 

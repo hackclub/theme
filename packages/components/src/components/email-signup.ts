@@ -228,11 +228,13 @@ export class HcEmailSignup extends LitElement {
       >
         ${this.status === 'loading' ? '…' : this.buttonLabel}
       </button>
-      ${this.error
-        ? html`<p class="error" part="error" id="error" role="alert">
-            ${this.error}
-          </p>`
-        : nothing}
+      ${
+        this.error
+          ? html`<p class="error" part="error" id="error" role="alert">
+              ${this.error}
+            </p>`
+          : nothing
+      }
     </form>`
   }
 }

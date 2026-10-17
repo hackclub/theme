@@ -84,11 +84,13 @@ export class HcPolaroid extends LitElement {
     const hasCaption = this.caption || this.querySelector('[slot="caption"]')
     return html`<figure part="frame" style="--r: ${this.rotate || 0}deg">
       <img part="image" src=${this.src} alt=${this.alt} loading="lazy" />
-      ${hasCaption
-        ? html`<figcaption>
-            <slot name="caption">${this.caption}</slot>
-          </figcaption>`
-        : nothing}
+      ${
+        hasCaption
+          ? html`<figcaption>
+              <slot name="caption">${this.caption}</slot>
+            </figcaption>`
+          : nothing
+      }
     </figure>`
   }
 }
