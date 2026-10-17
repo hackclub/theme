@@ -115,7 +115,7 @@ const swatches = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'] 
     </div>
   </hc-section>
 
-  <hc-section>
+  <hc-section data-stickers="4">
     <div class="grid-2">
       <div>
         <span class="hc-kicker">Tokens</span>
@@ -142,7 +142,7 @@ const swatches = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'] 
     </div>
   </hc-section>
 
-  <hc-section tone="ink">
+  <hc-section tone="ink" data-stickers="4">
     <div class="grid-2" style="align-items: center">
       <div>
         <span class="hc-kicker">Try it out</span>
@@ -160,6 +160,9 @@ const swatches = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'] 
   <hc-wave fill="var(--hc-black)" style="background: var(--hc-ink)"></hc-wave>
 
   <script>
+    import { scatterStickers } from '../scripts/scatter-stickers'
+    scatterStickers()
+
     const signup = document.getElementById('home-signup') as HTMLElement & { status: string }
     signup?.addEventListener('hc-submit', () => {
       signup.status = 'success'
