@@ -1,11 +1,9 @@
-# Hack Club Theme
+# Hack Club design system
 
-![format](https://github.com/hackclub/theme/workflows/format/badge.svg)
-![test](https://github.com/hackclub/theme/workflows/test/badge.svg)
+[![format](https://github.com/hackclub/theme/workflows/format/badge.svg)](https://github.com/hackclub/theme/actions/workflows/format.yml)
+[![test](https://github.com/hackclub/theme/workflows/test/badge.svg)](https://github.com/hackclub/theme/actions/workflows/test.yml)
 
-[Hack Club](https://hackclub.com)'s design system: the look of
-[hackclub.com](https://github.com/hackclub/site) as design tokens, CSS and
-framework-agnostic web components.
+The design system behind [Hack Club](https://hackclub.com)'s website, available as tokens, CSS and web components. Works with any framework, or none at all.
 
 ```html
 <link
@@ -33,7 +31,7 @@ framework-agnostic web components.
 | [`@hackclub/meta`](packages/meta)             | React component for generating social tags for `<head>`                      |
 
 > Looking for the Theme UI theme for the previous version of hackclub.com?
-> It's `@hackclub/theme@1` on npm, and in this repo's history before v2.
+> It's `@hackclub/theme@1` on npm, and in [this repo's history](https://github.com/hackclub/theme/tree/v1.2.1) before v2.
 
 ## Development
 
@@ -47,12 +45,10 @@ bun run test:e2e     # clean build, tests, dist smoke test and docs build
 bun run docs:dev     # theme.hackclub.com on localhost
 ```
 
-The docs site in [`/docs`](docs) is built with [Astro](https://astro.build)
-and deployed on Vercel. It imports the built packages, so run
-`bun run build` after changing a package.
+The docs site in [`/docs`](docs) is built with [Astro](https://astro.build) and deployed on Vercel.
+It imports the built packages, so run `bun run build` after changing a package.
 
 ## License
 
-Code is MIT. The Phantom Sans and Zarathustra font files in
-`packages/css-base/fonts` are Hack Club's brand typefaces, taken from
-hackclub.com, and are not covered by the MIT license.
+Code is MIT.
+The Phantom Sans and Zarathustra font files in `packages/css-base/fonts` are Hack Club's brand typefaces, taken from hackclub.com, and are not covered by the MIT license.
