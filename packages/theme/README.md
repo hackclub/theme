@@ -1,6 +1,6 @@
 # @hackclub/theme
 
-Hack Club’s design system in one package: the [tokens](../tokens), the
+Hack Club's design system in one package: the [tokens](../tokens), the
 [base CSS and fonts](../css-base) and every [web component](../components),
 styled after [hackclub.com](https://hackclub.com).
 

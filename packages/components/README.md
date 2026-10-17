@@ -1,6 +1,6 @@
 # @hackclub/components
 
-Framework-agnostic web components for Hack Club’s design system, built with
+Framework-agnostic web components for Hack Club's design system, built with
 [Lit](https://lit.dev). They work in plain HTML, React 19, Vue, Svelte, Astro,
 or anything else that renders HTML.
 

@@ -3,7 +3,7 @@
 React component for generating Open Graph/etc meta tags for Hack Club pages.
 Designed for Next.js but framework-agnostic.
 
-Not recommended for non-Hack Club sites—you’ll get Hack Club favicons :)
+Not recommended for non-Hack Club sites—you'll get Hack Club favicons :)
 
 ## Usage
 

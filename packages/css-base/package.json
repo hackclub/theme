@@ -1,6 +1,6 @@
 {
   "name": "@hackclub/css-base",
-  "description": "Hack Club’s fonts, element defaults and utility classes as plain CSS",
+  "description": "Hack Club's fonts, element defaults and utility classes as plain CSS",
   "version": "1.0.0",
   "type": "module",
   "style": "dist/index.css",

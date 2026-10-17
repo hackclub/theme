@@ -24,5 +24,5 @@ bun add @hackclub/css-base
 @import '@hackclub/css-base/base.css';
 ```
 
-The font files are Hack Club’s brand typefaces and are not covered by this
-package’s MIT license.
+The font files are Hack Club's brand typefaces and are not covered by this
+package's MIT license.

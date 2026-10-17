@@ -1,6 +1,6 @@
 {
   "name": "@hackclub/components",
-  "description": "Framework-agnostic web components for Hack Club’s design system",
+  "description": "Framework-agnostic web components for Hack Club's design system",
   "version": "1.0.0",
   "type": "module",
   "main": "dist/index.js",
