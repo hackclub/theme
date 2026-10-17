@@ -4,3 +4,4 @@ coverage
 .astro
 bun.lock
 packages/components/src/glyph*.ts
+packages/components/src/prose-css.ts

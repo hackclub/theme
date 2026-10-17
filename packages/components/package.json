@@ -22,8 +22,7 @@
   "sideEffects": [
     "./dist/index.js",
     "./dist/icons.js",
-    "./dist/components/*.js",
-    "./dist/chunk-*.js"
+    "./dist/components/*.js"
   ],
   "files": [
     "dist/"

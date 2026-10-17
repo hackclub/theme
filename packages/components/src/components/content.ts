@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { define } from '../internal/define'
 import { base, focusRing } from '../internal/styles'
-import proseCSS from '@hackclub/css-base/src/prose.css' with { type: 'text' }
+import { proseCSS } from '../prose-css'
 import './icon'
 
 const adopted = new WeakSet<Document | ShadowRoot>()
