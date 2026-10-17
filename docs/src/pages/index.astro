@@ -14,7 +14,7 @@ const packages = [
   },
   {
     name: '@hackclub/tokens',
-    text: 'Colors, type, spacing, radii, shadows and motion as JS, JSON, CSS custom properties and a Tailwind v4 theme.',
+    text: 'Colours, type, spacing, radii, shadows and motion as JS, JSON, CSS custom properties and a Tailwind v4 theme.',
     color: 'orange'
   },
   {
@@ -53,11 +53,10 @@ const swatches = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'] 
     </div>
     <div class="hc-container" style="position: relative">
       <h1 class="hc-display">
-        Build like<br /><hc-gradient-text variant="rainbow">hackclub.com</hc-gradient-text>
+        Build cool sites like<br /><hc-gradient-text variant="rainbow"><a style="text-decoration-thickness: 5px; text-underline-offset: 3px;" href="https://hackclub.com">hackclub.com</a></hc-gradient-text>
       </h1>
       <p class="hc-lead">
-        The design system behind Hack Club's website, as tokens, CSS and web components. Works with
-        any framework, or none at all.
+        The design system behind Hack Club's website, available as tokens, CSS and web components. Works with any framework, or none at all.
       </p>
       <div class="hero-actions">
         <hc-button href="/getting-started/" arrow>Get started</hc-button>
@@ -72,16 +71,15 @@ const swatches = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'] 
       <span class="hc-kicker">Packages</span>
       <h2 class="hc-heading">Use as much or as little as you like</h2>
       <p class="hc-lead">
-        Each layer works on its own. Use just the tokens in your Tailwind config, or drop two tags on a
-        page to get everything.
+        Each layer works on its own. Use just the tokens in your Tailwind config, or drop two tags on a page to get everything.
       </p>
     </div>
-    <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr))">
+    <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr))">
       {
         packages.map(pkg => (
-          <hc-card variant="raised" href={`https://www.npmjs.com/package/${pkg.name}`}>
+          <hc-card style="width: fit-content;" variant="raised" href={`https://www.npmjs.com/package/${pkg.name}`}>
             <hc-badge color={pkg.color} variant="soft">npm</hc-badge>
-            <h3 class="card-title" style="margin-top: 16px; font-size: 1.4rem; overflow-wrap: anywhere">{pkg.name}</h3>
+            <h3 class="card-title" style="margin-top: 16px; font-size: 1.4rem; white-space: preserve nowrap; overflow-wrap: anywhere;"><code>{pkg.name}</code></h3>
             <p class="card-text">{pkg.text}</p>
           </hc-card>
         ))
@@ -95,8 +93,7 @@ const swatches = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'] 
         <span class="hc-kicker">No build step</span>
         <h2 class="hc-heading">Two tags and you're in</h2>
         <p class="hc-lead">
-          The CDN bundle includes Lit and every component, and is about 32&nbsp;KB gzipped. Fonts load from
-          the same package.
+          The CDN bundle includes every component, bundled via Lit, and is approximately 32&nbsp;KB gzipped. Fonts load from the same package.
         </p>
         <Code code={cdn} lang="html" themes={{ light: 'github-light', dark: 'github-dark' }} />
       </div>
@@ -104,8 +101,7 @@ const swatches = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'] 
         <span class="hc-kicker">With a bundler</span>
         <h2 class="hc-heading">Or import it</h2>
         <p class="hc-lead">
-          Works with Vite, Next.js, Astro, SvelteKit and Nuxt. The components are standard custom
-          elements, so React 19 and Vue support them natively.
+          Works with Vite, Next.js, Astro, SvelteKit and Nuxt. The components are standard web components, so React 19 and Vue support them natively.
         </p>
         <Code code={npm} lang="js" themes={{ light: 'github-light', dark: 'github-dark' }} />
         <p style="margin-top: 24px">
@@ -119,10 +115,9 @@ const swatches = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'] 
     <div class="grid-2">
       <div>
         <span class="hc-kicker">Tokens</span>
-        <h2 class="hc-heading">The colors of <hc-gradient-text>Hack Club</hc-gradient-text></h2>
+        <h2 class="hc-heading">The colours of <hc-gradient-text>Hack Club</hc-gradient-text></h2>
         <p class="hc-lead">
-          The palette, the Zarathustra and Phantom Sans type pairing, pill radii and playful easing,
-          taken straight from hackclub.com. Light and dark mode come built in.
+          The colour palette, font pairing, pill radii and playful easing, as seen on hackclub.com. Light and dark mode are built-in to every control.
         </p>
         <hc-button href="/tokens/" arrow>Explore tokens</hc-button>
       </div>
@@ -148,8 +143,8 @@ const swatches = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'] 
         <span class="hc-kicker">Try it out</span>
         <h2 class="hc-heading">Components with the details done</h2>
         <p class="hc-lead">
-          They handle focus rings, reduced motion, form participation, keyboard navigation and dark mode
-          for you.
+          Individual components handle focus rings, reduced motion, form participation, keyboard navigation and dark mode for you.
+          This website is a live demo of Hack Club's design system in action.
         </p>
       </div>
       <div>

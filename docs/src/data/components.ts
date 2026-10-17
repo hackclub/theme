@@ -38,7 +38,7 @@ export const components: ComponentDoc[] = [
     group: 'Core',
     tags: ['hc-button'],
     summary:
-      'The pill-shaped button from hackclub.com. Dark by default, turning red on hover. Set `href` to render a link, and `arrow` for the arrow that nudges on hover. Inside a `<form>` it submits like a native button.',
+      'The pill-shaped button from hackclub.com. It\'s dark by default, but turns red on hover. Set `href` to render a link, and `arrow` for the arrow that nudges on hover, as shown below.',
     demos: [
       {
         title: 'Variants',
@@ -102,7 +102,7 @@ export const components: ComponentDoc[] = [
     group: 'Core',
     tags: ['hc-card'],
     summary:
-      'Rounded content cards. `surface` is the default 16px-radius card; `raised` is the bordered, warm-shadowed card from the brand page; `image` puts text over a darkened photo. Set `href` to make the whole card a link.',
+      'Rounded content cards to showcase projects, event photos and new programmes. `surface` is the default 16px-radius card; `raised` is the bordered, warm-shadowed card from the brand page; `image` puts text over a darkened photo. Set `href` to make the whole card a link.',
     demos: [
       {
         layout: 'block',
@@ -115,7 +115,7 @@ export const components: ComponentDoc[] = [
     <h3 class="card-title">Raised</h3>
     <p class="card-text">Bordered, with a soft warm shadow.</p>
   </hc-card>
-  <hc-card variant="image" image="${photo(2)}" href="#">
+  <hc-card variant="image" image="${photo(2)}" href="https://game.hackclub.com">
     <h3 class="card-title">Image</h3>
     <p>Text over a photo. This one is a link.</p>
   </hc-card>
@@ -162,7 +162,7 @@ export const components: ComponentDoc[] = [
     group: 'Core',
     tags: ['hc-badge'],
     summary:
-      'Small pill labels in any brand color, with an optional pulsing “live” dot.',
+      'A small pill label in any brand colour, with an optional pulsing \'live\' dot, inspired by a certain timelapsing app.',
     demos: [
       {
         html: `<hc-badge>New</hc-badge>
@@ -201,7 +201,7 @@ export const components: ComponentDoc[] = [
     group: 'Core',
     tags: ['hc-input'],
     summary:
-      'A pill text field with a label, hint and error message. It is form-associated: its value is submitted with the surrounding `<form>` and it takes part in native validation.',
+      'A pill-shaped text field with a label, hint and error message. It is form-associated: its value is submitted with the surrounding `<form>` and it takes part in native validation.',
     demos: [
       {
         layout: 'block',
@@ -241,7 +241,7 @@ export const components: ComponentDoc[] = [
     group: 'Core',
     tags: ['hc-email-signup'],
     summary:
-      'The homepage email capture: a pill input with a “Join” button inside it, client-side validation and an error tooltip. Without an `action` it fires `hc-submit` and leaves the request to you; set `status="success"` when you are done.',
+      'The homepage email capture: a pill-shaped input control with an inline \'Join\' button, featuring client-side validation and an error tooltip. Without an `action`, it fires the `hc-submit` event and leaves the request to you; set `status="success"` when you are done.',
     demos: [
       {
         layout: 'block',
@@ -541,7 +541,7 @@ export const components: ComponentDoc[] = [
     group: 'Motifs',
     tags: ['hc-wave', 'hc-grid-paper'],
     summary:
-      'Wavy section dividers and grid-paper backgrounds. Give a wave the color of the section it leads into (`fill`), and `flip` it at the top edge of a section.',
+      'Wavy section dividers and grid-paper backgrounds. Give a wave the colour of the section it leads into (`fill`), and `flip` it at the top edge of a section.',
     demos: [
       {
         layout: 'flush',

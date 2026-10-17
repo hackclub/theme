@@ -69,8 +69,7 @@ const usage = `.card {
         <span class="hc-kicker">Tokens</span>
         <h1 class="hc-title">Design tokens</h1>
         <p class="hc-lead">
-          Every value is a CSS custom property prefixed with <code>--hc-</code>, and is also exported
-          from <code>@hackclub/tokens</code> as JavaScript and JSON.
+          Every value is a CSS custom property prefixed with <code>--hc-</code>, and is also exported from <code>@hackclub/tokens</code> as JavaScript and JSON.
         </p>
       </header>
 
@@ -80,7 +79,7 @@ const usage = `.card {
 
       <section id="palette">
         <h2>Palette</h2>
-        <p>The brand colors. These stay the same in light and dark mode.</p>
+        <p>Hack Club's brand colours, from <a href="https://hackclub.com/brand">our brand guide</a>. These stay the same in light and dark mode.</p>
         <div class="swatches">
           {
             brand.map(name => (
@@ -97,9 +96,7 @@ const usage = `.card {
         </div>
         <h3>Neutrals & accessible reds</h3>
         <p>
-          Brand red is only 4.0:1 on white. For text smaller than 24px, use
-          <code>--hc-red-text</code>, which switches between <code>red-dark</code> and
-          <code>red-light</code> with the color scheme.
+          Brand red is only 4.0:1 on white. For text smaller than 24px, use <code>--hc-red-text</code>, which switches between <code>red-dark</code> and <code>red-light</code> with the colour scheme.
         </p>
         <div class="swatches">
           {
@@ -120,8 +117,7 @@ const usage = `.card {
       <section id="schemes">
         <h2>Light & dark</h2>
         <p>
-          Semantic colors change with the color scheme. Use these for backgrounds, text and borders
-          rather than raw palette values.
+          Semantic colours change with the colour scheme. Use these for backgrounds, text and borders rather than raw palette values.
         </p>
         <div class="scheme-pair">
           {
@@ -144,9 +140,8 @@ const usage = `.card {
       <section id="typography">
         <h2>Typography</h2>
         <p>
-          Headings use <strong>Zarathustra</strong>, a serif display face with a single weight
-          (<code>--hc-font-display</code>). Everything else uses <strong>Phantom Sans</strong>
-          (<code>--hc-font-sans</code>), in weights from 100 to 700 with italics. Body text is 20px.
+          Headings use <strong>Zarathustra</strong>, a serif display face with a single weight (<code>--hc-font-display</code>).
+          Everything else uses <strong>Phantom Sans</strong> (<code>--hc-font-sans</code>), in weights from 100 to 700 with italics. Body text is 20px.
         </p>
         {
           typeSamples.map(([size, family]) => (
@@ -174,7 +169,7 @@ const usage = `.card {
                 {weight}
               </code>
               <div style={`font-weight: ${weight}; font-size: 1.5rem`}>
-                The quick brown dinosaur <em>jumps</em>
+                Where <em>teens</em> make cool stuff.
               </div>
             </div>
           ))
@@ -218,7 +213,7 @@ const usage = `.card {
       </section>
 
       <section id="radii">
-        <h2>Radii</h2>
+        <h2>Rounding</h2>
         <p>hackclub.com rounds generously: buttons and inputs are pills, and cards use 16px.</p>
         <div class="tiles">
           {
@@ -257,8 +252,7 @@ const usage = `.card {
           </div>
         </div>
         <p style="margin-top: 16px">
-          Use <code>sticker</code> and <code>sticker-hover</code> with <code>filter: drop-shadow()</code>
-          on cut-out images.
+          Use <code>sticker</code> and <code>sticker-hover</code> with <code>filter: drop-shadow()</code> on cut-out images.
         </p>
       </section>
 
@@ -280,8 +274,8 @@ const usage = `.card {
       <section id="motion">
         <h2>Motion</h2>
         <p>
-          Navigation uses a snappy ease-out; photos and stickers use a gentler, playful curve. Every
-          component turns off its animations when the visitor prefers reduced motion.
+          Navigation uses a snappy ease-out; photos and stickers use a gentler, playful curve.
+          Every component turns off its animations when the visitor prefers reduced motion.
         </p>
         <div class="table-scroll">
           <table class="api values">
@@ -309,8 +303,7 @@ const usage = `.card {
           </table>
         </div>
         <p>
-          CSS can't use custom properties in media queries, so breakpoints are available in JavaScript
-          and in the Tailwind theme only:
+          CSS can't use custom properties in media queries, so breakpoints are available in JavaScript and in the Tailwind theme only:
         </p>
         <div class="table-scroll">
           <table class="api values">

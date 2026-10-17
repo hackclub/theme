@@ -10,7 +10,7 @@ const sections = [
   ['frameworks', 'Frameworks'],
   ['tailwind', 'Tailwind CSS'],
   ['dark-mode', 'Dark mode'],
-  ['customizing', 'Customizing'],
+  ['customizing', 'Customisation'],
   ['migrating', 'Migrating from v1']
 ]
 
@@ -187,8 +187,8 @@ hc-card::part(card) {
 
 const tokensJs = `import { palette, colors, fonts, radii, cssVar } from '@hackclub/tokens'
 
-palette.red          // '#ec3750'
-colors.dark.surface  // '#1f1f27'
+palette.red // '#ec3750'
+colors.dark.surface // '#1f1f27'
 cssVar('radius-card') // 'var(--hc-radius-card)'`
 
 const migrate = `// v1 (Theme UI)
@@ -203,7 +203,7 @@ import '@hackclub/theme'
 <hc-button arrow>Join</hc-button>`
 ---
 
-<Base title="Get started" description="Install the Hack Club theme from a CDN or npm, and use it with any framework.">
+<Base title="Get started" description="Install the Hack Club design system from a CDN or npm, and use it with any framework.">
   <div class="hc-container docs-shell">
     <nav class="docs-sidebar" aria-label="On this page">
       <span class="hc-kicker">On this page</span>
@@ -215,16 +215,14 @@ import '@hackclub/theme'
         <span class="hc-kicker">Get started</span>
         <h1 class="hc-title">Installation</h1>
         <p class="hc-lead">
-          Hack Club Theme v2 comes as CSS plus standard web components, so it works with any
-          framework, or with plain HTML.
+          Hack Club Theme v2 comes as CSS plus standard web components, so it works with any framework, or with plain HTML.
         </p>
       </header>
 
       <section id="cdn">
         <h2>CDN</h2>
         <p>
-          The quickest start. <code>hackclub.css</code> contains the tokens, fonts, element defaults and
-          prose styles; <code>hackclub.js</code> registers every component, with Lit bundled in.
+          The quickest start. <code>hackclub.css</code> contains the tokens, fonts, element defaults and prose styles; <code>hackclub.js</code> registers every component, with Lit bundled in.
         </p>
         <Code code={cdn} lang="html" themes={themes} />
       </section>
@@ -240,23 +238,20 @@ import '@hackclub/theme'
         <Code code={layers} lang="bash" themes={themes} />
         <hc-callout tone="tip" heading="Using only the JavaScript?">
           The components fall back to injecting the token stylesheet if the page hasn't loaded it.
-          You still need <code>fonts.css</code> (or <code>hackclub.css</code>) for Phantom Sans and
-          Zarathustra.
+          You still need <code>fonts.css</code> (or <code>hackclub.css</code>) for Phantom Sans and Zarathustra.
         </hc-callout>
       </section>
 
       <section id="frameworks">
         <h2>Frameworks</h2>
         <p>
-          The components are custom elements, so you configure them with attributes and listen to
-          their events like any other HTML. They render on the client; server-rendered pages show their
-          light-DOM content until the script loads.
+          The components are custom elements, so you configure them with attributes and listen to their events like any other HTML.
+          They render on the client; server-rendered pages show their light-DOM content until the script loads.
         </p>
 
         <h3>React 19</h3>
         <p>
-          React 19 passes props to custom elements as properties and wires up custom events with an
-          <code>on</code> prefix.
+          React 19 passes props to custom elements as properties and wires up custom events with an <code>on</code> prefix.
         </p>
         <Code code={react} lang="jsx" themes={themes} />
         <p>TypeScript doesn't know about custom elements, so you can declare the ones you use:</p>
@@ -278,8 +273,7 @@ import '@hackclub/theme'
       <section id="tailwind">
         <h2>Tailwind CSS</h2>
         <p>
-          <code>tailwind.css</code> maps Tailwind v4's theme onto the <code>--hc-</code> custom
-          properties, so utilities change with the color scheme.
+          <code>tailwind.css</code> maps Tailwind v4's theme onto the <code>--hc-</code> custom properties, so utilities change with the color scheme.
         </p>
         <Code code={tailwind} lang="css" themes={themes} />
         <Code code={tailwindUsage} lang="html" themes={themes} />
@@ -288,26 +282,22 @@ import '@hackclub/theme'
       <section id="dark-mode">
         <h2>Dark mode</h2>
         <p>
-          With no setup, the theme follows the visitor's system setting. Add
-          <a href="/components/theme-toggle/"><code>&lt;hc-theme-toggle&gt;</code></a> to let visitors
-          choose, and inline <code>themeScript</code> in your <code>&lt;head&gt;</code> so the saved
-          choice applies before the first paint:
+          With no setup, the theme follows the visitor's system setting.
+          Add <a href="/components/theme-toggle/"><code>&lt;hc-theme-toggle&gt;</code></a> to let visitors choose, and inline <code>themeScript</code> in your <code>&lt;head&gt;</code> so the saved choice applies before the first paint:
         </p>
         <Code code={themeHead} lang="html" themes={themes} />
         <p>
-          The scheme is resolved in this order: <code>data-theme</code> or
-          <code>.hc-light</code>/<code>.hc-dark</code> on any element, then <code>html.dark</code>, then
-          <code>prefers-color-scheme</code>.
+          The scheme is resolved in this order: <code>data-theme</code> or <code>.hc-light</code>/<code>.hc-dark</code> on any element, then <code>html.dark</code>, then <code>prefers-color-scheme</code>.
         </p>
         <Code code={scoped} lang="html" themes={themes} />
         <Code code={jsTheme} lang="js" themes={themes} />
       </section>
 
       <section id="customizing">
-        <h2>Customizing</h2>
+        <h2>Customisation</h2>
         <p>
-          Every token is a custom property you can override. Components also expose their own custom
-          properties and CSS parts, listed on each <a href="/components/">component page</a>.
+          Every token is a custom property you can override.
+          Components also expose their own custom properties and CSS parts, listed on each <a href="/components/">component page</a>.
         </p>
         <Code code={override} lang="css" themes={themes} />
         <p>The raw values are available in JavaScript, and as <code>tokens.json</code>:</p>
@@ -317,9 +307,9 @@ import '@hackclub/theme'
       <section id="migrating">
         <h2>Migrating from v1</h2>
         <p>
-          v1 was a <a href="https://theme-ui.com">Theme UI</a> theme for the previous hackclub.com. v2
-          follows the current site's design and drops Theme UI and React entirely. If you need the old
-          theme, <code>@hackclub/theme@1</code> is still on npm.
+          v1 was a <a href="https://theme-ui.com">Theme UI</a> theme for the previous hackclub.com.
+          v2 follows the current site's design and drops Theme UI and React entirely.
+          If you need the old theme, <code>@hackclub/theme@1</code> is still on npm.
         </p>
         <ul>
           <li>
@@ -327,12 +317,10 @@ import '@hackclub/theme'
             <code>primary</code> is <code>--hc-red</code>.
           </li>
           <li>
-            The new site pairs <strong>Zarathustra</strong> headings with <strong>Phantom Sans</strong>
-            body text, and buttons are always pills.
+            The new site pairs <strong>Zarathustra</strong> headings with <strong>Phantom Sans</strong> body text, and buttons are always pills.
           </li>
           <li>
-            Theme UI variants (<code>Button variant="cta"</code>, <code>Card variant="sunken"</code>)
-            become components and attributes (<code>&lt;hc-button&gt;</code>,
+            Theme UI variants (<code>Button variant="cta"</code>, <code>Card variant="sunken"</code>) become components and attributes (<code>&lt;hc-button&gt;</code>,
             <code>&lt;hc-card variant="outline"&gt;</code>).
           </li>
           <li><code>@hackclub/meta</code> is unchanged.</li>
