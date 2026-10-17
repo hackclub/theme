@@ -38,7 +38,7 @@ export const components: ComponentDoc[] = [
     group: 'Core',
     tags: ['hc-button'],
     summary:
-      'The pill-shaped button from hackclub.com. It\'s dark by default, but turns red on hover. Set `href` to render a link, and `arrow` for the arrow that nudges on hover, as shown below.',
+      "The pill-shaped button from hackclub.com. It's dark by default, but turns red on hover. Set `href` to render a link, and `arrow` for the arrow that nudges on hover, as shown below.",
     demos: [
       {
         title: 'Variants',
@@ -162,7 +162,7 @@ export const components: ComponentDoc[] = [
     group: 'Core',
     tags: ['hc-badge'],
     summary:
-      'A small pill label in any brand colour, with an optional pulsing \'live\' dot, inspired by a certain timelapsing app.',
+      "A small pill label in any brand colour, with an optional pulsing 'live' dot, inspired by a certain timelapsing app.",
     demos: [
       {
         html: `<hc-badge>New</hc-badge>

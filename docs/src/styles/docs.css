@@ -305,7 +305,7 @@
   white-space: nowrap;
 }
 
-.values th:last-child, 
+.values th:last-child,
 .values td:last-child {
   text-align: right;
   display: flex;
