@@ -1,6 +1,6 @@
-public
-package-lock.json
-yarn.lock
 node_modules
 dist
 coverage
+.astro
+bun.lock
+packages/components/src/glyph*.ts

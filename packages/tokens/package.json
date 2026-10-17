@@ -1,0 +1,48 @@
+{
+  "name": "@hackclub/tokens",
+  "description": "Hack Club’s design tokens as JS, JSON, CSS custom properties and a Tailwind CSS theme",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./tokens.css": "./dist/tokens.css",
+    "./tailwind.css": "./dist/tailwind.css",
+    "./tokens.json": "./dist/tokens.json"
+  },
+  "files": [
+    "dist/"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "keywords": [
+    "hack club",
+    "design tokens",
+    "css variables",
+    "tailwind"
+  ],
+  "scripts": {
+    "build": "bun run build.ts",
+    "prepublishOnly": "bun run build",
+    "clean": "rm -rf ./dist"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hackclub/theme.git",
+    "directory": "packages/tokens"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

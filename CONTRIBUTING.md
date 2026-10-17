@@ -4,44 +4,23 @@ Hey—thanks for your interest in contributing! We follow the [Hack Club Code of
 
 ## Local Development
 
-This repo uses [Yarn Workspaces][] and [Lerna][] to develop multiple packages together as a monorepo.
-Be sure to install [Yarn][] before setting up the development environment.
-
-Install dependencies and link local packages in the root directory:
+This repo is a [Bun](https://bun.sh) workspace, with [Lerna][] building the
+packages in dependency order.
 
 ```bash
-yarn
-```
-
-After yarn has linked packages and installed dependences in the repo, you can run whatever you’re looking for.
-
-```bash
-yarn workspace <name-of-package> <command>
-```
-
-Where name of package is something like `@hackclub/theme` or `@hackclub/meta` (one of the packages
-listed by yarn when you run the `yarn workspaces info` command)
-
-Example:
-
-```bash
-yarn workspace @hackclub/meta prepare
+bun install           # installs dependencies and builds every package
+bun run build         # rebuild after changing a package
+bun run --cwd docs dev
 ```
 
 ## Tests
 
-Unit tests are run with [Jest][], and each relevant package includes a `test/` directory with unit tests for that package.
-
-Running tests:
-
-```sh
-yarn test
-```
-
-Running tests in watch mode:
+Unit tests use `bun test` with [happy-dom](https://github.com/capricorn86/happy-dom),
+and live in each package's `test/` directory.
 
 ```sh
-yarn test --watch
+bun run test
+bun run test:e2e   # clean build + tests + dist smoke test + docs build
 ```
 
 ## Pull Requests
@@ -52,8 +31,5 @@ When opening a pull request, please be sure to update any relevant documentation
 
 _Doc adapted from [Theme UI][]_
 
-[yarn]: https://yarnpkg.com
-[yarn workspaces]: https://yarnpkg.com/en/docs/workspaces
 [lerna]: https://github.com/lerna/lerna
-[jest]: https://jestjs.io/
 [theme ui]: https://github.com/system-ui/theme-ui/blob/master/CONTRIBUTING.md

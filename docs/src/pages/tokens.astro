@@ -1,0 +1,315 @@
+---
+import Base from '../layouts/Base.astro'
+import { Code } from 'astro:components'
+import {
+  palette,
+  colors,
+  fontSizes,
+  fontWeights,
+  lineHeights,
+  space,
+  radii,
+  shadows,
+  gradients,
+  easings,
+  durations,
+  breakpoints,
+  layout,
+  kebab
+} from '@hackclub/theme'
+
+const themes = { light: 'github-light', dark: 'github-dark' } as const
+
+const sections = [
+  ['palette', 'Palette'],
+  ['schemes', 'Light & dark'],
+  ['typography', 'Typography'],
+  ['space', 'Spacing'],
+  ['radii', 'Radii'],
+  ['shadows', 'Shadows'],
+  ['gradients', 'Gradients'],
+  ['motion', 'Motion'],
+  ['layout', 'Layout & breakpoints']
+]
+
+const brand = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple', 'gray'] as const
+const neutrals = ['ink', 'ink2', 'black', 'paper', 'cream', 'redDark', 'redLight'] as const
+const schemeKeys = Object.keys(colors.light).filter(k => k !== 'shadowPopover') as (keyof typeof colors.light)[]
+
+const typeSamples: [keyof typeof fontSizes, 'display' | 'sans'][] = [
+  ['display', 'display'],
+  ['title', 'display'],
+  ['heading', 'display'],
+  ['xl', 'display'],
+  ['lg', 'sans'],
+  ['body', 'sans'],
+  ['md', 'sans'],
+  ['sm', 'sans'],
+  ['xs', 'sans']
+]
+
+const usage = `.card {
+  background: var(--hc-surface);
+  border-radius: var(--hc-radius-card);
+  box-shadow: var(--hc-shadow-card);
+  font-family: var(--hc-font-display);
+  transition: transform var(--hc-duration-medium) var(--hc-ease-playful);
+}`
+---
+
+<Base title="Tokens" description="Colors, typography, spacing, radii, shadows and motion from hackclub.com.">
+  <div class="hc-container docs-shell">
+    <nav class="docs-sidebar" aria-label="On this page">
+      <span class="hc-kicker">On this page</span>
+      <ul>{sections.map(([id, label]) => <li><a href={`#${id}`}>{label}</a></li>)}</ul>
+    </nav>
+
+    <article class="docs-content">
+      <header class="page-header">
+        <span class="hc-kicker">Tokens</span>
+        <h1 class="hc-title">Design tokens</h1>
+        <p class="hc-lead">
+          Every value is a CSS custom property prefixed with <code>--hc-</code>, and is also exported
+          from <code>@hackclub/tokens</code> as JavaScript and JSON.
+        </p>
+      </header>
+
+      <section>
+        <Code code={usage} lang="css" themes={themes} />
+      </section>
+
+      <section id="palette">
+        <h2>Palette</h2>
+        <p>The brand colors. These stay the same in light and dark mode.</p>
+        <div class="swatches">
+          {
+            brand.map(name => (
+              <div class="swatch">
+                <div class="swatch-chip" style={`background: ${palette[name]}`} />
+                <div class="swatch-info">
+                  <strong>{name}</strong>
+                  <code>--hc-{kebab(name)}</code>
+                  <code>{palette[name]}</code>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <h3>Neutrals & accessible reds</h3>
+        <p>
+          Brand red is only 4.0:1 on white. For text smaller than 24px, use
+          <code>--hc-red-text</code>, which switches between <code>red-dark</code> and
+          <code>red-light</code> with the color scheme.
+        </p>
+        <div class="swatches">
+          {
+            neutrals.map(name => (
+              <div class="swatch">
+                <div class="swatch-chip" style={`background: ${palette[name]}`} />
+                <div class="swatch-info">
+                  <strong>{name}</strong>
+                  <code>--hc-{kebab(name)}</code>
+                  <code>{palette[name]}</code>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section id="schemes">
+        <h2>Light & dark</h2>
+        <p>
+          Semantic colors change with the color scheme. Use these for backgrounds, text and borders
+          rather than raw palette values.
+        </p>
+        <div class="scheme-pair">
+          {
+            (['light', 'dark'] as const).map(scheme => (
+              <div class="scheme" data-theme={scheme}>
+                <span class="hc-kicker">{scheme}</span>
+                {schemeKeys.map(key => (
+                  <div class="scheme-row">
+                    <span style={`background: ${colors[scheme][key]}`} />
+                    <span>{kebab(key)}</span>
+                    <code>{colors[scheme][key]}</code>
+                  </div>
+                ))}
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section id="typography">
+        <h2>Typography</h2>
+        <p>
+          Headings use <strong>Zarathustra</strong>, a serif display face with a single weight
+          (<code>--hc-font-display</code>). Everything else uses <strong>Phantom Sans</strong>
+          (<code>--hc-font-sans</code>), in weights from 100 to 700 with italics. Body text is 20px.
+        </p>
+        {
+          typeSamples.map(([size, family]) => (
+            <div class="specimen">
+              <code>
+                --hc-text-{size}
+                <br />
+                {fontSizes[size]}
+              </code>
+              <div
+                style={`font-family: var(--hc-font-${family}); font-size: ${fontSizes[size]}; line-height: ${family === 'display' ? 1 : 1.3}`}
+              >
+                {family === 'display' ? 'Hack Club' : 'For teens, by teens.'}
+              </div>
+            </div>
+          ))
+        }
+        <h3>Phantom Sans weights</h3>
+        {
+          Object.entries(fontWeights).map(([name, weight]) => (
+            <div class="specimen">
+              <code>
+                --hc-weight-{name}
+                <br />
+                {weight}
+              </code>
+              <div style={`font-weight: ${weight}; font-size: 1.5rem`}>
+                The quick brown dinosaur <em>jumps</em>
+              </div>
+            </div>
+          ))
+        }
+        <h3>Line heights</h3>
+        <div class="table-scroll">
+          <table class="api">
+            <tbody>
+              {Object.entries(lineHeights).map(([name, value]) => (
+                <tr><td><code>--hc-leading-{name}</code></td><td>{value}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="space">
+        <h2>Spacing</h2>
+        <p>Keyed by multiples of 4px, like Tailwind: <code>--hc-space-4</code> is 16px.</p>
+        {
+          Object.entries(space).map(([key, value]) => (
+            <div class="scale-row">
+              <code>--hc-space-{key}</code>
+              <div class="scale-bar" style={`width: ${value}`} />
+              <span>{value}</span>
+            </div>
+          ))
+        }
+      </section>
+
+      <section id="radii">
+        <h2>Radii</h2>
+        <p>hackclub.com rounds generously: buttons and inputs are pills, and cards use 16px.</p>
+        <div class="tiles">
+          {
+            Object.entries(radii).map(([key, value]) => (
+              <div class="tile" style={`border-radius: ${value}`}>
+                <div>
+                  <code>--hc-radius-{key}</code>
+                  <br />
+                  {value}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section id="shadows">
+        <h2>Shadows</h2>
+        <div class="tiles">
+          {
+            Object.entries(shadows).map(([key, value]) => (
+              <div
+                class="tile"
+                style={
+                  key.startsWith('sticker')
+                    ? `border-radius: var(--hc-radius-card); box-shadow: none; filter: drop-shadow(${value})`
+                    : `border-radius: var(--hc-radius-card); box-shadow: ${value}`
+                }
+              >
+                <code>--hc-shadow-{kebab(key)}</code>
+              </div>
+            ))
+          }
+          <div class="tile" style="border-radius: var(--hc-radius-card); box-shadow: var(--hc-shadow-popover)">
+            <code>--hc-shadow-popover</code>
+          </div>
+        </div>
+        <p style="margin-top: 16px">
+          Use <code>sticker</code> and <code>sticker-hover</code> with <code>filter: drop-shadow()</code>
+          on cut-out images.
+        </p>
+      </section>
+
+      <section id="gradients">
+        <h2>Gradients</h2>
+        <div class="tiles">
+          {
+            Object.entries(gradients).map(([key, value]) => (
+              <div class="tile" style={`border-radius: var(--hc-radius-card); background: ${value}; color: white`}>
+                <code style="color: inherit; background: rgba(0,0,0,.35); padding: 2px 8px; border-radius: 999px">
+                  --hc-gradient-{kebab(key)}
+                </code>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section id="motion">
+        <h2>Motion</h2>
+        <p>
+          Navigation uses a snappy ease-out; photos and stickers use a gentler, playful curve. Every
+          component turns off its animations when the visitor prefers reduced motion.
+        </p>
+        <div class="table-scroll">
+          <table class="api">
+            <tbody>
+              {Object.entries(easings).map(([name, value]) => (
+                <tr><td><code>--hc-ease-{name}</code></td><td><code>{value}</code></td></tr>
+              ))}
+              {Object.entries(durations).map(([name, value]) => (
+                <tr><td><code>--hc-duration-{name}</code></td><td>{value}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="layout">
+        <h2>Layout & breakpoints</h2>
+        <div class="table-scroll">
+          <table class="api">
+            <tbody>
+              {Object.entries(layout).map(([name, value]) => (
+                <tr><td><code>--hc-{kebab(name)}</code></td><td><code>{value}</code></td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          CSS can’t use custom properties in media queries, so breakpoints are available in JavaScript
+          and in the Tailwind theme only:
+        </p>
+        <div class="table-scroll">
+          <table class="api">
+            <tbody>
+              {Object.entries(breakpoints).map(([name, value]) => (
+                <tr><td><code>breakpoints.{name}</code></td><td>{value}px</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </article>
+  </div>
+</Base>

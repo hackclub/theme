@@ -1,0 +1,271 @@
+/*
+ * @hackclub/css-base — element defaults and utilities for the Hack Club look.
+ * Requires the custom properties from @hackclub/tokens.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  background-color: var(--hc-background);
+  color: var(--hc-foreground);
+  font-family: var(--hc-font-sans);
+  font-size: var(--hc-text-body);
+  line-height: var(--hc-leading-snug);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Smooth color transitions once the theme toggle has initialized */
+:root.hc-theme-ready body {
+  transition:
+    background-color var(--hc-duration-base) var(--hc-ease-standard),
+    color var(--hc-duration-base) var(--hc-ease-standard);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 var(--hc-space-4);
+  font-family: var(--hc-font-display);
+  font-weight: 400;
+  line-height: var(--hc-leading-heading);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--hc-text-title);
+}
+h2 {
+  font-size: var(--hc-text-heading);
+}
+h3 {
+  font-size: var(--hc-text-xl);
+}
+h4 {
+  font-size: var(--hc-text-lg);
+}
+h5,
+h6 {
+  font-size: var(--hc-text-body);
+}
+
+p {
+  margin: 0 0 var(--hc-space-4);
+  text-wrap: pretty;
+}
+
+/* Links slotted into navigation components are styled by the components */
+a:not(:is(hc-nav, hc-nav-menu, hc-footer, hc-footer-column) > a) {
+  color: var(--hc-red-text);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 2px;
+}
+
+a:not(:is(hc-nav, hc-nav-menu, hc-footer, hc-footer-column) > a):hover {
+  text-decoration-thickness: 0.12em;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+small {
+  font-size: var(--hc-text-sm);
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+hr {
+  margin: var(--hc-space-8) 0;
+  border: 0;
+  border-top: 2px solid var(--hc-border);
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--hc-font-mono);
+  font-size: 0.875em;
+}
+
+:not(pre) > code {
+  padding: 0.125em 0.375em;
+  border-radius: var(--hc-radius-sm);
+  background: var(--hc-surface-hover);
+}
+
+pre {
+  overflow-x: auto;
+  padding: var(--hc-space-4) var(--hc-space-5);
+  border-radius: var(--hc-radius-lg);
+  background: var(--hc-surface);
+  border: 1px solid var(--hc-border);
+  line-height: var(--hc-leading-normal);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: var(--hc-red);
+  color: var(--hc-paper);
+}
+
+:focus-visible {
+  outline: 3px solid var(--hc-orange);
+  outline-offset: 2px;
+}
+
+/* ── Typography utilities ─────────────────────────────────────────────── */
+
+.hc-display {
+  font-family: var(--hc-font-display);
+  font-weight: 400;
+  font-size: var(--hc-text-display);
+  line-height: var(--hc-leading-display);
+  letter-spacing: var(--hc-tracking-display);
+}
+
+.hc-title {
+  font-family: var(--hc-font-display);
+  font-weight: 400;
+  font-size: var(--hc-text-title);
+  line-height: var(--hc-leading-heading);
+}
+
+.hc-heading {
+  font-family: var(--hc-font-display);
+  font-weight: 400;
+  font-size: var(--hc-text-heading);
+  line-height: var(--hc-leading-heading);
+}
+
+.hc-kicker {
+  display: block;
+  font-family: var(--hc-font-sans);
+  font-size: var(--hc-text-xs);
+  font-weight: 700;
+  letter-spacing: var(--hc-tracking-kicker);
+  line-height: var(--hc-leading-snug);
+  text-transform: uppercase;
+  color: var(--hc-red-text);
+}
+
+.hc-lead {
+  font-size: var(--hc-text-lg);
+  line-height: var(--hc-leading-normal);
+  color: var(--hc-muted);
+}
+
+.hc-muted {
+  color: var(--hc-muted);
+}
+
+.hc-gradient-text {
+  background-image: var(--hc-gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ── Layout utilities ─────────────────────────────────────────────────── */
+
+.hc-container {
+  width: min(var(--hc-max-width), 100% - 2 * var(--hc-gutter));
+  margin-inline: auto;
+}
+
+.hc-container-prose {
+  width: min(var(--hc-prose-width), 100% - 2 * var(--hc-gutter));
+  margin-inline: auto;
+}
+
+.hc-section {
+  padding-block: var(--hc-section-y);
+}
+
+.hc-grid-paper {
+  --hc-grid-size: 50px;
+  --hc-grid-color: var(--hc-border);
+  background-image:
+    linear-gradient(90deg, var(--hc-grid-color) 1px, transparent 1px),
+    linear-gradient(var(--hc-grid-color) 1px, transparent 1px);
+  background-size: var(--hc-grid-size) var(--hc-grid-size);
+}
+
+.hc-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hc-skip-link {
+  position: absolute;
+  top: var(--hc-space-3);
+  left: var(--hc-space-3);
+  z-index: 1000;
+  padding: var(--hc-space-2) var(--hc-space-5);
+  border-radius: var(--hc-radius-pill);
+  background: var(--hc-foreground);
+  color: var(--hc-background);
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.hc-skip-link:focus {
+  transform: none;
+}
+
+/* Hide components until they have been defined, to avoid a flash of unstyled content */
+hc-nav:not(:defined),
+hc-footer:not(:defined),
+hc-sticker:not(:defined),
+hc-polaroid:not(:defined) {
+  visibility: hidden;
+}

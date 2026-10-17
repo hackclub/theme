@@ -1,0 +1,36 @@
+---
+import { components, groups } from '../data/components'
+
+const path = Astro.url.pathname
+---
+
+<nav class="docs-sidebar" aria-label="Components">
+  <ul>
+    <li>
+      <a href="/components/" aria-current={path === '/components/' ? 'page' : undefined}>
+        Overview
+      </a>
+    </li>
+  </ul>
+  {
+    groups.map(group => (
+      <>
+        <span class="hc-kicker">{group}</span>
+        <ul>
+          {components
+            .filter(c => c.group === group)
+            .map(c => (
+              <li>
+                <a
+                  href={`/components/${c.slug}/`}
+                  aria-current={path === `/components/${c.slug}/` ? 'page' : undefined}
+                >
+                  {c.name}
+                </a>
+              </li>
+            ))}
+        </ul>
+      </>
+    ))
+  }
+</nav>

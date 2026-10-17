@@ -1,0 +1,47 @@
+{
+  "name": "@hackclub/css-base",
+  "description": "Hack Club’s fonts, element defaults and utility classes as plain CSS",
+  "version": "1.0.0",
+  "type": "module",
+  "style": "dist/index.css",
+  "main": "dist/index.css",
+  "exports": {
+    ".": "./dist/index.css",
+    "./index.css": "./dist/index.css",
+    "./base.css": "./dist/base.css",
+    "./fonts.css": "./dist/fonts.css",
+    "./prose.css": "./dist/prose.css",
+    "./fonts/*": "./dist/fonts/*",
+    "./src/prose.css": "./src/prose.css"
+  },
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "keywords": [
+    "hack club",
+    "css",
+    "fonts",
+    "phantom sans"
+  ],
+  "scripts": {
+    "build": "bun run build.ts",
+    "prepublishOnly": "bun run build",
+    "clean": "rm -rf ./dist"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hackclub/theme.git",
+    "directory": "packages/css-base"
+  },
+  "devDependencies": {
+    "@hackclub/tokens": "workspace:*"
+  }
+}

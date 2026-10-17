@@ -1,0 +1,8 @@
+{
+  "public": true,
+  "trailingSlash": true,
+  "github": { "silent": true },
+  "redirects": [
+    { "source": "/gh/", "destination": "https://github.com/hackclub/theme" }
+  ]
+}

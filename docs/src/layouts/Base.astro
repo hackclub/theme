@@ -1,0 +1,98 @@
+---
+import '@hackclub/theme/css'
+import '../styles/docs.css'
+import { themeScript } from '@hackclub/theme'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title,
+  description = 'Hack Club’s design system: tokens, CSS and framework-agnostic web components for building sites that look like hackclub.com.'
+} = Astro.props
+
+const fullTitle = title ? `${title} – Hack Club Theme` : 'Hack Club Theme'
+const path = Astro.url.pathname
+const links = [
+  { href: '/getting-started/', label: 'Get started' },
+  { href: '/tokens/', label: 'Tokens' },
+  { href: '/components/', label: 'Components' }
+]
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline set:html={themeScript} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Hack Club" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:site" content="@hackclub" />
+    <meta name="theme-color" content="#ec3750" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={new URL(path, Astro.site)} />
+  </head>
+  <body>
+    <a class="hc-skip-link" href="#main">Skip to content</a>
+    <hc-nav sticky>
+      <span slot="logo" class="docs-logo">
+        <img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club" />
+        <span>Theme</span>
+      </span>
+      {
+        links.map(link => (
+          <a
+            href={link.href}
+            aria-current={path.startsWith(link.href) ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <hc-nav-menu label="Packages" align="end">
+        <a href="https://www.npmjs.com/package/@hackclub/theme">@hackclub/theme</a>
+        <a href="https://www.npmjs.com/package/@hackclub/tokens">@hackclub/tokens</a>
+        <a href="https://www.npmjs.com/package/@hackclub/css-base">@hackclub/css-base</a>
+        <a href="https://www.npmjs.com/package/@hackclub/components">@hackclub/components</a>
+        <a href="https://www.npmjs.com/package/@hackclub/meta">@hackclub/meta</a>
+      </hc-nav-menu>
+      <hc-theme-toggle slot="end"></hc-theme-toggle>
+      <hc-button slot="cta" size="sm" href="https://github.com/hackclub/theme">
+        <hc-icon slot="start" glyph="github" size="24"></hc-icon>
+        GitHub
+      </hc-button>
+    </hc-nav>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <hc-footer>
+      <p slot="about">
+        The design system behind hackclub.com.<br />For teens, by teens.
+      </p>
+      <hc-footer-column heading="Docs">
+        <a href="/getting-started/">Get started</a>
+        <a href="/tokens/">Tokens</a>
+        <a href="/components/">Components</a>
+      </hc-footer-column>
+      <hc-footer-column heading="Hack Club">
+        <a href="https://hackclub.com/">Website</a>
+        <a href="https://hackclub.com/brand/">Brand guide</a>
+        <a href="https://icons.hackclub.com/">Icons</a>
+        <a href="https://github.com/hackclub/site">hackclub/site</a>
+      </hc-footer-column>
+    </hc-footer>
+
+    <script>
+      import '@hackclub/theme'
+    </script>
+  </body>
+</html>
