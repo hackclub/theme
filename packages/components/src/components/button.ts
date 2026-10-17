@@ -5,11 +5,7 @@ import { base, focusRing } from '../internal/styles'
 import { arrowIcon } from '../internal/arrow'
 
 export type ButtonVariant =
-  | 'primary'
-  | 'red'
-  | 'secondary'
-  | 'outline'
-  | 'ghost'
+  'primary' | 'red' | 'secondary' | 'outline' | 'ghost'
 export type ButtonSize = 'sm' | 'md' | 'lg'
 
 /**
@@ -208,9 +204,11 @@ export class HcButton extends LitElement {
   render() {
     const content = html`<slot name="start"></slot><slot></slot
       ><slot name="end"
-        >${this.arrow
-          ? html`<span class="arrow" part="arrow">${arrowIcon}</span>`
-          : nothing}</slot
+        >${
+          this.arrow
+            ? html`<span class="arrow" part="arrow">${arrowIcon}</span>`
+            : nothing
+        }</slot
       >`
 
     if (this.href && !this.disabled) {

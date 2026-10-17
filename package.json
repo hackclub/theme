@@ -1,35 +1,49 @@
 {
+  "name": "hackclub-theme",
+  "description": "Hack Club's design system monorepo",
   "private": true,
-  "scripts": {
-    "build": "lerna run build",
-    "prepare": "bun run build",
-    "clean": "lerna run clean",
-    "test": "bun test",
-    "test:e2e": "bun run clean && bun run build && bun run test && node scripts/dist-smoke.mjs && bun run --cwd docs build",
-    "format": "prettier --write .",
-    "checkFormat": "prettier --check ."
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackclub/theme.git"
+  },
+  "packageManager": "bun@1.4.3",
+  "engines": {
+    "bun": ">=1.4"
   },
   "workspaces": [
     "packages/*",
     "docs"
   ],
+  "scripts": {
+    "build": "lerna run build",
+    "clean": "lerna run clean",
+    "test": "bun test",
+    "test:dist": "node scripts/dist-smoke.mjs",
+    "test:e2e": "bun run clean && bun run build && bun run test && bun run test:dist && bun run docs:build",
+    "docs:dev": "bun run --cwd docs dev",
+    "docs:build": "bun run --cwd docs build",
+    "format": "prettier --write .",
+    "checkFormat": "prettier --check .",
+    "prepare": "bun run build"
+  },
   "devDependencies": {
     "@hackclub/components": "workspace:*",
     "@hackclub/css-base": "workspace:*",
     "@hackclub/meta": "workspace:*",
     "@hackclub/theme": "workspace:*",
     "@hackclub/tokens": "workspace:*",
-    "@happy-dom/global-registrator": "^20.8.4",
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/react": "^16.3.2",
-    "happy-dom": "^20.8.4",
-    "lerna": "^9.0.5",
-    "prettier": "^3.8.1",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "typescript": "^5.9.3"
-  },
-  "dependencies": {
-    "@types/bun": "^1.3.11"
+    "@happy-dom/global-registrator": "^21.0.3",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
+    "@types/bun": "^1.4.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "happy-dom": "^21.0.3",
+    "lerna": "^10.1.1",
+    "prettier": "^3.9.10",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "^7.0.2"
   }
 }

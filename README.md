@@ -44,7 +44,7 @@ bun install          # also builds every package
 bun run build        # rebuild packages (in dependency order)
 bun run test         # unit tests (happy-dom)
 bun run test:e2e     # clean build, tests, dist smoke test and docs build
-bun run --cwd docs dev
+bun run docs:dev     # theme.hackclub.com on localhost
 ```
 
 The docs site in [`/docs`](docs) is built with [Astro](https://astro.build)

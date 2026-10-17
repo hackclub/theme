@@ -2,7 +2,32 @@
   "name": "@hackclub/components",
   "description": "Framework-agnostic web components for Hack Club's design system",
   "version": "1.0.0",
+  "keywords": [
+    "hack club",
+    "web components",
+    "custom elements",
+    "lit",
+    "design system"
+  ],
+  "homepage": "https://theme.hackclub.com",
+  "bugs": "https://github.com/hackclub/theme/issues",
+  "license": "MIT",
+  "author": "Hack Club <team@hackclub.com> (https://hackclub.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackclub/theme.git",
+    "directory": "packages/components"
+  },
   "type": "module",
+  "sideEffects": [
+    "./dist/index.js",
+    "./dist/icons.js",
+    "./dist/components/*.js",
+    "./dist/chunk-*.js"
+  ],
+  "files": [
+    "dist/"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,44 +49,22 @@
       "default": "./dist/components/*.js"
     }
   },
-  "files": [
-    "dist/"
-  ],
-  "sideEffects": [
-    "./dist/index.js",
-    "./dist/icons.js",
-    "./dist/components/*.js",
-    "./dist/chunk-*.js"
-  ],
-  "keywords": [
-    "hack club",
-    "web components",
-    "custom elements",
-    "lit",
-    "design system"
-  ],
   "scripts": {
     "build": "bun run build.ts",
-    "prepublishOnly": "bun run build",
+    "watch": "bun run --watch build.ts",
+    "clean": "rm -rf ./dist",
     "icons": "bun run scripts/gen-icons.tsx",
-    "clean": "rm -rf ./dist"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hackclub/theme.git",
-    "directory": "packages/components"
+    "prepublishOnly": "bun run build"
   },
   "dependencies": {
     "@hackclub/tokens": "workspace:*",
-    "lit": "^3.3.1"
+    "lit": "^3.3.3"
   },
   "devDependencies": {
     "@hackclub/css-base": "workspace:*",
-    "@hackclub/icons": "^0.2.2",
-    "typescript": "^5.9.3"
+    "@hackclub/icons": "^0.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

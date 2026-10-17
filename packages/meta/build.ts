@@ -34,7 +34,7 @@ const tsc = Bun.spawnSync(['bunx', 'tsc', '--emitDeclarationOnly'], {
   cwd: import.meta.dir
 })
 if (tsc.exitCode !== 0) {
-  console.error(tsc.stderr.toString())
+  console.error(tsc.stdout.toString(), tsc.stderr.toString())
   process.exit(1)
 }
 

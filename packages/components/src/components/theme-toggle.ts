@@ -138,9 +138,11 @@ export class HcThemeToggle extends LitElement {
       <svg viewBox="0 0 24 24" aria-hidden="true">
         ${icons[this.preference]}
       </svg>
-      ${this.variant === 'labeled'
-        ? html`<span>${labels[this.preference]} theme</span>`
-        : null}
+      ${
+        this.variant === 'labeled'
+          ? html`<span>${labels[this.preference]} theme</span>`
+          : null
+      }
     </button>`
   }
 }

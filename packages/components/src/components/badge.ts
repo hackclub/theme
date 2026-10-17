@@ -125,9 +125,11 @@ export class HcBadge extends LitElement {
 
   render() {
     return html`<span class="badge" part="badge"
-      >${this.pulse
-        ? html`<span class="dot" aria-hidden="true"></span>`
-        : nothing}<slot></slot
+      >${
+        this.pulse
+          ? html`<span class="dot" aria-hidden="true"></span>`
+          : nothing
+      }<slot></slot
     ></span>`
   }
 }

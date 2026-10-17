@@ -212,14 +212,16 @@ export class HcInput extends LitElement {
         ? `${this.#id}-hint`
         : undefined
     return html`
-      ${this.label
-        ? html`<label
-            part="label"
-            for=${this.#id}
-            class=${this.hideLabel ? 'sr-only' : ''}
-            >${this.label}</label
-          >`
-        : nothing}
+      ${
+        this.label
+          ? html`<label
+              part="label"
+              for=${this.#id}
+              class=${this.hideLabel ? 'sr-only' : ''}
+              >${this.label}</label
+            >`
+          : nothing
+      }
       <input
         part="input"
         id=${this.#id}
@@ -241,20 +243,22 @@ export class HcInput extends LitElement {
         @input=${this.#onInput}
         @change=${this.#onChange}
       />
-      ${this.error
-        ? html`<p
-            part="error"
-            class="error"
-            id="${this.#id}-error"
-            role="alert"
-          >
-            ${this.error}
-          </p>`
-        : this.hint
-          ? html`<p part="hint" class="hint" id="${this.#id}-hint">
-              ${this.hint}
+      ${
+        this.error
+          ? html`<p
+              part="error"
+              class="error"
+              id="${this.#id}-error"
+              role="alert"
+            >
+              ${this.error}
             </p>`
-          : nothing}
+          : this.hint
+            ? html`<p part="hint" class="hint" id="${this.#id}-hint">
+                ${this.hint}
+              </p>`
+            : nothing
+      }
     `
   }
 }

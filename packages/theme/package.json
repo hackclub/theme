@@ -2,8 +2,27 @@
   "name": "@hackclub/theme",
   "description": "Hack Club's design system: tokens, CSS and framework-agnostic web components",
   "version": "2.0.0",
+  "keywords": [
+    "hack club",
+    "design system",
+    "web components",
+    "design tokens",
+    "css"
+  ],
+  "homepage": "https://theme.hackclub.com",
+  "bugs": "https://github.com/hackclub/theme/issues",
+  "license": "MIT",
   "author": "Hack Club <team@hackclub.com> (https://hackclub.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackclub/theme.git",
+    "directory": "packages/theme"
+  },
   "type": "module",
+  "sideEffects": true,
+  "files": [
+    "dist/"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -30,31 +49,11 @@
       "default": "./dist/components/*.js"
     }
   },
-  "files": [
-    "dist/"
-  ],
-  "sideEffects": true,
-  "keywords": [
-    "hack club",
-    "design system",
-    "web components",
-    "design tokens",
-    "css"
-  ],
   "scripts": {
     "build": "bun run build.ts",
-    "prepublishOnly": "bun run build",
     "watch": "bun run --watch build.ts",
-    "clean": "rm -rf ./dist"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hackclub/theme.git",
-    "directory": "packages/theme"
+    "clean": "rm -rf ./dist",
+    "prepublishOnly": "bun run build"
   },
   "dependencies": {
     "@hackclub/components": "workspace:*",
@@ -62,5 +61,8 @@
   },
   "devDependencies": {
     "@hackclub/css-base": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

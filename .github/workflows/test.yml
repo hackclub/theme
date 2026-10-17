@@ -8,11 +8,20 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
-      - run: bun install
+        with:
+          bun-version-file: package.json
+      # Also builds every package (root "prepare" script)
+      - run: bun install --frozen-lockfile
       - run: bun run test
+      - run: bun run test:dist
+      - run: bun run docs:build

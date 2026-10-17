@@ -2,7 +2,28 @@
   "name": "@hackclub/tokens",
   "description": "Hack Club's design tokens as JS, JSON, CSS custom properties and a Tailwind CSS theme",
   "version": "1.0.0",
+  "keywords": [
+    "hack club",
+    "design tokens",
+    "css variables",
+    "tailwind"
+  ],
+  "homepage": "https://theme.hackclub.com",
+  "bugs": "https://github.com/hackclub/theme/issues",
+  "license": "MIT",
+  "author": "Hack Club <team@hackclub.com> (https://hackclub.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackclub/theme.git",
+    "directory": "packages/tokens"
+  },
   "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist/"
+  ],
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,33 +37,13 @@
     "./tailwind.css": "./dist/tailwind.css",
     "./tokens.json": "./dist/tokens.json"
   },
-  "files": [
-    "dist/"
-  ],
-  "sideEffects": [
-    "*.css"
-  ],
-  "keywords": [
-    "hack club",
-    "design tokens",
-    "css variables",
-    "tailwind"
-  ],
   "scripts": {
     "build": "bun run build.ts",
-    "prepublishOnly": "bun run build",
-    "clean": "rm -rf ./dist"
+    "watch": "bun run --watch build.ts",
+    "clean": "rm -rf ./dist",
+    "prepublishOnly": "bun run build"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hackclub/theme.git",
-    "directory": "packages/tokens"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3"
   }
 }
