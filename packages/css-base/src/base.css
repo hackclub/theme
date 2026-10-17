@@ -77,14 +77,11 @@ p {
 }
 
 /* Links slotted into navigation components are styled by the components */
+/* As on hackclub.com: a plain underline that stays put on hover */
 a:not(:is(hc-nav, hc-nav-menu, hc-footer, hc-footer-column) > a) {
   color: var(--hc-red-text);
-  text-decoration-thickness: 0.08em;
+  text-decoration: underline;
   text-underline-offset: 2px;
-}
-
-a:not(:is(hc-nav, hc-nav-menu, hc-footer, hc-footer-column) > a):hover {
-  text-decoration-thickness: 0.12em;
 }
 
 strong,

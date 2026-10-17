@@ -24,7 +24,8 @@ const summary = doc.summary.replace(/[`*]/g, '').replace(/\[([^\]]+)\]\([^)]+\)/
         <span class="hc-kicker">{doc.group}</span>
         <h1 class="hc-title">{doc.name}</h1>
         <p class="hc-lead" set:html={inline(doc.summary)} />
-        <p>
+        <br/>
+        <p style="display: inline-flex; gap: 0.25rem;">
           {doc.tags.map(tag => <hc-badge variant="soft" color="ink">&lt;{tag}&gt;</hc-badge>)}
         </p>
       </header>
