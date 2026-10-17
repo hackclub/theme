@@ -95,6 +95,33 @@
   }
 }
 
+/* Stickers scattered by scripts/scatter-stickers.ts */
+.sticker-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sticker-layer hc-sticker {
+  position: absolute;
+  pointer-events: auto;
+  animation: sticker-in var(--hc-duration-slow) var(--hc-ease-playful) both;
+}
+
+@keyframes sticker-in {
+  from {
+    opacity: 0;
+    scale: 0.85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sticker-layer hc-sticker {
+    animation: none;
+  }
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
