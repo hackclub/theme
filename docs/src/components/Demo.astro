@@ -1,0 +1,19 @@
+---
+import { Code } from 'astro:components'
+import type { Demo } from '../data/components'
+
+interface Props {
+  demo: Demo
+}
+
+const { demo } = Astro.props
+const layout = demo.layout ?? 'inline'
+---
+
+<figure class="demo">
+  {demo.title && <figcaption class="demo-title">{demo.title}</figcaption>}
+  <div class:list={['demo-stage', { block: layout === 'block', flush: layout === 'flush' }]}>
+    <Fragment set:html={demo.html} />
+  </div>
+  <Code code={demo.html} lang="html" themes={{ light: 'github-light', dark: 'github-dark' }} />
+</figure>

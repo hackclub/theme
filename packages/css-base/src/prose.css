@@ -1,0 +1,119 @@
+/* Long-form content styling, matching hackclub.com’s Markdown pages */
+
+:where(hc-prose, .hc-prose) {
+  display: block;
+  max-width: var(--hc-prose-width);
+  font-size: var(--hc-text-md);
+  line-height: var(--hc-leading-prose);
+  color: var(--hc-foreground);
+}
+
+:where(hc-prose, .hc-prose) > :first-child {
+  margin-top: 0;
+}
+
+:where(hc-prose, .hc-prose) :where(h1, h2, h3, h4) {
+  margin: 2em 0 0.6em;
+  font-family: var(--hc-font-display);
+  font-weight: 400;
+  line-height: var(--hc-leading-heading);
+}
+
+:where(hc-prose, .hc-prose) :where(h1) {
+  font-size: 2.5rem;
+}
+:where(hc-prose, .hc-prose) :where(h2) {
+  font-size: 2rem;
+}
+:where(hc-prose, .hc-prose) :where(h3) {
+  font-size: 1.5rem;
+}
+:where(hc-prose, .hc-prose) :where(h4) {
+  font-size: 1.25rem;
+  font-family: var(--hc-font-sans);
+  font-weight: 700;
+}
+
+:where(hc-prose, .hc-prose) :where(p, ul, ol, blockquote, pre, table, figure) {
+  margin: 0 0 1.25em;
+}
+
+:where(hc-prose, .hc-prose) :where(a) {
+  color: var(--hc-red-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+:where(hc-prose, .hc-prose) :where(ul, ol) {
+  padding-left: 1.5em;
+}
+
+:where(hc-prose, .hc-prose) :where(li) {
+  margin-bottom: 0.4em;
+}
+
+:where(hc-prose, .hc-prose) li::marker {
+  color: var(--hc-red);
+}
+
+:where(hc-prose, .hc-prose) :where(blockquote) {
+  padding: 0.25em 0 0.25em 1.25em;
+  border-left: 4px solid var(--hc-red);
+  color: var(--hc-muted);
+  font-style: italic;
+}
+
+:where(hc-prose, .hc-prose) :where(hr) {
+  margin: 2.5em 0;
+  border: 0;
+  border-top: 2px solid var(--hc-border);
+}
+
+:where(hc-prose, .hc-prose) :where(img, video) {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--hc-radius-card);
+}
+
+:where(hc-prose, .hc-prose) :where(code) {
+  font-family: var(--hc-font-mono);
+  font-size: 0.875em;
+}
+
+:where(hc-prose, .hc-prose) :where(:not(pre) > code) {
+  padding: 0.125em 0.375em;
+  border-radius: var(--hc-radius-sm);
+  background: var(--hc-surface-hover);
+}
+
+:where(hc-prose, .hc-prose) :where(pre) {
+  overflow-x: auto;
+  padding: 1em 1.25em;
+  border: 1px solid var(--hc-border);
+  border-radius: var(--hc-radius-lg);
+  background: var(--hc-surface);
+  line-height: var(--hc-leading-normal);
+}
+
+:where(hc-prose, .hc-prose) :where(table) {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+:where(hc-prose, .hc-prose) :where(th, td) {
+  padding: 0.6em 0.8em;
+  border-bottom: 1px solid var(--hc-border);
+  text-align: left;
+}
+
+:where(hc-prose, .hc-prose) :where(th) {
+  font-weight: 700;
+}
+
+:where(hc-prose, .hc-prose) :where(figcaption) {
+  margin-top: 0.5em;
+  font-size: var(--hc-text-sm);
+  color: var(--hc-muted);
+  text-align: center;
+}

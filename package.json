@@ -5,7 +5,7 @@
     "prepare": "bun run build",
     "clean": "lerna run clean",
     "test": "bun test",
-    "test:e2e": "bun run clean && bun run build && bun run test && node scripts/dist-smoke.cjs && bun run --cwd docs build",
+    "test:e2e": "bun run clean && bun run build && bun run test && node scripts/dist-smoke.mjs && bun run --cwd docs build",
     "format": "prettier --write .",
     "checkFormat": "prettier --check ."
   },
@@ -14,6 +14,11 @@
     "docs"
   ],
   "devDependencies": {
+    "@hackclub/components": "workspace:*",
+    "@hackclub/css-base": "workspace:*",
+    "@hackclub/meta": "workspace:*",
+    "@hackclub/theme": "workspace:*",
+    "@hackclub/tokens": "workspace:*",
     "@happy-dom/global-registrator": "^20.8.4",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/react": "^16.3.2",
@@ -21,7 +26,8 @@
     "lerna": "^9.0.5",
     "prettier": "^3.8.1",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react-dom": "^19.2.4",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "@types/bun": "^1.3.11"

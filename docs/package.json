@@ -1,0 +1,17 @@
+{
+  "name": "@hackclub/theme-docs",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "start": "astro dev"
+  },
+  "dependencies": {
+    "@hackclub/theme": "workspace:*",
+    "astro": "^5.14.1"
+  }
+}

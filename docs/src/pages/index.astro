@@ -1,0 +1,169 @@
+---
+import Base from '../layouts/Base.astro'
+import { Code } from 'astro:components'
+import { palette } from '@hackclub/theme'
+
+const photo = (n: number) => `https://hackclub.com/assets/hero_photo${n}.webp`
+const sticker = (n: number) => `https://hackclub.com/assets/hero_sticker${n}.webp`
+
+const packages = [
+  {
+    name: '@hackclub/theme',
+    text: 'Everything in one install: tokens, CSS, fonts and every component. Also available as a single file on a CDN.',
+    color: 'red'
+  },
+  {
+    name: '@hackclub/tokens',
+    text: 'Colors, type, spacing, radii, shadows and motion as JS, JSON, CSS custom properties and a Tailwind v4 theme.',
+    color: 'orange'
+  },
+  {
+    name: '@hackclub/css-base',
+    text: 'Phantom Sans and Zarathustra, element defaults, prose styles and a few utility classes. No JavaScript.',
+    color: 'blue'
+  },
+  {
+    name: '@hackclub/components',
+    text: 'Framework-agnostic web components: buttons, cards, nav, footer, theme toggle, polaroids, stickers and more.',
+    color: 'purple'
+  }
+]
+
+const cdn = `<link rel="stylesheet" href="https://unpkg.com/@hackclub/theme@2/dist/hackclub.css" />
+<script type="module" src="https://unpkg.com/@hackclub/theme@2/dist/hackclub.js"></script>
+
+<hc-button arrow>Join Hack Club</hc-button>`
+
+const npm = `// bun add @hackclub/theme
+import '@hackclub/theme/css'
+import '@hackclub/theme'`
+
+const swatches = ['red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'purple'] as const
+---
+
+<Base>
+  <section class="hero">
+    <div class="hero-photos" aria-hidden="true">
+      <hc-polaroid src={photo(1)} alt="" rotate="-10" style="left: 4%; top: 12%; --hc-polaroid-width: 200px"></hc-polaroid>
+      <hc-polaroid src={photo(4)} alt="" rotate="8" style="left: 8%; bottom: 10%; --hc-polaroid-width: 180px"></hc-polaroid>
+      <hc-polaroid src={photo(2)} alt="" rotate="12" style="right: 5%; top: 10%; --hc-polaroid-width: 210px"></hc-polaroid>
+      <hc-polaroid src={photo(3)} alt="" rotate="-6" style="right: 9%; bottom: 8%; --hc-polaroid-width: 180px"></hc-polaroid>
+      <hc-sticker src={sticker(1)} alt="" rotate="-12" movable style="left: 3%; top: 42%; --hc-sticker-width: 110px"></hc-sticker>
+      <hc-sticker src={sticker(3)} alt="" rotate="14" movable style="right: 3%; top: 44%; --hc-sticker-width: 100px"></hc-sticker>
+    </div>
+    <div class="hc-container" style="position: relative">
+      <span class="hc-kicker">Hack Club Theme v2</span>
+      <h1 class="hc-display">
+        Build like<br /><hc-gradient-text variant="rainbow">hackclub.com</hc-gradient-text>
+      </h1>
+      <p class="hc-lead">
+        The design system behind Hack Club’s website, as tokens, CSS and web components. Works with
+        any framework, or none at all.
+      </p>
+      <div class="hero-actions">
+        <hc-button href="/getting-started/" arrow>Get started</hc-button>
+        <hc-button href="/components/" variant="secondary">Browse components</hc-button>
+      </div>
+      <code class="hero-install">bun add @hackclub/theme</code>
+    </div>
+  </section>
+
+  <hc-section>
+    <div class="section-intro">
+      <span class="hc-kicker">Packages</span>
+      <h2 class="hc-heading">Use as much or as little as you like</h2>
+      <p class="hc-lead">
+        Each layer works on its own. Use just the tokens in your Tailwind config, or drop two tags on a
+        page to get everything.
+      </p>
+    </div>
+    <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr))">
+      {
+        packages.map(pkg => (
+          <hc-card variant="raised" href={`https://www.npmjs.com/package/${pkg.name}`}>
+            <hc-badge color={pkg.color} variant="soft">npm</hc-badge>
+            <h3 class="card-title" style="margin-top: 16px; font-size: 1.4rem; overflow-wrap: anywhere">{pkg.name}</h3>
+            <p class="card-text">{pkg.text}</p>
+          </hc-card>
+        ))
+      }
+    </div>
+  </hc-section>
+
+  <hc-section tone="surface">
+    <div class="grid-2">
+      <div>
+        <span class="hc-kicker">No build step</span>
+        <h2 class="hc-heading">Two tags and you’re in</h2>
+        <p class="hc-lead">
+          The CDN bundle includes Lit and every component, and is about 32&nbsp;KB gzipped. Fonts load from
+          the same package.
+        </p>
+        <Code code={cdn} lang="html" themes={{ light: 'github-light', dark: 'github-dark' }} />
+      </div>
+      <div>
+        <span class="hc-kicker">With a bundler</span>
+        <h2 class="hc-heading">Or import it</h2>
+        <p class="hc-lead">
+          Works with Vite, Next.js, Astro, SvelteKit and Nuxt. The components are standard custom
+          elements, so React 19 and Vue support them natively.
+        </p>
+        <Code code={npm} lang="js" themes={{ light: 'github-light', dark: 'github-dark' }} />
+        <p style="margin-top: 24px">
+          <hc-button href="/getting-started/" variant="outline" size="sm" arrow>Framework guides</hc-button>
+        </p>
+      </div>
+    </div>
+  </hc-section>
+
+  <hc-section>
+    <div class="grid-2">
+      <div>
+        <span class="hc-kicker">Tokens</span>
+        <h2 class="hc-heading">The colors of <hc-gradient-text>Hack Club</hc-gradient-text></h2>
+        <p class="hc-lead">
+          The palette, the Zarathustra and Phantom Sans type pairing, pill radii and playful easing,
+          taken straight from hackclub.com. Light and dark mode come built in.
+        </p>
+        <hc-button href="/tokens/" arrow>Explore tokens</hc-button>
+      </div>
+      <div class="swatches" style="grid-template-columns: repeat(auto-fill, minmax(100px, 1fr))">
+        {
+          swatches.map(name => (
+            <div class="swatch">
+              <div class="swatch-chip" style={`background: ${palette[name]}; height: 72px`} />
+              <div class="swatch-info">
+                {name}
+                <code>{palette[name]}</code>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </hc-section>
+
+  <hc-section tone="ink">
+    <div class="grid-2" style="align-items: center">
+      <div>
+        <span class="hc-kicker">Email signup</span>
+        <h2 class="hc-heading">Components with the details done</h2>
+        <p class="hc-lead">
+          They handle focus rings, reduced motion, form participation, keyboard navigation and dark mode
+          for you.
+        </p>
+      </div>
+      <div>
+        <hc-email-signup id="home-signup"></hc-email-signup>
+      </div>
+    </div>
+  </hc-section>
+  <hc-wave fill="var(--hc-black)" style="background: var(--hc-ink)"></hc-wave>
+
+  <script>
+    const signup = document.getElementById('home-signup') as HTMLElement & { status: string }
+    signup?.addEventListener('hc-submit', () => {
+      signup.status = 'success'
+    })
+  </script>
+</Base>

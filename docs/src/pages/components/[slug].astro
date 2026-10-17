@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro'
+import Demo from '../../components/Demo.astro'
+import ApiTable from '../../components/ApiTable.astro'
+import Sidebar from '../../components/Sidebar.astro'
+import { components, type ComponentDoc } from '../../data/components'
+import { inline } from '../../lib/inline'
+
+export function getStaticPaths() {
+  return components.map(doc => ({ params: { slug: doc.slug }, props: { doc } }))
+}
+
+const { doc } = Astro.props as { doc: ComponentDoc }
+const index = components.indexOf(doc)
+const next = components[index + 1]
+const summary = doc.summary.replace(/[`*]/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+---
+
+<Base title={doc.name} description={summary}>
+  <div class="hc-container docs-shell">
+    <Sidebar />
+    <article class="docs-content">
+      <header class="page-header">
+        <span class="hc-kicker">{doc.group}</span>
+        <h1 class="hc-title">{doc.name}</h1>
+        <p class="hc-lead" set:html={inline(doc.summary)} />
+        <p>
+          {doc.tags.map(tag => <hc-badge variant="soft" color="ink">&lt;{tag}&gt;</hc-badge>)}
+        </p>
+      </header>
+
+      <section>
+        {doc.demos.map(demo => <Demo demo={demo} />)}
+        {doc.notes && <hc-callout heading="Good to know" set:html={inline(doc.notes)} />}
+      </section>
+
+      <section>
+        <h2>API</h2>
+        <ApiTable title="Attributes" rows={doc.attributes} />
+        <ApiTable title="Slots" rows={doc.slots} />
+        <ApiTable title="Events" rows={doc.events} />
+        <ApiTable title="CSS parts" rows={doc.parts} />
+        <ApiTable title="CSS custom properties" rows={doc.cssProps} />
+        {
+          !doc.attributes && !doc.slots && !doc.events && !doc.parts && !doc.cssProps && (
+            <p>No options — just wrap your content.</p>
+          )
+        }
+      </section>
+
+      {
+        next && (
+          <hc-button href={`/components/${next.slug}/`} variant="secondary" arrow>
+            Next: {next.name}
+          </hc-button>
+        )
+      }
+    </article>
+  </div>
+</Base>

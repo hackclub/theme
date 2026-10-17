@@ -1,0 +1,67 @@
+{
+  "name": "@hackclub/components",
+  "description": "Framework-agnostic web components for Hack Club’s design system",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./theme": {
+      "types": "./dist/theme.d.ts",
+      "default": "./dist/theme.js"
+    },
+    "./icons": {
+      "types": "./dist/icons.d.ts",
+      "default": "./dist/icons.js"
+    },
+    "./*": {
+      "types": "./dist/components/*.d.ts",
+      "default": "./dist/components/*.js"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "sideEffects": [
+    "./dist/index.js",
+    "./dist/icons.js",
+    "./dist/components/*.js",
+    "./dist/chunk-*.js"
+  ],
+  "keywords": [
+    "hack club",
+    "web components",
+    "custom elements",
+    "lit",
+    "design system"
+  ],
+  "scripts": {
+    "build": "bun run build.ts",
+    "prepublishOnly": "bun run build",
+    "icons": "bun run scripts/gen-icons.tsx",
+    "clean": "rm -rf ./dist"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hackclub/theme.git",
+    "directory": "packages/components"
+  },
+  "dependencies": {
+    "@hackclub/tokens": "workspace:*",
+    "lit": "^3.3.1"
+  },
+  "devDependencies": {
+    "@hackclub/css-base": "workspace:*",
+    "@hackclub/icons": "^0.2.2",
+    "typescript": "^5.9.3"
+  }
+}

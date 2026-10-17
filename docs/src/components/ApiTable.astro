@@ -1,0 +1,43 @@
+---
+import type { Row } from '../data/components'
+import { inline } from '../lib/inline'
+
+interface Props {
+  title: string
+  rows?: Row[]
+}
+
+const { title, rows } = Astro.props
+const showType = rows?.some(row => row[2])
+const showDefault = rows?.some(row => row[3])
+---
+
+{
+  rows?.length ? (
+    <>
+      <h3>{title}</h3>
+      <div class="table-scroll">
+        <table class="api">
+          <thead>
+            <tr>
+              <th>Name</th>
+              {showType && <th>Type</th>}
+              {showDefault && <th>Default</th>}
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(([name, description, type, defaultValue]) => (
+              <tr>
+                <td><code>{name}</code></td>
+                {showType && <td>{type && <code>{type}</code>}</td>}
+                {showDefault && <td>{defaultValue && <code>{defaultValue}</code>}</td>}
+                <td set:html={inline(description)} />
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  ) : null
+}

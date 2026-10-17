@@ -1,0 +1,344 @@
+---
+import Base from '../layouts/Base.astro'
+import { Code } from 'astro:components'
+
+const themes = { light: 'github-light', dark: 'github-dark' } as const
+
+const sections = [
+  ['cdn', 'CDN'],
+  ['npm', 'npm'],
+  ['frameworks', 'Frameworks'],
+  ['tailwind', 'Tailwind CSS'],
+  ['dark-mode', 'Dark mode'],
+  ['customizing', 'Customizing'],
+  ['migrating', 'Migrating from v1']
+]
+
+const cdn = `<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/@hackclub/theme@2/dist/hackclub.css" />
+    <script type="module" src="https://unpkg.com/@hackclub/theme@2/dist/hackclub.js"></script>
+  </head>
+  <body>
+    <hc-nav>
+      <a href="/about">About</a>
+      <hc-button slot="cta" size="sm">Join</hc-button>
+    </hc-nav>
+    <hc-section>
+      <h1 class="hc-display">Hello, world</h1>
+    </hc-section>
+    <hc-footer></hc-footer>
+  </body>
+</html>`
+
+const install = `bun add @hackclub/theme`
+
+const npmUsage = `// Fonts, tokens, element defaults and prose styles
+import '@hackclub/theme/css'
+
+// Registers every <hc-*> element
+import '@hackclub/theme'
+
+// …or only what you use
+import '@hackclub/theme/components/button'
+import '@hackclub/theme/components/card'`
+
+const layers = `bun add @hackclub/tokens       # JS/JSON tokens, tokens.css, tailwind.css
+bun add @hackclub/css-base     # fonts + element defaults (CSS only)
+bun add @hackclub/components   # the web components`
+
+const react = `import '@hackclub/theme/css'
+import '@hackclub/theme'
+
+export function Signup() {
+  return (
+    <hc-email-signup
+      button-label="Join"
+      onhc-submit={event => subscribe(event.detail.email)}
+    />
+  )
+}`
+
+const reactTypes = `// hackclub.d.ts: optional JSX types
+import type { HcButton, HcEmailSignup } from '@hackclub/theme'
+
+type Props<T> = Partial<Omit<T, keyof HTMLElement>> &
+  React.HTMLAttributes<T> & { children?: React.ReactNode }
+
+declare module 'react' {
+  namespace JSX {
+    interface IntrinsicElements {
+      'hc-button': Props<HcButton>
+      'hc-email-signup': Props<HcEmailSignup> & {
+        'onhc-submit'?: (event: CustomEvent<{ email: string }>) => void
+      }
+    }
+  }
+}`
+
+const nextjs = `// app/layout.tsx
+import '@hackclub/theme/css'
+import { themeScript } from '@hackclub/theme'
+import { Elements } from './elements'
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body>
+        <Elements />
+        {children}
+      </body>
+    </html>
+  )
+}
+
+// app/elements.tsx
+'use client'
+import { useEffect } from 'react'
+export function Elements() {
+  useEffect(() => void import('@hackclub/theme'), [])
+  return null
+}`
+
+const vue = `// vite.config.js
+import vue from '@vitejs/plugin-vue'
+
+export default {
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: { isCustomElement: tag => tag.startsWith('hc-') }
+      }
+    })
+  ]
+}
+
+// main.js
+import '@hackclub/theme/css'
+import '@hackclub/theme'`
+
+const svelte = `<script>
+  import '@hackclub/theme/css'
+  import '@hackclub/theme'
+</script>
+
+<hc-button variant="red" on:click={() => count++}>Clicked {count} times</hc-button>`
+
+const astro = `---
+import '@hackclub/theme/css'
+import { themeScript } from '@hackclub/theme'
+---
+<html lang="en">
+  <head>
+    <script is:inline set:html={themeScript} />
+  </head>
+  <body>
+    <hc-button arrow>Hello</hc-button>
+    <script>
+      import '@hackclub/theme'
+    </script>
+  </body>
+</html>`
+
+const tailwind = `/* app.css */
+@import 'tailwindcss';
+@import '@hackclub/theme/tailwind.css';
+@import '@hackclub/theme/fonts.css';`
+
+const tailwindUsage = `<div class="bg-hc-surface text-hc-foreground rounded-card shadow-raised p-8">
+  <h2 class="font-display text-heading">Clubs</h2>
+  <p class="text-hc-muted">Utilities follow light and dark mode.</p>
+  <a class="text-hc-red-text">Learn more</a>
+</div>`
+
+const themeHead = `<head>
+  <!-- Before your stylesheets: applies the saved theme before first paint -->
+  <script>/* paste the value of themeScript from @hackclub/theme here */</script>
+</head>`
+
+const scoped = `<!-- Force a scheme for part of the page -->
+<section data-theme="dark">Always dark</section>
+<html class="dark">…</html> <!-- same as hackclub.com and Tailwind -->`
+
+const jsTheme = `import { setTheme, getThemePreference, THEME_CHANGE_EVENT } from '@hackclub/theme'
+
+setTheme('dark') // 'light' | 'dark' | 'system'
+document.addEventListener(THEME_CHANGE_EVENT, e => console.log(e.detail.theme))`
+
+const override = `:root {
+  --hc-max-width: 1400px;
+  --hc-radius-card: 24px;
+}
+
+/* Restyle one button */
+hc-button.signup {
+  --hc-button-bg: var(--hc-purple);
+  --hc-button-bg-hover: var(--hc-blue);
+}
+
+/* Reach inside with CSS parts */
+hc-card::part(card) {
+  border: 2px dashed var(--hc-red);
+}`
+
+const tokensJs = `import { palette, colors, fonts, radii, cssVar } from '@hackclub/tokens'
+
+palette.red          // '#ec3750'
+colors.dark.surface  // '#1f1f27'
+cssVar('radius-card') // 'var(--hc-radius-card)'`
+
+const migrate = `// v1 (Theme UI)
+import theme from '@hackclub/theme'
+<ThemeProvider theme={theme}>
+  <Button variant="cta">Join</Button>
+</ThemeProvider>
+
+// v2
+import '@hackclub/theme/css'
+import '@hackclub/theme'
+<hc-button arrow>Join</hc-button>`
+---
+
+<Base title="Get started" description="Install the Hack Club theme from a CDN or npm, and use it with any framework.">
+  <div class="hc-container docs-shell">
+    <nav class="docs-sidebar" aria-label="On this page">
+      <span class="hc-kicker">On this page</span>
+      <ul>{sections.map(([id, label]) => <li><a href={`#${id}`}>{label}</a></li>)}</ul>
+    </nav>
+
+    <article class="docs-content">
+      <header class="page-header">
+        <span class="hc-kicker">Get started</span>
+        <h1 class="hc-title">Installation</h1>
+        <p class="hc-lead">
+          Hack Club Theme v2 comes as CSS plus standard web components, so it works with any
+          framework, or with plain HTML.
+        </p>
+      </header>
+
+      <section id="cdn">
+        <h2>CDN</h2>
+        <p>
+          The quickest start. <code>hackclub.css</code> contains the tokens, fonts, element defaults and
+          prose styles; <code>hackclub.js</code> registers every component, with Lit bundled in.
+        </p>
+        <Code code={cdn} lang="html" themes={themes} />
+      </section>
+
+      <section id="npm">
+        <h2>npm</h2>
+        <Code code={install} lang="bash" themes={themes} />
+        <Code code={npmUsage} lang="js" themes={themes} />
+        <p>
+          <code>@hackclub/theme</code> bundles every layer. If you only need part of it, install the
+          layers on their own:
+        </p>
+        <Code code={layers} lang="bash" themes={themes} />
+        <hc-callout tone="tip" heading="Using only the JavaScript?">
+          The components fall back to injecting the token stylesheet if the page hasn’t loaded it.
+          You still need <code>fonts.css</code> (or <code>hackclub.css</code>) for Phantom Sans and
+          Zarathustra.
+        </hc-callout>
+      </section>
+
+      <section id="frameworks">
+        <h2>Frameworks</h2>
+        <p>
+          The components are custom elements, so you configure them with attributes and listen to
+          their events like any other HTML. They render on the client; server-rendered pages show their
+          light-DOM content until the script loads.
+        </p>
+
+        <h3>React 19</h3>
+        <p>
+          React 19 passes props to custom elements as properties and wires up custom events with an
+          <code>on</code> prefix.
+        </p>
+        <Code code={react} lang="jsx" themes={themes} />
+        <p>TypeScript doesn’t know about custom elements, so you can declare the ones you use:</p>
+        <Code code={reactTypes} lang="ts" themes={themes} />
+
+        <h3>Next.js (App Router)</h3>
+        <Code code={nextjs} lang="tsx" themes={themes} />
+
+        <h3>Vue</h3>
+        <Code code={vue} lang="js" themes={themes} />
+
+        <h3>Svelte</h3>
+        <Code code={svelte} lang="svelte" themes={themes} />
+
+        <h3>Astro</h3>
+        <Code code={astro} lang="astro" themes={themes} />
+      </section>
+
+      <section id="tailwind">
+        <h2>Tailwind CSS</h2>
+        <p>
+          <code>tailwind.css</code> maps Tailwind v4’s theme onto the <code>--hc-</code> custom
+          properties, so utilities change with the color scheme.
+        </p>
+        <Code code={tailwind} lang="css" themes={themes} />
+        <Code code={tailwindUsage} lang="html" themes={themes} />
+      </section>
+
+      <section id="dark-mode">
+        <h2>Dark mode</h2>
+        <p>
+          With no setup, the theme follows the visitor’s system setting. Add
+          <a href="/components/theme-toggle/"><code>&lt;hc-theme-toggle&gt;</code></a> to let visitors
+          choose, and inline <code>themeScript</code> in your <code>&lt;head&gt;</code> so the saved
+          choice applies before the first paint:
+        </p>
+        <Code code={themeHead} lang="html" themes={themes} />
+        <p>
+          The scheme is resolved in this order: <code>data-theme</code> or
+          <code>.hc-light</code>/<code>.hc-dark</code> on any element, then <code>html.dark</code>, then
+          <code>prefers-color-scheme</code>.
+        </p>
+        <Code code={scoped} lang="html" themes={themes} />
+        <Code code={jsTheme} lang="js" themes={themes} />
+      </section>
+
+      <section id="customizing">
+        <h2>Customizing</h2>
+        <p>
+          Every token is a custom property you can override. Components also expose their own custom
+          properties and CSS parts, listed on each <a href="/components/">component page</a>.
+        </p>
+        <Code code={override} lang="css" themes={themes} />
+        <p>The raw values are available in JavaScript, and as <code>tokens.json</code>:</p>
+        <Code code={tokensJs} lang="js" themes={themes} />
+      </section>
+
+      <section id="migrating">
+        <h2>Migrating from v1</h2>
+        <p>
+          v1 was a <a href="https://theme-ui.com">Theme UI</a> theme for the previous hackclub.com. v2
+          follows the current site’s design and drops Theme UI and React entirely. If you need the old
+          theme, <code>@hackclub/theme@1</code> is still on npm.
+        </p>
+        <ul>
+          <li>
+            <code>theme.colors.*</code> → <code>var(--hc-*)</code>. The palette is the same, and
+            <code>primary</code> is <code>--hc-red</code>.
+          </li>
+          <li>
+            The new site pairs <strong>Zarathustra</strong> headings with <strong>Phantom Sans</strong>
+            body text, and buttons are always pills.
+          </li>
+          <li>
+            Theme UI variants (<code>Button variant="cta"</code>, <code>Card variant="sunken"</code>)
+            become components and attributes (<code>&lt;hc-button&gt;</code>,
+            <code>&lt;hc-card variant="outline"&gt;</code>).
+          </li>
+          <li><code>@hackclub/meta</code> is unchanged.</li>
+        </ul>
+        <Code code={migrate} lang="jsx" themes={themes} />
+      </section>
+    </article>
+  </div>
+</Base>

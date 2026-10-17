@@ -1,34 +1,49 @@
 {
   "name": "@hackclub/theme",
-  "description": "Hack Club’s theme for Theme UI websites",
-  "version": "1.1.0",
-  "author": "Lachlan Campbell <lachlan@hackclub.com> (https://lachlanjc.com)",
+  "description": "Hack Club’s design system: tokens, CSS and framework-agnostic web components",
+  "version": "2.0.0",
+  "author": "Hack Club <team@hackclub.com> (https://hackclub.com)",
+  "type": "module",
   "main": "dist/index.js",
-  "module": "dist/index.esm.mjs",
-  "unpkg": "dist/index.esm.mjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "unpkg": "dist/hackclub.js",
+  "jsdelivr": "dist/hackclub.js",
+  "style": "dist/hackclub.css",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.esm.mjs"
-      },
-      "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
+      "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
-    "./fonts/*": "./fonts/*"
+    "./cdn": "./dist/hackclub.js",
+    "./css": "./dist/hackclub.css",
+    "./hackclub.css": "./dist/hackclub.css",
+    "./base.css": "./dist/base.css",
+    "./fonts.css": "./dist/fonts.css",
+    "./prose.css": "./dist/prose.css",
+    "./tokens.css": "./dist/tokens.css",
+    "./tailwind.css": "./dist/tailwind.css",
+    "./tokens.json": "./dist/tokens.json",
+    "./fonts/*": "./dist/fonts/*",
+    "./components/*": {
+      "types": "./dist/components/*.d.ts",
+      "default": "./dist/components/*.js"
+    }
   },
   "files": [
-    "dist/",
-    "fonts/"
+    "dist/"
   ],
-  "sideEffects": false,
+  "sideEffects": true,
+  "keywords": [
+    "hack club",
+    "design system",
+    "web components",
+    "design tokens",
+    "css"
+  ],
   "scripts": {
     "build": "bun run build.ts",
-    "prepare": "bun run build",
+    "prepublishOnly": "bun run build",
     "watch": "bun run --watch build.ts",
     "clean": "rm -rf ./dist"
   },
@@ -41,16 +56,11 @@
     "url": "https://github.com/hackclub/theme.git",
     "directory": "packages/theme"
   },
-  "peerDependencies": {
-    "react": ">=19.0.0",
-    "react-dom": ">=19.0.0"
+  "dependencies": {
+    "@hackclub/components": "workspace:*",
+    "@hackclub/tokens": "workspace:*"
   },
   "devDependencies": {
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "theme-ui": "^0.17.4"
+    "@hackclub/css-base": "workspace:*"
   }
 }
