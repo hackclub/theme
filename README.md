@@ -18,7 +18,7 @@ The design system behind [Hack Club](https://hackclub.com)'s website, available 
 <hc-button arrow>Join Hack Club</hc-button>
 ```
 
-**[Documentation → theme.hackclub.com](https://theme.hackclub.com)**
+**[Documentation → design.hackclub.com](https://design.hackclub.com)**
 
 ## Packages
 
@@ -42,7 +42,7 @@ bun install          # also builds every package
 bun run build        # rebuild packages (in dependency order)
 bun run test         # unit tests (happy-dom)
 bun run test:e2e     # clean build, tests, dist smoke test and docs build
-bun run docs:dev     # theme.hackclub.com on localhost
+bun run docs:dev     # design.hackclub.com on localhost
 ```
 
 The docs site in [`/docs`](docs) is built with [Astro](https://astro.build) and deployed on Vercel.

@@ -4,7 +4,7 @@ Hack Club's design system in one package: the [tokens](../tokens), the
 [base CSS and fonts](../css-base) and every [web component](../components),
 styled after [hackclub.com](https://hackclub.com).
 
-**Docs: [theme.hackclub.com](https://theme.hackclub.com)**
+**Docs: [design.hackclub.com](https://design.hackclub.com)**
 
 ## CDN
 
@@ -50,4 +50,4 @@ import { palette, setTheme, themeScript } from '@hackclub/theme'
 
 v1 was a [Theme UI](https://theme-ui.com) theme for the previous
 hackclub.com, and v2 replaces it. If you depend on it, pin `@hackclub/theme@^1`.
-See the [migration notes](https://theme.hackclub.com/getting-started/#migrating).
+See the [migration notes](https://design.hackclub.com/getting-started/#migrating).

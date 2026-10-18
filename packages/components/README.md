@@ -48,4 +48,4 @@ import { themeScript, setTheme } from '@hackclub/components/theme'
 // Inline themeScript in <head> to apply the saved theme before first paint
 ```
 
-Docs and live examples: [theme.hackclub.com/components](https://theme.hackclub.com/components/)
+Docs and live examples: [design.hackclub.com/components](https://design.hackclub.com/components/)

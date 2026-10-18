@@ -45,4 +45,4 @@ cssVar('surfaceHover') // 'var(--hc-surface-hover)'
 
 `@hackclub/tokens/tokens.json` has the same data for other tools.
 
-Full reference: [theme.hackclub.com/tokens](https://theme.hackclub.com/tokens/)
+Full reference: [design.hackclub.com/tokens](https://design.hackclub.com/tokens/)

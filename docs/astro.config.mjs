@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config'
 
 export default defineConfig({
-  site: 'https://theme.hackclub.com',
+  site: 'https://design.hackclub.com',
   devToolbar: { enabled: false },
   trailingSlash: 'ignore',
   markdown: {

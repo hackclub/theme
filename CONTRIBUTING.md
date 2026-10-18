@@ -10,7 +10,7 @@ packages in dependency order.
 ```bash
 bun install           # installs dependencies and builds every package
 bun run build         # rebuild after changing a package
-bun run docs:dev     # theme.hackclub.com on localhost
+bun run docs:dev      # design.hackclub.com on localhost
 ```
 
 ## Tests
