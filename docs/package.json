@@ -17,6 +17,6 @@
   },
   "dependencies": {
     "@hackclub/theme": "workspace:*",
-    "astro": "^7.4.0"
+    "astro": "^7.4.1"
   }
 }
